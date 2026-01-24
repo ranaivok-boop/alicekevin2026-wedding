@@ -1,12 +1,11 @@
 :root{
   --bg:#fafafa;
   --text:#111;
-  --muted:#5a5a5a;
-  --line:#e8e8e8;
-  --max:920px;
+  --muted:#666;
+  --line:#e9e9e9;
+  --max:980px;
 }
 
-/* Base */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -16,71 +15,66 @@ body{
   font-family: Georgia, "Times New Roman", serif;
 }
 
-/* Header / Nav */
 header{
   position:sticky;
   top:0;
-  z-index:10;
+  z-index:20;
   background:rgba(250,250,250,0.92);
   backdrop-filter:saturate(180%) blur(10px);
   border-bottom:1px solid var(--line);
 }
 
-.navbar{
+.bar{
   max-width:var(--max);
   margin:0 auto;
   padding:14px 18px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:14px;
+  gap:12px;
 }
 
 .nav{
   display:flex;
-  gap:16px;
-  align-items:center;
   flex-wrap:wrap;
+  gap:16px;
+  justify-content:center;
 }
 
-.nav a{
+.nav a, .lang a{
   text-decoration:none;
   color:var(--muted);
   font-size:14px;
   letter-spacing:.04em;
   border-bottom:1px solid transparent;
   padding-bottom:2px;
+  white-space:nowrap;
+}
+.nav a:hover, .lang a:hover{
+  color:var(--text);
+  border-bottom-color:var(--text);
 }
 
-.nav a:hover{color:var(--text); border-bottom-color:var(--text)}
-.nav a.active{color:var(--text); border-bottom-color:var(--text)}
-
-/* Language toggle */
 .lang{
   display:flex;
   gap:10px;
-  align-items:center;
+  justify-content:flex-end;
 }
-.lang a{
-  text-decoration:none;
-  color:var(--muted);
-  font-size:13px;
-  letter-spacing:.06em;
-  border-bottom:1px solid transparent;
-  padding-bottom:2px;
+.lang a.active{
+  color:var(--text);
+  border-bottom-color:var(--text);
+  font-weight:700;
 }
-.lang a.active{color:var(--text); border-bottom-color:var(--text)}
 
-/* Layout */
 main{
   max-width:var(--max);
   margin:0 auto;
-  padding:56px 18px 80px;
+  padding:56px 18px 90px;
   text-align:center;
 }
 
 .section{
-  padding:34px 0;
+  padding:38px 0;
   border-bottom:1px solid var(--line);
 }
 .section:last-child{border-bottom:none}
@@ -92,7 +86,6 @@ h1{
   text-transform:uppercase;
   font-size:40px;
 }
-
 h2{
   margin:0 0 18px;
   font-weight:400;
@@ -107,39 +100,24 @@ p{
   line-height:1.9;
 }
 
-.small{
-  margin-top:12px;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.7;
-}
+.small{color:var(--muted); font-size:14px; line-height:1.7}
 
-/* CTAs */
-.cta-row{
+.ctaRow{
+  margin-top:18px;
   display:flex;
   gap:18px;
   justify-content:center;
   flex-wrap:wrap;
-  margin-top:18px;
 }
 
-a.btn{
+.btn{
   display:inline-block;
-  text-decoration:none;
   color:var(--text);
+  text-decoration:none;
   border-bottom:1px solid var(--text);
   padding-bottom:3px;
 }
 
-/* Gift highlight: elegant but visible */
-.gift-callout{
-  margin-top:18px;
-  padding-top:18px;
-  border-top:1px solid var(--line);
-}
-.gift-callout a{ font-weight:600; }
-
-/* Tables (Agenda) */
 .table{
   width:100%;
   border-collapse:collapse;
@@ -150,32 +128,31 @@ a.btn{
   padding:12px 10px;
   border-bottom:1px solid var(--line);
 }
-.table td:first-child{
-  width:120px;
-  color:var(--muted);
-  white-space:nowrap;
+.table td:first-child{width:120px; color:var(--muted)}
+
+.card{
+  margin:14px auto 0;
+  max-width:720px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:16px 14px;
+  background:#fff;
+  text-align:left;
 }
 
-/* Footer */
-footer{
-  border-top:1px solid var(--line);
-  padding:22px 18px;
-  text-align:center;
-  color:var(--muted);
-  font-size:13px;
+.mono{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size:15px;
+  line-height:1.8;
+  word-break:break-word;
 }
-footer a{
-  color:var(--muted);
-  text-decoration:none;
-  border-bottom:1px solid transparent;
-  padding-bottom:2px;
-}
-footer a:hover{ color:var(--text); border-bottom-color:var(--text); }
 
-/* Mobile */
+@media (max-width:720px){
+  .bar{flex-direction:column; align-items:center}
+  .lang{justify-content:center}
+}
 @media (max-width:520px){
   h1{font-size:32px}
   p{font-size:17px}
-  .table td:first-child{width:92px}
-  .navbar{padding:12px 14px}
+  .table td:first-child{width:90px}
 }
