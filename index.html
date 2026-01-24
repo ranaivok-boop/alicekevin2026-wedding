@@ -6,21 +6,19 @@
   <title>Alice & Kevin — Invitation</title>
   <meta name="description" content="Invitation de mariage — Alice & Kevin" />
 
-  <!-- Fonts (editorial, proche de ton visuel) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Lock scroll until intro is dismissed -->
   <script>
     document.documentElement.classList.add("no-scroll");
   </script>
 </head>
 
 <body>
-  <!-- INTRO OVERLAY (cover cliquable) -->
+  <!-- INTRO (cliquable) -->
   <div id="intro-overlay" class="intro" role="button" tabindex="0" aria-label="Ouvrir l’invitation">
     <div class="intro__inner">
       <img
@@ -33,23 +31,20 @@
     </div>
   </div>
 
-  <!-- Language switch (utility only, not a menu) -->
+  <!-- Switch langues -->
   <div class="lang" aria-label="Choisir la langue">
     <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
     <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
     <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
   </div>
 
-  <main class="page">
-    <!-- HERO -->
-    <section class="hero" id="top">
+  <main class="page" id="top">
+    <section class="hero">
       <div class="hero__inner">
         <p class="kicker" data-i18n="kicker">Save the Date</p>
         <h1 class="title">Alice &amp; Kevin</h1>
 
-        <p class="subtitle" data-i18n="subtitle">
-          Syracuse, Sicily · June 20, 2026
-        </p>
+        <p class="subtitle" data-i18n="subtitle">Siracusa, Sicilia · 20 giugno 2026</p>
 
         <div class="hero__card">
           <p class="hero__text" data-i18n="hero_text">
@@ -58,24 +53,22 @@
           </p>
 
           <div class="hero__cta">
-            <a class="btn" href="#rsvp" data-i18n="cta_rsvp">RSVP</a>
-            <a class="btn btn--ghost" href="#infos" data-i18n="cta_infos">Infos pratiques</a>
+            <a class="btn btn--dark" href="#rsvp" data-i18n="cta_rsvp">RSVP</a>
+            <a class="btn" href="#infos" data-i18n="cta_infos">Infos pratiques</a>
           </div>
         </div>
 
-        <!-- Quick chips (MECE) -->
-        <div class="chips" aria-label="Accès rapide">
-          <a class="chip" href="#events" data-i18n="chip_events">Cérémonie &amp; réception</a>
-          <a class="chip" href="#infos" data-i18n="chip_travel">Accès &amp; séjour</a>
+        <div class="chips">
+          <a class="chip" href="#events" data-i18n="chip_events">Cérémonie & réception</a>
+          <a class="chip" href="#infos" data-i18n="chip_travel">Accès & séjour</a>
           <a class="chip" href="#gift" data-i18n="chip_gift">Cadeau / Don</a>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 1: Cérémonie & Réception (MECE : tout ce qui est "où/quand") -->
     <section class="section" id="events">
       <div class="section__inner">
-        <h2 class="section__title" data-i18n="events_title">Cérémonie &amp; réception</h2>
+        <h2 class="section__title" data-i18n="events_title">Cérémonie & réception</h2>
         <p class="section__lead" data-i18n="events_lead">
           Les informations ci-dessous seront précisées au fil des confirmations (horaires, navettes, etc.).
         </p>
@@ -90,8 +83,7 @@
               La cérémonie aura lieu au Duomo (Ortigia). L’horaire exact sera communiqué ici.
             </p>
             <div class="card__meta">
-              <span data-i18n="church_meta_1">Ortigia · Syracuse</span>
-              <span>•</span>
+              <span data-i18n="church_meta_1">Ortigia · Syracuse</span><span>•</span>
               <span data-i18n="church_meta_2">Tenue élégante</span>
             </div>
           </article>
@@ -105,8 +97,7 @@
               Cocktail, dîner et soirée. Les détails logistiques (transport, horaires) seront ajoutés ici.
             </p>
             <div class="card__meta">
-              <span data-i18n="reception_meta_1">Syracuse & alentours</span>
-              <span>•</span>
+              <span data-i18n="reception_meta_1">Syracuse & alentours</span><span>•</span>
               <span data-i18n="reception_meta_2">Ambiance chaleureuse</span>
             </div>
           </article>
@@ -120,8 +111,7 @@
               Un moment informel pourra être proposé la veille ou le lendemain (selon vos arrivées).
             </p>
             <div class="card__meta">
-              <span data-i18n="weekend_meta_1">Infos à venir</span>
-              <span>•</span>
+              <span data-i18n="weekend_meta_1">Infos à venir</span><span>•</span>
               <span data-i18n="weekend_meta_2">Selon disponibilités</span>
             </div>
           </article>
@@ -129,10 +119,9 @@
       </div>
     </section>
 
-    <!-- SECTION 2: Accès & séjour (MECE : tout ce qui est "venir + dormir") -->
     <section class="section section--alt" id="infos">
       <div class="section__inner">
-        <h2 class="section__title" data-i18n="infos_title">Accès &amp; séjour</h2>
+        <h2 class="section__title" data-i18n="infos_title">Accès & séjour</h2>
         <p class="section__lead" data-i18n="infos_lead">
           Pour profiter sereinement, nous recommandons d’arriver la veille.
         </p>
@@ -160,47 +149,12 @@
               <li data-i18n="stay_li_2">Option 2 : Syracuse (pratique, bon rapport qualité-prix)</li>
               <li data-i18n="stay_li_3">Option 3 : alentours (voiture) si vous combinez plage & séjour</li>
             </ul>
-            <p class="note" data-i18n="stay_note">
-              Nous partagerons une sélection d’adresses fiables dès que possible.
-            </p>
-          </article>
-        </div>
-
-        <div class="grid">
-          <article class="card">
-            <div class="card__top">
-              <h3 class="card__title" data-i18n="dress_title">Dress code</h3>
-              <span class="badge" data-i18n="dress_badge">Élégant</span>
-            </div>
-            <p class="card__text" data-i18n="dress_text">
-              Tenue élégante, tons doux et estivaux. Prévoyez des chaussures confortables pour Ortigia.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card__top">
-              <h3 class="card__title" data-i18n="weather_title">Météo & conseils</h3>
-              <span class="badge badge--lemon" data-i18n="weather_badge">Juin</span>
-            </div>
-            <p class="card__text" data-i18n="weather_text">
-              Chaud en journée, plus doux le soir. Pensez à une étole légère et à l’hydratation.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card__top">
-              <h3 class="card__title" data-i18n="contact_title">Contact</h3>
-              <span class="badge badge--soft" data-i18n="contact_badge">Questions</span>
-            </div>
-            <p class="card__text" data-i18n="contact_text">
-              Pour toute question logistique, écrivez-nous. Nous mettrons aussi à jour cette page régulièrement.
-            </p>
+            <p class="note" data-i18n="stay_note">Nous partagerons une sélection d’adresses fiables dès que possible.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3: RSVP (MECE : confirmer) -->
     <section class="section" id="rsvp">
       <div class="section__inner">
         <h2 class="section__title" data-i18n="rsvp_title">RSVP</h2>
@@ -209,26 +163,19 @@
         </p>
 
         <div class="cta-panel">
-          <div class="cta-panel__text">
+          <div>
             <h3 class="cta-panel__title" data-i18n="rsvp_box_title">Confirmer sa présence</h3>
             <p class="cta-panel__p" data-i18n="rsvp_box_text">
-              Le formulaire sera disponible ici. (Vous pourrez remplacer le lien en 10 secondes.)
+              Remplacez le lien ci-dessous par votre Google Form / Typeform.
             </p>
           </div>
 
-          <!-- Remplace href par ton lien Google Forms / Typeform -->
-          <a class="btn btn--dark" href="#" onclick="return false;" data-i18n="rsvp_button">
-            Ouvrir le formulaire
-          </a>
+          <!-- Mets ton lien ici -->
+          <a class="btn btn--dark" href="#" onclick="return false;" data-i18n="rsvp_button">Ouvrir le formulaire</a>
         </div>
-
-        <p class="fineprint" data-i18n="rsvp_fineprint">
-          Astuce : quand votre Google Form est prêt, remplacez simplement le “#” par le lien du formulaire.
-        </p>
       </div>
     </section>
 
-    <!-- SECTION 4: Cadeau / Don IBAN (MECE : contribuer) -->
     <section class="section section--alt" id="gift">
       <div class="section__inner">
         <h2 class="section__title" data-i18n="gift_title">Cadeau / Don</h2>
@@ -238,36 +185,27 @@
         </p>
 
         <div class="gift">
-          <div class="gift__left">
+          <div>
             <h3 class="gift__title" data-i18n="gift_box_title">Contribution (IBAN)</h3>
             <p class="gift__text" data-i18n="gift_box_text">
               Nous privilégions la discrétion : un simple virement suffit. Merci infiniment.
             </p>
           </div>
 
-          <div class="gift__right">
-            <div class="iban" role="group" aria-label="IBAN">
+          <div>
+            <div class="iban">
               <div class="iban__label">IBAN</div>
               <div class="iban__value" id="ibanValue">FR76 XXXX XXXX XXXX XXXX XXXX XXX</div>
-              <button class="btn btn--ghost" type="button" id="copyIban" data-i18n="copy_iban">
-                Copier
-              </button>
+              <button class="btn" type="button" id="copyIban" data-i18n="copy_iban">Copier</button>
             </div>
-
             <div class="toast" id="toast" aria-live="polite"></div>
-
-            <p class="fineprint" data-i18n="gift_fineprint">
-              Vous pourrez remplacer l’IBAN ci-dessus par le vôtre. Nous pouvons aussi ajouter un BIC si nécessaire.
-            </p>
           </div>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <p class="footer__p" data-i18n="footer">
-        © Alice & Kevin · 2026
-      </p>
+      <p class="footer__p" data-i18n="footer">© Alice & Kevin · 2026</p>
     </footer>
   </main>
 
