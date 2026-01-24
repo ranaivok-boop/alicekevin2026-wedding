@@ -1,32 +1,30 @@
 :root{
-  --paper: #f6f1ea; /* ivory paper tone (matches your design) */
+  --paper: #f6f1ea;
   --ease: cubic-bezier(.22,.61,.36,1);
 }
 
 *{ box-sizing: border-box; }
 html, body { height: 100%; }
+
 body{
-  margin:0;
+  margin: 0;
   background: var(--paper);
-  overflow:hidden;
 }
 
 /* Fullscreen intro */
 .intro{
-  position:relative;
-  width:100%;
-  height:100vh;
-  display:grid;
-  place-items:center;
-  cursor:pointer;
-  user-select:none;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  user-select: none;
   -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
 }
 
-/* Responsive, elegant fitting:
-   - mobile: use most of the height
-   - desktop: keep correct ratio and avoid ugly cropping
-*/
+/* Image */
 .intro-img{
   width: min(92vw, 860px);
   height: auto;
@@ -34,37 +32,47 @@ body{
   object-fit: contain;
   border-radius: 14px;
   box-shadow: 0 18px 50px rgba(0,0,0,.10);
-  transform: translateY(0);
+
   opacity: 0;
+  transform: translateY(10px);
   animation: introIn 900ms var(--ease) forwards;
 }
 
-/* Premium “this is clickable” hint */
+/* Hint */
 .intro-hint{
-  position:absolute;
+  position: absolute;
   bottom: 28px;
-  font: 500 12px/1.2 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font: 600 12px/1.2 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: rgba(50,50,50,.55);
+
   opacity: 0;
+  transform: translateY(6px);
   animation: hintIn 900ms var(--ease) 650ms forwards;
+
+  transition: opacity 250ms var(--ease), transform 250ms var(--ease);
 }
 
-/* Fade overlay (paper fade) */
+.intro-hint.hide{
+  opacity: 0 !important;
+  transform: translateY(6px);
+}
+
+/* Fade overlay (paper tone) */
 .fade-overlay{
-  position:absolute;
-  inset:0;
+  position: absolute;
+  inset: 0;
   background: var(--paper);
-  opacity:0;
-  pointer-events:none;
+  opacity: 0;
+  pointer-events: none;
   transition: opacity 520ms var(--ease);
 }
 
 /* Hover micro-interaction (desktop only) */
 @media (hover:hover){
   .intro:hover .intro-img{
-    transform: scale(1.01);
+    transform: translateY(0) scale(1.01);
     transition: transform 260ms var(--ease), filter 260ms var(--ease);
     filter: saturate(1.02) contrast(0.99);
   }
@@ -72,13 +80,14 @@ body{
 
 /* Press feedback */
 .intro.is-pressing .intro-img{
-  transform: scale(1.006);
+  transform: translateY(0) scale(1.006);
   filter: brightness(0.99);
   transition: transform 180ms var(--ease), filter 180ms var(--ease);
 }
 
-/* Exit animation */
+/* Exit animation: subtle lift + paper fade */
 .intro.is-exiting .fade-overlay{ opacity: 1; }
+
 .intro.is-exiting .intro-img{
   transform: translateY(-6px);
   transition: transform 520ms var(--ease);
@@ -86,12 +95,10 @@ body{
 
 /* Keyframes */
 @keyframes introIn{
-  from { opacity:0; transform: translateY(10px); }
-  to   { opacity:1; transform: translateY(0); }
+  to { opacity: 1; transform: translateY(0); }
 }
 @keyframes hintIn{
-  from { opacity:0; transform: translateY(6px); }
-  to   { opacity:1; transform: translateY(0); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Mobile tuning */
