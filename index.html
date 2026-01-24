@@ -3,79 +3,170 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alice & Kevin — Wedding 2026</title>
+  <title>Alice & Kévin – Mariage</title>
 
-  <!-- STYLE -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts (équivalents Voguer & Hatton) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- LANG SCRIPT -->
-  <script src="lang.js" defer></script>
+  <style>
+    body{
+      margin:0;
+      background:#fafafa;
+      color:#111;
+      font-family:"Cormorant Garamond", Georgia, serif;
+      text-align:center;
+    }
+
+    /* Language switch */
+    .lang{
+      position:fixed;
+      top:16px;
+      right:18px;
+      display:flex;
+      gap:10px;
+      font-size:13px;
+      letter-spacing:.06em;
+    }
+    .lang a{
+      text-decoration:none;
+      color:#666;
+      border-bottom:1px solid transparent;
+      padding-bottom:2px;
+    }
+    .lang a.active{
+      color:#111;
+      border-bottom-color:#111;
+      font-weight:600;
+    }
+
+    main{
+      max-width:900px;
+      margin:0 auto;
+      padding:140px 18px 90px;
+    }
+
+    h1{
+      font-family:"Bodoni Moda", Georgia, serif;
+      font-size:56px;
+      letter-spacing:.14em;
+      font-weight:400;
+      margin:0 0 12px;
+      text-transform:uppercase;
+    }
+
+    .lead{
+      font-size:18px;
+      line-height:1.9;
+    }
+
+    .nav{
+      margin-top:36px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      max-width:720px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .nav a{
+      text-decoration:none;
+      color:#111;
+      border:1px solid #e6e6e6;
+      border-radius:16px;
+      padding:16px 12px;
+      font-size:14px;
+      letter-spacing:.05em;
+    }
+
+    @media (max-width:720px){
+      h1{font-size:40px}
+      .nav{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="bar">
-    <nav class="nav">
-      <a href="#">Home</a>
+<!-- LANGUAGES -->
+<div class="lang">
+  <a href="#" data-lang="fr" class="active">FR</a>
+  <a href="#" data-lang="it">IT</a>
+  <a href="#" data-lang="en">EN</a>
+</div>
+
+<main>
+
+  <!-- FR -->
+  <section data-content="fr">
+    <h1>Alice & Kévin</h1>
+    <p class="lead">
+      ont le plaisir de vous inviter à célébrer leur mariage<br>
+      <span style="font-size:14px;color:#666;">20 juin 2026 · Syracuse, Sicile</span>
+    </p>
+
+    <div class="nav">
       <a href="#">Programme</a>
       <a href="#">Agenda</a>
       <a href="#">RSVP</a>
       <a href="#">Cadeaux</a>
-    </nav>
-
-    <div class="lang">
-      <a href="#" data-set-lang="fr">FR</a>
-      <a href="#" data-set-lang="en">EN</a>
-      <a href="#" data-set-lang="it">IT</a>
-    </div>
-  </div>
-</header>
-
-<!-- CONTENT -->
-<main>
-
-  <!-- FR -->
-  <section class="section" data-lang="fr">
-    <h1>Alice & Kevin</h1>
-    <p>Wedding 2026</p>
-    <p class="small" style="margin-top:12px;">Syracuse, Sicile</p>
-
-    <div class="ctaRow">
-      <a class="btn" href="#">RSVP</a>
-      <a class="btn" href="#">Programme</a>
-      <a class="btn" href="#">Cadeaux</a>
-    </div>
-  </section>
-
-  <!-- EN -->
-  <section class="section" data-lang="en">
-    <h1>Alice & Kevin</h1>
-    <p>Wedding 2026</p>
-    <p class="small" style="margin-top:12px;">Syracuse, Sicily</p>
-
-    <div class="ctaRow">
-      <a class="btn" href="#">RSVP</a>
-      <a class="btn" href="#">Program</a>
-      <a class="btn" href="#">Gifts</a>
     </div>
   </section>
 
   <!-- IT -->
-  <section class="section" data-lang="it">
+  <section data-content="it" style="display:none">
     <h1>Alice & Kevin</h1>
-    <p>Matrimonio 2026</p>
-    <p class="small" style="margin-top:12px;">Siracusa, Sicilia</p>
+    <p class="lead">
+      sono lieti di invitarvi a celebrare il loro matrimonio<br>
+      <span style="font-size:14px;color:#666;">20 giugno 2026 · Siracusa, Sicilia</span>
+    </p>
 
-    <div class="ctaRow">
-      <a class="btn" href="#">RSVP</a>
-      <a class="btn" href="#">Programma</a>
-      <a class="btn" href="#">Regali</a>
+    <div class="nav">
+      <a href="#">Programma</a>
+      <a href="#">Agenda</a>
+      <a href="#">RSVP</a>
+      <a href="#">Regali</a>
+    </div>
+  </section>
+
+  <!-- EN -->
+  <section data-content="en" style="display:none">
+    <h1>Alice & Kevin</h1>
+    <p class="lead">
+      request the pleasure of your company to celebrate their wedding<br>
+      <span style="font-size:14px;color:#666;">20 June 2026 · Syracuse, Sicily</span>
+    </p>
+
+    <div class="nav">
+      <a href="#">Program</a>
+      <a href="#">Schedule</a>
+      <a href="#">RSVP</a>
+      <a href="#">Gifts</a>
     </div>
   </section>
 
 </main>
+
+<script>
+  const links = document.querySelectorAll(".lang a");
+  const sections = document.querySelectorAll("section[data-content]");
+
+  links.forEach(link=>{
+    link.addEventListener("click", e=>{
+      e.preventDefault();
+      const lang = link.dataset.lang;
+
+      links.forEach(l=>l.classList.remove("active"));
+      link.classList.add("active");
+
+      sections.forEach(sec=>{
+        sec.style.display = sec.dataset.content === lang ? "" : "none";
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
