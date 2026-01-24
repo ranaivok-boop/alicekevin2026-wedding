@@ -1,44 +1,46 @@
 (() => {
-  const overlay = document.getElementById("intro-overlay");
-  const hint = document.getElementById("intro-hint");
+  const intro = document.getElementById("intro");
+  const fade = document.getElementById("fadeOverlay");
+  const hint = document.getElementById("introHint");
 
-  if (!overlay) return;
+  if (!intro || !fade) return;
 
   let locked = false;
+
+  // ✅ Change this if your homepage file is different
+  const TARGET = "./home.html";
 
   const enter = () => {
     if (locked) return;
     locked = true;
 
-    // Premium exit: press feedback + paper fade
-    overlay.classList.add("is-exiting");
+    // Hide hint instantly after first interaction (premium)
+    if (hint) hint.classList.add("hide");
 
-    // After animation, unlock scroll and remove overlay from the DOM
+    // Trigger exit animations (image lift + paper fade)
+    intro.classList.add("is-exiting");
+    fade.style.opacity = "1";
+
+    // Navigate after the fade completes
     window.setTimeout(() => {
-      document.documentElement.classList.remove("no-scroll");
-      document.body.classList.remove("no-scroll");
-
-      overlay.remove();
-    }, 650);
+      window.location.href = TARGET;
+    }, 520);
   };
 
   // Click / tap
-  overlay.addEventListener("click", enter);
+  intro.addEventListener("click", enter);
 
   // Keyboard accessibility
-  overlay.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") enter();
+  intro.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      enter();
+    }
   });
 
   // Subtle press feedback
-  overlay.addEventListener("pointerdown", () => overlay.classList.add("is-pressing"));
-  overlay.addEventListener("pointerup", () => overlay.classList.remove("is-pressing"));
-  overlay.addEventListener("pointercancel", () => overlay.classList.remove("is-pressing"));
-  overlay.addEventListener("pointerleave", () => overlay.classList.remove("is-pressing"));
-
-  // Optional: hide hint after first interaction on mobile
-  if (hint) {
-    overlay.addEventListener("pointerdown", () => hint.classList.add("hide"), { once: true });
-  }
+  intro.addEventListener("pointerdown", () => intro.classList.add("is-pressing"));
+  intro.addEventListener("pointerup", () => intro.classList.remove("is-pressing"));
+  intro.addEventListener("pointercancel", () => intro.classList.remove("is-pressing"));
+  intro.addEventListener("pointerleave", () => intro.classList.remove("is-pressing"));
 })();
-
