@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alice & Kevin — Invitation</title>
+  <meta name="description" content="Invitation de mariage — Alice & Kevin" />
+  <link rel="preload" as="image" href="assets/images/envelope-photo-1152.jpg">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Landing: enveloppe -->
+  <main id="landing" class="landing" aria-label="Ouverture de l'invitation">
+    <div class="landing__frame">
+      <div class="landing__hint" aria-hidden="true">
+        <span class="dot"></span>
+        <span>Cliquez pour ouvrir</span>
+      </div>
+
+      <button id="envelopeButton" class="envelope" type="button" aria-label="Ouvrir l'enveloppe">
+        <div class="envelope__scene" id="scene">
+          <!-- Base photo (texture) -->
+          <div class="envelope__layer envelope__base" aria-hidden="true"></div>
+
+          <!-- Flaps (découpe via clip-path, même photo pour un alignement parfait) -->
+          <div class="envelope__layer envelope__flap envelope__flap--top" aria-hidden="true"></div>
+          <div class="envelope__layer envelope__flap envelope__flap--left" aria-hidden="true"></div>
+          <div class="envelope__layer envelope__flap envelope__flap--right" aria-hidden="true"></div>
+
+          <!-- Sceau (PNG) -->
+          <img class="envelope__seal" id="seal" src="assets/images/seal.png" alt="" aria-hidden="true" />
+
+          <!-- Micro-ombre premium sous le sceau -->
+          <div class="envelope__sealShadow" id="sealShadow" aria-hidden="true"></div>
+        </div>
+      </button>
+
+      <div class="landing__credit" aria-hidden="true">
+        <span>Invitation</span>
+        <span class="sep">•</span>
+        <span>A&K</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Homepage -->
+  <section id="home" class="home" aria-label="Accueil" hidden>
+    <header class="hero">
+      <div class="hero__inner reveal">
+        <p class="kicker">Mariage</p>
+        <h1>Alice <span class="amp">&amp;</span> Kevin</h1>
+        <p class="sub">Sicile — Juin 2026</p>
+        <a class="cta" href="#details">Découvrir</a>
+      </div>
+    </header>
+
+    <section id="details" class="section">
+      <div class="section__inner reveal">
+        <h2>Détails</h2>
+        <p>
+          Remplace ici par tes informations (date, lieu, programme, RSVP, etc.).
+          Cette page est volontairement sobre : élégance, respiration, et animations discrètes au scroll.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="section__inner reveal">
+        <h2>RSVP</h2>
+        <p>Ajoute un bouton vers ton formulaire / Google Form / Typeform.</p>
+        <a class="cta cta--ghost" href="#" target="_blank" rel="noopener">Répondre</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__inner reveal">
+        <p>Avec amour, A&K</p>
+      </div>
+    </footer>
+  </section>
+
+  <!-- GSAP (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="js/animation.js"></script>
+</body>
+</html>
