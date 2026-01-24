@@ -5,9 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alice & Kevin — Invitation</title>
   <meta name="description" content="Invitation de mariage — Alice & Kevin" />
+
+  <!-- Preloads -->
   <link rel="preload" as="image" href="assets/images/envelope-photo-1152.jpg">
+  <link rel="preload" as="image" href="assets/images/seal.png">
+
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- FULLSCREEN OVERRIDES (safe, no break) -->
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #f7f3ee; /* ivoire premium, cohérent avec l’enveloppe */
+    }
+
+    /* Landing must occupy the whole viewport */
+    #landing.landing {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Remove any fixed frame constraints and center content */
+    .landing__frame {
+      width: 100vw;
+      height: 100vh;
+      max-width: none !important;
+      max-height: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* The clickable envelope button should not constrain the scene */
+    #envelopeButton.envelope {
+      width: 100vw;
+      height: 100vh;
+      max-width: none !important;
+      max-height: none !important;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* The animation scene: always full viewport, centered */
+    #scene.envelope__scene {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /*
+      The visual envelope layers are defined in css/style.css (background image + clip-path).
+      We scale the whole envelope scene using a "virtual canvas" approach:
+      - keep the artwork ratio stable
+      - avoid stretching
+      - maximize screen usage
+    */
+    .envelope__base,
+    .envelope__flap--top,
+    .envelope__flap--left,
+    .envelope__flap--right {
+      /* if your CSS already sets width/height, we do not break it; just ensure no unexpected caps */
+      max-width: none !important;
+      max-height: none !important;
+    }
+
+    /* Hint + credit remain visible, but stay "overlay" */
+    .landing__hint,
+    .landing__credit {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .landing__hint { top: 16px; }
+    .landing__credit { bottom: 16px; }
+
+    /* Mobile safe areas */
+    @media (max-width: 480px) {
+      .landing__hint { top: 12px; }
+      .landing__credit { bottom: 12px; }
+    }
+  </style>
 </head>
+
 <body>
   <!-- Landing: enveloppe -->
   <main id="landing" class="landing" aria-label="Ouverture de l'invitation">
