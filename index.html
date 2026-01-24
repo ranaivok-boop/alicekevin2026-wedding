@@ -3,105 +3,365 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alice & Kevin — Invitation</title>
+  <title>Alice & Kevin — Wedding Invitation</title>
   <meta name="description" content="Invitation de mariage — Alice & Kevin" />
 
+  <!-- Fonts (close to invitation editorial style) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Lock scroll until intro is dismissed (prevents jank) -->
+  <script>
+    document.documentElement.classList.add("no-scroll");
+  </script>
 </head>
 
 <body>
+  <!-- INTRO OVERLAY (cover image) -->
+  <div id="intro-overlay" class="intro" role="button" tabindex="0" aria-label="Ouvrir l’invitation">
+    <div class="intro__inner">
+      <img
+        class="intro__image"
+        src="assets/invite-cover.png"
+        alt="Alice & Kevin — Invitation"
+        loading="eager"
+        decoding="async"
+      />
+      <div class="intro__hint" id="intro-hint">Cliquer pour ouvrir</div>
+    </div>
+  </div>
+
+  <!-- TOP BAR -->
   <header class="topbar">
-    <a class="brand" href="#home" aria-label="Retour à l'accueil">A&K</a>
+    <a class="brand" href="#home" aria-label="Retour à l'accueil">A&amp;K</a>
+
+    <nav id="site-nav" class="nav" aria-label="Navigation principale">
+      <a href="#home" class="nav__link is-active" data-i18n="nav_home">Accueil</a>
+      <a href="#schedule" class="nav__link" data-i18n="nav_schedule">Programme</a>
+      <a href="#locations" class="nav__link" data-i18n="nav_locations">Lieux</a>
+      <a href="#travel" class="nav__link" data-i18n="nav_travel">Infos pratiques</a>
+      <a href="#stay" class="nav__link" data-i18n="nav_stay">Hébergements</a>
+      <a href="#dress" class="nav__link" data-i18n="nav_dress">Dress code</a>
+      <a href="#gifts" class="nav__link" data-i18n="nav_gifts">Cadeaux</a>
+      <a href="#faq" class="nav__link" data-i18n="nav_faq">FAQ</a>
+      <a href="#rsvp" class="nav__link nav__link--cta" data-i18n="nav_rsvp">RSVP</a>
+    </nav>
+
+    <!-- Language switch -->
+    <div class="lang" aria-label="Choix de langue">
+      <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+      <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
 
     <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav">
       <span></span><span></span><span></span>
     </button>
-
-    <nav id="site-nav" class="nav" aria-label="Navigation principale">
-      <a href="#home" class="nav__link is-active">Accueil</a>
-      <a href="#schedule" class="nav__link">Programme</a>
-      <a href="#travel" class="nav__link">Infos pratiques</a>
-      <a href="#rsvp" class="nav__link">RSVP</a>
-    </nav>
   </header>
 
+  <!-- HERO -->
   <main id="home" class="hero">
     <div class="hero__inner">
-      <p class="hero__kicker">Save the Date</p>
-      <h1 class="hero__title">Alice &amp; Kevin</h1>
-      <p class="hero__subtitle">Syracuse, Sicily · Juin 2026</p>
+      <p class="hero__kicker" data-i18n="hero_kicker">Save the Date</p>
+
+      <h1 class="hero__title">
+        <span class="hero__names">Alice &amp; Kevin</span>
+      </h1>
+
+      <p class="hero__subtitle">
+        <span data-i18n="hero_city">Siracusa, Sicilia</span>
+        <span class="dot">·</span>
+        <span data-i18n="hero_date">20 Juin 2026</span>
+      </p>
 
       <div class="hero__card">
-        <p class="hero__text">
-          Une célébration élégante, chaleureuse et intime.
-          Tous les détails arrivent bientôt — gardez cette page en favori.
+        <p class="hero__text" data-i18n="hero_text">
+          Une célébration élégante, chaleureuse et intime. Tous les détails arrivent bientôt — gardez cette page en favori.
         </p>
 
         <div class="hero__cta">
-          <a class="btn" href="#rsvp">Confirmer sa présence</a>
-          <a class="btn btn--ghost" href="#travel">Voir les infos</a>
+          <a class="btn" href="#rsvp" data-i18n="btn_rsvp">Confirmer sa présence</a>
+          <a class="btn btn--ghost" href="#travel" data-i18n="btn_info">Voir les infos</a>
+          <a class="btn btn--ghost" href="#gifts" data-i18n="btn_gifts">Offrir un cadeau</a>
         </div>
       </div>
+
+      <p class="hero__note" data-i18n="hero_note">
+        Conseil : arrivez idéalement la veille pour profiter de Syracuse et de la Sicile.
+      </p>
     </div>
   </main>
 
+  <!-- PROGRAMME -->
   <section id="schedule" class="section">
     <div class="section__inner">
-      <h2 class="section__title">Programme</h2>
-      <p class="section__lead">À ajuster dès que vos horaires sont finalisés.</p>
+      <h2 class="section__title" data-i18n="schedule_title">Programme</h2>
+      <p class="section__lead" data-i18n="schedule_lead">
+        Les horaires détaillés seront partagés dès finalisation. Voici la structure générale du week-end.
+      </p>
 
       <div class="grid">
         <article class="tile">
-          <h3>Vendredi</h3>
-          <p>Dîner / accueil (optionnel)</p>
+          <h3 data-i18n="schedule_fri_title">Vendredi</h3>
+          <p data-i18n="schedule_fri_text">Accueil &amp; dîner informel (optionnel)</p>
         </article>
+
         <article class="tile">
-          <h3>Samedi</h3>
-          <p>Cérémonie au Duomo · Réception</p>
+          <h3 data-i18n="schedule_sat_title">Samedi</h3>
+          <p data-i18n="schedule_sat_text">Cérémonie au Duomo · Réception &amp; soirée</p>
         </article>
+
         <article class="tile">
-          <h3>Dimanche</h3>
-          <p>Brunch / au revoir</p>
+          <h3 data-i18n="schedule_sun_title">Dimanche</h3>
+          <p data-i18n="schedule_sun_text">Brunch / au revoir</p>
+        </article>
+      </div>
+
+      <div class="notice">
+        <p class="notice__title" data-i18n="schedule_notice_title">Astuce élégante</p>
+        <p class="notice__text" data-i18n="schedule_notice_text">
+          Prévoyez des chaussures confortables : la pierre et les pavés siciliens sont sublimes, et parfois… exigeants.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIEUX -->
+  <section id="locations" class="section section--alt">
+    <div class="section__inner">
+      <h2 class="section__title" data-i18n="locations_title">Lieux</h2>
+      <p class="section__lead" data-i18n="locations_lead">
+        Informations principales des lieux (détails + maps) seront ajoutées au fur et à mesure.
+      </p>
+
+      <div class="grid">
+        <article class="tile">
+          <h3 data-i18n="loc_ceremony_title">Cérémonie</h3>
+          <p>
+            <strong data-i18n="loc_ceremony_place">Duomo di Siracusa</strong><br/>
+            <span data-i18n="loc_ceremony_text">Ortigia — Syracuse</span>
+          </p>
+          <p class="tile__meta" data-i18n="loc_ceremony_meta">Heure &amp; consignes à venir.</p>
+        </article>
+
+        <article class="tile">
+          <h3 data-i18n="loc_reception_title">Réception</h3>
+          <p>
+            <strong data-i18n="loc_reception_place">Lieu de réception</strong><br/>
+            <span data-i18n="loc_reception_text">À confirmer</span>
+          </p>
+          <p class="tile__meta" data-i18n="loc_reception_meta">Navettes / accès précisés prochainement.</p>
+        </article>
+
+        <article class="tile">
+          <h3 data-i18n="loc_brunch_title">Brunch</h3>
+          <p>
+            <strong data-i18n="loc_brunch_place">Brunch du dimanche</strong><br/>
+            <span data-i18n="loc_brunch_text">À confirmer</span>
+          </p>
+          <p class="tile__meta" data-i18n="loc_brunch_meta">Optionnel, très recommandé.</p>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- INFOS PRATIQUES -->
   <section id="travel" class="section">
     <div class="section__inner">
-      <h2 class="section__title">Infos pratiques</h2>
+      <h2 class="section__title" data-i18n="travel_title">Infos pratiques</h2>
+      <p class="section__lead" data-i18n="travel_lead">
+        Les informations ci-dessous sont pensées pour rendre votre séjour simple, fluide et agréable.
+      </p>
+
       <div class="grid">
         <article class="tile">
-          <h3>Accès</h3>
-          <p>Arrivée recommandée la veille · Location de voiture conseillée.</p>
+          <h3 data-i18n="travel_air_title">Vols</h3>
+          <p data-i18n="travel_air_text">
+            Aéroports recommandés : Catane (CTA) en priorité. Ensuite Comiso (CIY) selon les vols.
+          </p>
         </article>
+
         <article class="tile">
-          <h3>Hébergements</h3>
-          <p>Liste d’adresses &amp; recommandations à venir.</p>
+          <h3 data-i18n="travel_car_title">Location de voiture</h3>
+          <p data-i18n="travel_car_text">
+            Fortement conseillée pour profiter de la région. Parking et accès seront indiqués par lieu.
+          </p>
         </article>
+
         <article class="tile">
-          <h3>Dress code</h3>
-          <p>Élégant · couleurs douces / estivales.</p>
+          <h3 data-i18n="travel_moves_title">Déplacements</h3>
+          <p data-i18n="travel_moves_text">
+            Nous partagerons une recommandation claire : où loger, comment se déplacer, et les meilleurs timings.
+          </p>
+        </article>
+      </div>
+
+      <div class="notice">
+        <p class="notice__title" data-i18n="travel_notice_title">Conseil</p>
+        <p class="notice__text" data-i18n="travel_notice_text">
+          Pour une expérience sereine, arrivez la veille et prévoyez votre retour le lendemain du brunch.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEBERGEMENTS -->
+  <section id="stay" class="section section--alt">
+    <div class="section__inner">
+      <h2 class="section__title" data-i18n="stay_title">Hébergements</h2>
+      <p class="section__lead" data-i18n="stay_lead">
+        Nous publierons une short-list d’hébergements (toutes gammes) + zones recommandées.
+      </p>
+
+      <div class="grid">
+        <article class="tile">
+          <h3 data-i18n="stay_ortigia_title">Ortigia</h3>
+          <p data-i18n="stay_ortigia_text">Charme absolu, central, idéal sans voiture. Parfait pour profiter à pied.</p>
+        </article>
+
+        <article class="tile">
+          <h3 data-i18n="stay_syracuse_title">Syracuse</h3>
+          <p data-i18n="stay_syracuse_text">Plus simple en voiture, options variées, bon compromis.</p>
+        </article>
+
+        <article class="tile">
+          <h3 data-i18n="stay_countryside_title">Campagne</h3>
+          <p data-i18n="stay_countryside_text">Expérience villa / agriturismo, calme, très “Sicile”.</p>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- DRESS CODE -->
+  <section id="dress" class="section">
+    <div class="section__inner">
+      <h2 class="section__title" data-i18n="dress_title">Dress code</h2>
+      <p class="section__lead" data-i18n="dress_lead">
+        Élégant, lumineux, estival. L’idée : une allure soignée, confortable, et harmonieuse sur les photos.
+      </p>
+
+      <div class="grid">
+        <article class="tile">
+          <h3 data-i18n="dress_palette_title">Couleurs</h3>
+          <p data-i18n="dress_palette_text">Tons doux (ivoire, sable, pastel), agrumes, verts. Éviter le total noir.</p>
+        </article>
+
+        <article class="tile">
+          <h3 data-i18n="dress_fabric_title">Matières</h3>
+          <p data-i18n="dress_fabric_text">Lin, coton, soie — privilégiez des tissus respirants.</p>
+        </article>
+
+        <article class="tile">
+          <h3 data-i18n="dress_shoes_title">Chaussures</h3>
+          <p data-i18n="dress_shoes_text">Chic + confort : pavés et pierre (Ortigia).</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIFTS / IBAN -->
+  <section id="gifts" class="section section--alt">
+    <div class="section__inner">
+      <h2 class="section__title" data-i18n="gifts_title">Cadeaux</h2>
+      <p class="section__lead" data-i18n="gifts_lead">
+        Votre présence est déjà un cadeau. Si vous souhaitez contribuer à notre projet de vie, vous pouvez le faire ici.
+      </p>
+
+      <div class="gift">
+        <div class="gift__left">
+          <p class="gift__headline" data-i18n="gifts_headline">Contribuer en toute simplicité</p>
+          <p class="gift__text" data-i18n="gifts_text">
+            Nous avons choisi une solution discrète : un virement direct. En un clic, vous copiez l’IBAN.
+          </p>
+
+          <div class="iban">
+            <div class="iban__label" data-i18n="gifts_iban_label">IBAN</div>
+            <div class="iban__value" id="ibanValue">FR76 XXXX XXXX XXXX XXXX XXXX XXX</div>
+            <div class="iban__actions">
+              <button class="btn btn--dark" type="button" id="copyIbanBtn" data-i18n="gifts_copy">Copier l’IBAN</button>
+              <button class="btn btn--ghost" type="button" id="revealIbanBtn" data-i18n="gifts_reveal">Afficher / Masquer</button>
+            </div>
+            <p class="iban__note" data-i18n="gifts_note">
+              Astuce : vous pouvez indiquer “Mariage Alice & Kevin” en libellé.
+            </p>
+          </div>
+        </div>
+
+        <div class="gift__right">
+          <div class="mini-card">
+            <p class="mini-card__title" data-i18n="gifts_right_title">Merci</p>
+            <p class="mini-card__text" data-i18n="gifts_right_text">
+              Chaque geste nous touche. Nous vous remercierons personnellement avec plaisir.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="section__inner">
+      <h2 class="section__title" data-i18n="faq_title">FAQ</h2>
+      <p class="section__lead" data-i18n="faq_lead">
+        Les réponses aux questions les plus fréquentes — pensées pour vous faciliter la vie.
+      </p>
+
+      <div class="faq">
+        <details class="faq__item">
+          <summary class="faq__q" data-i18n="faq_q1">À quelle heure faut-il arriver ?</summary>
+          <div class="faq__a" data-i18n="faq_a1">Nous partagerons une heure recommandée dès que les horaires sont finalisés.</div>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__q" data-i18n="faq_q2">Puis-je venir accompagné(e) ?</summary>
+          <div class="faq__a" data-i18n="faq_a2">Merci de suivre l’invitation telle qu’elle vous a été adressée. Le RSVP précisera tout.</div>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__q" data-i18n="faq_q3">Y aura-t-il des navettes ?</summary>
+          <div class="faq__a" data-i18n="faq_a3">Oui, si nécessaire. Les modalités seront publiées ici.</div>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__q" data-i18n="faq_q4">Quelle météo prévoir en Sicile ?</summary>
+          <div class="faq__a" data-i18n="faq_a4">Chaleur agréable en juin. Prévoyez une étole légère pour le soir.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
   <section id="rsvp" class="section section--alt">
     <div class="section__inner">
-      <h2 class="section__title">RSVP</h2>
-      <p class="section__lead">Dites-nous si vous pourrez être avec nous.</p>
-
-      <!-- Remplace ce lien par ton Google Form / Typeform quand prêt -->
-      <a class="btn" href="#" onclick="return false;">Ouvrir le formulaire (bientôt)</a>
-
-      <p class="fineprint">
-        Conseil : vous pourrez remplacer ce bouton par un lien Google Forms en 10 secondes.
+      <h2 class="section__title" data-i18n="rsvp_title">RSVP</h2>
+      <p class="section__lead" data-i18n="rsvp_lead">
+        Merci de confirmer votre présence dès que possible (cela nous aide énormément).
       </p>
+
+      <!-- Replace href with your Google Form / Typeform -->
+      <a class="btn btn--dark" href="#" id="rsvpLink" data-i18n="rsvp_open" onclick="return false;">
+        Ouvrir le formulaire
+      </a>
+
+      <p class="fineprint" data-i18n="rsvp_note">
+        Le formulaire sera activé prochainement. Revenez ici : tout sera toujours à jour.
+      </p>
+
+      <div class="contact">
+        <p class="contact__title" data-i18n="contact_title">Contact</p>
+        <p class="contact__text" data-i18n="contact_text">
+          En cas de question, écrivez-nous — nous vous répondrons avec plaisir.
+        </p>
+        <p class="contact__mail">
+          <a href="mailto:alicekevin2026@gmail.com">alicekevin2026@gmail.com</a>
+        </p>
+      </div>
     </div>
   </section>
 
