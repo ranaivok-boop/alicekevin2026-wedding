@@ -1,16 +1,28 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alice & Kévin – Mariage</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alice & Kevin</title>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
-<body style="margin:0;padding:0;overflow:hidden">
-  <iframe
-    src="envelope/index.html"
-    title="Invitation Alice & Kévin"
-    style="border:0;width:100vw;height:100vh"
-    allow="autoplay"
-  ></iframe>
+<body>
+  <main class="intro" id="intro" aria-label="Enter the wedding website" role="button" tabindex="0">
+    <img
+      class="intro-img"
+      src="./assets/intro.webp"
+      alt="Alice & Kevin — Wedding Invitation"
+      loading="eager"
+      decoding="async"
+    />
+
+    <!-- subtle hint (optional but premium) -->
+    <div class="intro-hint" aria-hidden="true">Tap to enter</div>
+
+    <!-- fade overlay (paper tone) -->
+    <div class="fade-overlay" id="fadeOverlay" aria-hidden="true"></div>
+  </main>
+
+  <script src="./intro.js"></script>
 </body>
 </html>
