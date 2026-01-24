@@ -1,37 +1,81 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kévin & Alice — Mariage</title>
-  <style>
-    body{margin:0;background:#fafafa;color:#111;text-align:center;font-family:Georgia,"Times New Roman",serif}
-    .section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:48px 22px}
-    h1{font-size:46px;font-weight:400;letter-spacing:0.08em;margin:0 0 18px}
-    p{font-size:18px;line-height:1.6;margin:0}
-    a{color:#111;text-decoration:none;border-bottom:1px solid #111;padding-bottom:3px}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alice & Kevin — Wedding 2026</title>
+
+  <!-- STYLE -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- LANG SCRIPT -->
+  <script src="lang.js" defer></script>
 </head>
+
 <body>
-  <div class="section">
-    <h1>KÉVIN & ALICE</h1>
-    <p>se marient</p>
-  </div>
 
-  <div class="section">
-    <p>Nous avons la joie de vous inviter<br/>à célébrer notre mariage</p>
-  </div>
+<!-- HEADER -->
+<header>
+  <div class="bar">
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Programme</a>
+      <a href="#">Agenda</a>
+      <a href="#">RSVP</a>
+      <a href="#">Cadeaux</a>
+    </nav>
 
-  <div class="section">
-    <p>Samedi 6 juin 2026<br/>Syracuse, Sicile</p>
+    <div class="lang">
+      <a href="#" data-set-lang="fr">FR</a>
+      <a href="#" data-set-lang="en">EN</a>
+      <a href="#" data-set-lang="it">IT</a>
+    </div>
   </div>
+</header>
 
-  <div class="section">
-    <p><a href="#rsvp">Découvrir les détails & RSVP</a></p>
-  </div>
+<!-- CONTENT -->
+<main>
 
-  <div class="section" id="rsvp">
-    <p>Détails & RSVP<br/>à venir</p>
-  </div>
+  <!-- FR -->
+  <section class="section" data-lang="fr">
+    <h1>Alice & Kevin</h1>
+    <p>Wedding 2026</p>
+    <p class="small" style="margin-top:12px;">Syracuse, Sicile</p>
+
+    <div class="ctaRow">
+      <a class="btn" href="#">RSVP</a>
+      <a class="btn" href="#">Programme</a>
+      <a class="btn" href="#">Cadeaux</a>
+    </div>
+  </section>
+
+  <!-- EN -->
+  <section class="section" data-lang="en">
+    <h1>Alice & Kevin</h1>
+    <p>Wedding 2026</p>
+    <p class="small" style="margin-top:12px;">Syracuse, Sicily</p>
+
+    <div class="ctaRow">
+      <a class="btn" href="#">RSVP</a>
+      <a class="btn" href="#">Program</a>
+      <a class="btn" href="#">Gifts</a>
+    </div>
+  </section>
+
+  <!-- IT -->
+  <section class="section" data-lang="it">
+    <h1>Alice & Kevin</h1>
+    <p>Matrimonio 2026</p>
+    <p class="small" style="margin-top:12px;">Siracusa, Sicilia</p>
+
+    <div class="ctaRow">
+      <a class="btn" href="#">RSVP</a>
+      <a class="btn" href="#">Programma</a>
+      <a class="btn" href="#">Regali</a>
+    </div>
+  </section>
+
+</main>
+
 </body>
 </html>
