@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alice & Kevin — Wedding Invitation</title>
+  <title>Alice & Kevin — Invitation</title>
   <meta name="description" content="Invitation de mariage — Alice & Kevin" />
 
-  <!-- Fonts (close to invitation editorial style) -->
+  <!-- Fonts (editorial, proche de ton visuel) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Lock scroll until intro is dismissed (prevents jank) -->
+  <!-- Lock scroll until intro is dismissed -->
   <script>
     document.documentElement.classList.add("no-scroll");
   </script>
 </head>
 
 <body>
-  <!-- INTRO OVERLAY (cover image) -->
+  <!-- INTRO OVERLAY (cover cliquable) -->
   <div id="intro-overlay" class="intro" role="button" tabindex="0" aria-label="Ouvrir l’invitation">
     <div class="intro__inner">
       <img
@@ -28,346 +28,248 @@
         src="assets/invite-cover.png"
         alt="Alice & Kevin — Invitation"
         loading="eager"
-        decoding="async"
       />
-      <div class="intro__hint" id="intro-hint">Cliquer pour ouvrir</div>
+      <div class="intro__hint" data-i18n="intro_hint">Cliquer pour ouvrir</div>
     </div>
   </div>
 
-  <!-- TOP BAR -->
-  <header class="topbar">
-    <a class="brand" href="#home" aria-label="Retour à l'accueil">A&amp;K</a>
+  <!-- Language switch (utility only, not a menu) -->
+  <div class="lang" aria-label="Choisir la langue">
+    <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
+    <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+    <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
 
-    <nav id="site-nav" class="nav" aria-label="Navigation principale">
-      <a href="#home" class="nav__link is-active" data-i18n="nav_home">Accueil</a>
-      <a href="#schedule" class="nav__link" data-i18n="nav_schedule">Programme</a>
-      <a href="#locations" class="nav__link" data-i18n="nav_locations">Lieux</a>
-      <a href="#travel" class="nav__link" data-i18n="nav_travel">Infos pratiques</a>
-      <a href="#stay" class="nav__link" data-i18n="nav_stay">Hébergements</a>
-      <a href="#dress" class="nav__link" data-i18n="nav_dress">Dress code</a>
-      <a href="#gifts" class="nav__link" data-i18n="nav_gifts">Cadeaux</a>
-      <a href="#faq" class="nav__link" data-i18n="nav_faq">FAQ</a>
-      <a href="#rsvp" class="nav__link nav__link--cta" data-i18n="nav_rsvp">RSVP</a>
-    </nav>
+  <main class="page">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero__inner">
+        <p class="kicker" data-i18n="kicker">Save the Date</p>
+        <h1 class="title">Alice &amp; Kevin</h1>
 
-    <!-- Language switch -->
-    <div class="lang" aria-label="Choix de langue">
-      <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
-      <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-      <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-    </div>
-
-    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
-
-  <!-- HERO -->
-  <main id="home" class="hero">
-    <div class="hero__inner">
-      <p class="hero__kicker" data-i18n="hero_kicker">Save the Date</p>
-
-      <h1 class="hero__title">
-        <span class="hero__names">Alice &amp; Kevin</span>
-      </h1>
-
-      <p class="hero__subtitle">
-        <span data-i18n="hero_city">Siracusa, Sicilia</span>
-        <span class="dot">·</span>
-        <span data-i18n="hero_date">20 Juin 2026</span>
-      </p>
-
-      <div class="hero__card">
-        <p class="hero__text" data-i18n="hero_text">
-          Une célébration élégante, chaleureuse et intime. Tous les détails arrivent bientôt — gardez cette page en favori.
+        <p class="subtitle" data-i18n="subtitle">
+          Syracuse, Sicily · June 20, 2026
         </p>
 
-        <div class="hero__cta">
-          <a class="btn" href="#rsvp" data-i18n="btn_rsvp">Confirmer sa présence</a>
-          <a class="btn btn--ghost" href="#travel" data-i18n="btn_info">Voir les infos</a>
-          <a class="btn btn--ghost" href="#gifts" data-i18n="btn_gifts">Offrir un cadeau</a>
+        <div class="hero__card">
+          <p class="hero__text" data-i18n="hero_text">
+            Nous serions très heureux de vous avoir à nos côtés pour célébrer ce moment.
+            Vous trouverez ici toutes les informations essentielles.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn" href="#rsvp" data-i18n="cta_rsvp">RSVP</a>
+            <a class="btn btn--ghost" href="#infos" data-i18n="cta_infos">Infos pratiques</a>
+          </div>
+        </div>
+
+        <!-- Quick chips (MECE) -->
+        <div class="chips" aria-label="Accès rapide">
+          <a class="chip" href="#events" data-i18n="chip_events">Cérémonie &amp; réception</a>
+          <a class="chip" href="#infos" data-i18n="chip_travel">Accès &amp; séjour</a>
+          <a class="chip" href="#gift" data-i18n="chip_gift">Cadeau / Don</a>
         </div>
       </div>
+    </section>
 
-      <p class="hero__note" data-i18n="hero_note">
-        Conseil : arrivez idéalement la veille pour profiter de Syracuse et de la Sicile.
-      </p>
-    </div>
-  </main>
-
-  <!-- PROGRAMME -->
-  <section id="schedule" class="section">
-    <div class="section__inner">
-      <h2 class="section__title" data-i18n="schedule_title">Programme</h2>
-      <p class="section__lead" data-i18n="schedule_lead">
-        Les horaires détaillés seront partagés dès finalisation. Voici la structure générale du week-end.
-      </p>
-
-      <div class="grid">
-        <article class="tile">
-          <h3 data-i18n="schedule_fri_title">Vendredi</h3>
-          <p data-i18n="schedule_fri_text">Accueil &amp; dîner informel (optionnel)</p>
-        </article>
-
-        <article class="tile">
-          <h3 data-i18n="schedule_sat_title">Samedi</h3>
-          <p data-i18n="schedule_sat_text">Cérémonie au Duomo · Réception &amp; soirée</p>
-        </article>
-
-        <article class="tile">
-          <h3 data-i18n="schedule_sun_title">Dimanche</h3>
-          <p data-i18n="schedule_sun_text">Brunch / au revoir</p>
-        </article>
-      </div>
-
-      <div class="notice">
-        <p class="notice__title" data-i18n="schedule_notice_title">Astuce élégante</p>
-        <p class="notice__text" data-i18n="schedule_notice_text">
-          Prévoyez des chaussures confortables : la pierre et les pavés siciliens sont sublimes, et parfois… exigeants.
+    <!-- SECTION 1: Cérémonie & Réception (MECE : tout ce qui est "où/quand") -->
+    <section class="section" id="events">
+      <div class="section__inner">
+        <h2 class="section__title" data-i18n="events_title">Cérémonie &amp; réception</h2>
+        <p class="section__lead" data-i18n="events_lead">
+          Les informations ci-dessous seront précisées au fil des confirmations (horaires, navettes, etc.).
         </p>
-      </div>
-    </div>
-  </section>
 
-  <!-- LIEUX -->
-  <section id="locations" class="section section--alt">
-    <div class="section__inner">
-      <h2 class="section__title" data-i18n="locations_title">Lieux</h2>
-      <p class="section__lead" data-i18n="locations_lead">
-        Informations principales des lieux (détails + maps) seront ajoutées au fur et à mesure.
-      </p>
-
-      <div class="grid">
-        <article class="tile">
-          <h3 data-i18n="loc_ceremony_title">Cérémonie</h3>
-          <p>
-            <strong data-i18n="loc_ceremony_place">Duomo di Siracusa</strong><br/>
-            <span data-i18n="loc_ceremony_text">Ortigia — Syracuse</span>
-          </p>
-          <p class="tile__meta" data-i18n="loc_ceremony_meta">Heure &amp; consignes à venir.</p>
-        </article>
-
-        <article class="tile">
-          <h3 data-i18n="loc_reception_title">Réception</h3>
-          <p>
-            <strong data-i18n="loc_reception_place">Lieu de réception</strong><br/>
-            <span data-i18n="loc_reception_text">À confirmer</span>
-          </p>
-          <p class="tile__meta" data-i18n="loc_reception_meta">Navettes / accès précisés prochainement.</p>
-        </article>
-
-        <article class="tile">
-          <h3 data-i18n="loc_brunch_title">Brunch</h3>
-          <p>
-            <strong data-i18n="loc_brunch_place">Brunch du dimanche</strong><br/>
-            <span data-i18n="loc_brunch_text">À confirmer</span>
-          </p>
-          <p class="tile__meta" data-i18n="loc_brunch_meta">Optionnel, très recommandé.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- INFOS PRATIQUES -->
-  <section id="travel" class="section">
-    <div class="section__inner">
-      <h2 class="section__title" data-i18n="travel_title">Infos pratiques</h2>
-      <p class="section__lead" data-i18n="travel_lead">
-        Les informations ci-dessous sont pensées pour rendre votre séjour simple, fluide et agréable.
-      </p>
-
-      <div class="grid">
-        <article class="tile">
-          <h3 data-i18n="travel_air_title">Vols</h3>
-          <p data-i18n="travel_air_text">
-            Aéroports recommandés : Catane (CTA) en priorité. Ensuite Comiso (CIY) selon les vols.
-          </p>
-        </article>
-
-        <article class="tile">
-          <h3 data-i18n="travel_car_title">Location de voiture</h3>
-          <p data-i18n="travel_car_text">
-            Fortement conseillée pour profiter de la région. Parking et accès seront indiqués par lieu.
-          </p>
-        </article>
-
-        <article class="tile">
-          <h3 data-i18n="travel_moves_title">Déplacements</h3>
-          <p data-i18n="travel_moves_text">
-            Nous partagerons une recommandation claire : où loger, comment se déplacer, et les meilleurs timings.
-          </p>
-        </article>
-      </div>
-
-      <div class="notice">
-        <p class="notice__title" data-i18n="travel_notice_title">Conseil</p>
-        <p class="notice__text" data-i18n="travel_notice_text">
-          Pour une expérience sereine, arrivez la veille et prévoyez votre retour le lendemain du brunch.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- HEBERGEMENTS -->
-  <section id="stay" class="section section--alt">
-    <div class="section__inner">
-      <h2 class="section__title" data-i18n="stay_title">Hébergements</h2>
-      <p class="section__lead" data-i18n="stay_lead">
-        Nous publierons une short-list d’hébergements (toutes gammes) + zones recommandées.
-      </p>
-
-      <div class="grid">
-        <article class="tile">
-          <h3 data-i18n="stay_ortigia_title">Ortigia</h3>
-          <p data-i18n="stay_ortigia_text">Charme absolu, central, idéal sans voiture. Parfait pour profiter à pied.</p>
-        </article>
-
-        <article class="tile">
-          <h3 data-i18n="stay_syracuse_title">Syracuse</h3>
-          <p data-i18n="stay_syracuse_text">Plus simple en voiture, options variées, bon compromis.</p>
-        </article>
-
-        <article class="tile">
-          <h3 data-i18n="stay_countryside_title">Campagne</h3>
-          <p data-i18n="stay_countryside_text">Expérience villa / agriturismo, calme, très “Sicile”.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- DRESS CODE -->
-  <section id="dress" class="section">
-    <div class="section__inner">
-      <h2 class="section__title" data-i18n="dress_title">Dress code</h2>
-      <p class="section__lead" data-i18n="dress_lead">
-        Élégant, lumineux, estival. L’idée : une allure soignée, confortable, et harmonieuse sur les photos.
-      </p>
-
-      <div class="grid">
-        <article class="tile">
-          <h3 data-i18n="dress_palette_title">Couleurs</h3>
-          <p data-i18n="dress_palette_text">Tons doux (ivoire, sable, pastel), agrumes, verts. Éviter le total noir.</p>
-        </article>
-
-        <article class="tile">
-          <h3 data-i18n="dress_fabric_title">Matières</h3>
-          <p data-i18n="dress_fabric_text">Lin, coton, soie — privilégiez des tissus respirants.</p>
-        </article>
-
-        <article class="tile">
-          <h3 data-i18n="dress_shoes_title">Chaussures</h3>
-          <p data-i18n="dress_shoes_text">Chic + confort : pavés et pierre (Ortigia).</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- GIFTS / IBAN -->
-  <section id="gifts" class="section section--alt">
-    <div class="section__inner">
-      <h2 class="section__title" data-i18n="gifts_title">Cadeaux</h2>
-      <p class="section__lead" data-i18n="gifts_lead">
-        Votre présence est déjà un cadeau. Si vous souhaitez contribuer à notre projet de vie, vous pouvez le faire ici.
-      </p>
-
-      <div class="gift">
-        <div class="gift__left">
-          <p class="gift__headline" data-i18n="gifts_headline">Contribuer en toute simplicité</p>
-          <p class="gift__text" data-i18n="gifts_text">
-            Nous avons choisi une solution discrète : un virement direct. En un clic, vous copiez l’IBAN.
-          </p>
-
-          <div class="iban">
-            <div class="iban__label" data-i18n="gifts_iban_label">IBAN</div>
-            <div class="iban__value" id="ibanValue">FR76 XXXX XXXX XXXX XXXX XXXX XXX</div>
-            <div class="iban__actions">
-              <button class="btn btn--dark" type="button" id="copyIbanBtn" data-i18n="gifts_copy">Copier l’IBAN</button>
-              <button class="btn btn--ghost" type="button" id="revealIbanBtn" data-i18n="gifts_reveal">Afficher / Masquer</button>
+        <div class="grid">
+          <article class="card">
+            <div class="card__top">
+              <h3 class="card__title" data-i18n="church_title">Cérémonie religieuse</h3>
+              <span class="badge" data-i18n="church_badge">Duomo di Siracusa</span>
             </div>
-            <p class="iban__note" data-i18n="gifts_note">
-              Astuce : vous pouvez indiquer “Mariage Alice & Kevin” en libellé.
+            <p class="card__text" data-i18n="church_text">
+              La cérémonie aura lieu au Duomo (Ortigia). L’horaire exact sera communiqué ici.
+            </p>
+            <div class="card__meta">
+              <span data-i18n="church_meta_1">Ortigia · Syracuse</span>
+              <span>•</span>
+              <span data-i18n="church_meta_2">Tenue élégante</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3 class="card__title" data-i18n="reception_title">Réception</h3>
+              <span class="badge badge--soft" data-i18n="reception_badge">Lieu communiqué bientôt</span>
+            </div>
+            <p class="card__text" data-i18n="reception_text">
+              Cocktail, dîner et soirée. Les détails logistiques (transport, horaires) seront ajoutés ici.
+            </p>
+            <div class="card__meta">
+              <span data-i18n="reception_meta_1">Syracuse & alentours</span>
+              <span>•</span>
+              <span data-i18n="reception_meta_2">Ambiance chaleureuse</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3 class="card__title" data-i18n="weekend_title">Le week-end</h3>
+              <span class="badge badge--lemon" data-i18n="weekend_badge">Optionnel</span>
+            </div>
+            <p class="card__text" data-i18n="weekend_text">
+              Un moment informel pourra être proposé la veille ou le lendemain (selon vos arrivées).
+            </p>
+            <div class="card__meta">
+              <span data-i18n="weekend_meta_1">Infos à venir</span>
+              <span>•</span>
+              <span data-i18n="weekend_meta_2">Selon disponibilités</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Accès & séjour (MECE : tout ce qui est "venir + dormir") -->
+    <section class="section section--alt" id="infos">
+      <div class="section__inner">
+        <h2 class="section__title" data-i18n="infos_title">Accès &amp; séjour</h2>
+        <p class="section__lead" data-i18n="infos_lead">
+          Pour profiter sereinement, nous recommandons d’arriver la veille.
+        </p>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <div class="card__top">
+              <h3 class="card__title" data-i18n="travel_title">Venir en Sicile</h3>
+              <span class="badge badge--sage" data-i18n="travel_badge">Recommandation</span>
+            </div>
+            <ul class="list">
+              <li data-i18n="travel_li_1">Aéroport conseillé : Catane (CTA) · puis ~45–60 min vers Syracuse</li>
+              <li data-i18n="travel_li_2">Location de voiture fortement recommandée (flexibilité & confort)</li>
+              <li data-i18n="travel_li_3">Si vous logez à Ortigia : privilégiez parking + marche (zones limitées)</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3 class="card__title" data-i18n="stay_title">Où loger</h3>
+              <span class="badge badge--soft" data-i18n="stay_badge">À optimiser</span>
+            </div>
+            <ul class="list">
+              <li data-i18n="stay_li_1">Option 1 : Ortigia (charme, à pied, mais plus cher)</li>
+              <li data-i18n="stay_li_2">Option 2 : Syracuse (pratique, bon rapport qualité-prix)</li>
+              <li data-i18n="stay_li_3">Option 3 : alentours (voiture) si vous combinez plage & séjour</li>
+            </ul>
+            <p class="note" data-i18n="stay_note">
+              Nous partagerons une sélection d’adresses fiables dès que possible.
+            </p>
+          </article>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="card__top">
+              <h3 class="card__title" data-i18n="dress_title">Dress code</h3>
+              <span class="badge" data-i18n="dress_badge">Élégant</span>
+            </div>
+            <p class="card__text" data-i18n="dress_text">
+              Tenue élégante, tons doux et estivaux. Prévoyez des chaussures confortables pour Ortigia.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3 class="card__title" data-i18n="weather_title">Météo & conseils</h3>
+              <span class="badge badge--lemon" data-i18n="weather_badge">Juin</span>
+            </div>
+            <p class="card__text" data-i18n="weather_text">
+              Chaud en journée, plus doux le soir. Pensez à une étole légère et à l’hydratation.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card__top">
+              <h3 class="card__title" data-i18n="contact_title">Contact</h3>
+              <span class="badge badge--soft" data-i18n="contact_badge">Questions</span>
+            </div>
+            <p class="card__text" data-i18n="contact_text">
+              Pour toute question logistique, écrivez-nous. Nous mettrons aussi à jour cette page régulièrement.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: RSVP (MECE : confirmer) -->
+    <section class="section" id="rsvp">
+      <div class="section__inner">
+        <h2 class="section__title" data-i18n="rsvp_title">RSVP</h2>
+        <p class="section__lead" data-i18n="rsvp_lead">
+          Merci de confirmer votre présence dès que possible. Cela nous aide énormément.
+        </p>
+
+        <div class="cta-panel">
+          <div class="cta-panel__text">
+            <h3 class="cta-panel__title" data-i18n="rsvp_box_title">Confirmer sa présence</h3>
+            <p class="cta-panel__p" data-i18n="rsvp_box_text">
+              Le formulaire sera disponible ici. (Vous pourrez remplacer le lien en 10 secondes.)
+            </p>
+          </div>
+
+          <!-- Remplace href par ton lien Google Forms / Typeform -->
+          <a class="btn btn--dark" href="#" onclick="return false;" data-i18n="rsvp_button">
+            Ouvrir le formulaire
+          </a>
+        </div>
+
+        <p class="fineprint" data-i18n="rsvp_fineprint">
+          Astuce : quand votre Google Form est prêt, remplacez simplement le “#” par le lien du formulaire.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Cadeau / Don IBAN (MECE : contribuer) -->
+    <section class="section section--alt" id="gift">
+      <div class="section__inner">
+        <h2 class="section__title" data-i18n="gift_title">Cadeau / Don</h2>
+        <p class="section__lead" data-i18n="gift_lead">
+          Votre présence est le plus beau des cadeaux. Si vous souhaitez nous accompagner pour la suite,
+          une contribution est possible en toute simplicité.
+        </p>
+
+        <div class="gift">
+          <div class="gift__left">
+            <h3 class="gift__title" data-i18n="gift_box_title">Contribution (IBAN)</h3>
+            <p class="gift__text" data-i18n="gift_box_text">
+              Nous privilégions la discrétion : un simple virement suffit. Merci infiniment.
+            </p>
+          </div>
+
+          <div class="gift__right">
+            <div class="iban" role="group" aria-label="IBAN">
+              <div class="iban__label">IBAN</div>
+              <div class="iban__value" id="ibanValue">FR76 XXXX XXXX XXXX XXXX XXXX XXX</div>
+              <button class="btn btn--ghost" type="button" id="copyIban" data-i18n="copy_iban">
+                Copier
+              </button>
+            </div>
+
+            <div class="toast" id="toast" aria-live="polite"></div>
+
+            <p class="fineprint" data-i18n="gift_fineprint">
+              Vous pourrez remplacer l’IBAN ci-dessus par le vôtre. Nous pouvons aussi ajouter un BIC si nécessaire.
             </p>
           </div>
         </div>
-
-        <div class="gift__right">
-          <div class="mini-card">
-            <p class="mini-card__title" data-i18n="gifts_right_title">Merci</p>
-            <p class="mini-card__text" data-i18n="gifts_right_text">
-              Chaque geste nous touche. Nous vous remercierons personnellement avec plaisir.
-            </p>
-          </div>
-        </div>
       </div>
+    </section>
 
-      <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="section">
-    <div class="section__inner">
-      <h2 class="section__title" data-i18n="faq_title">FAQ</h2>
-      <p class="section__lead" data-i18n="faq_lead">
-        Les réponses aux questions les plus fréquentes — pensées pour vous faciliter la vie.
+    <footer class="footer">
+      <p class="footer__p" data-i18n="footer">
+        © Alice & Kevin · 2026
       </p>
-
-      <div class="faq">
-        <details class="faq__item">
-          <summary class="faq__q" data-i18n="faq_q1">À quelle heure faut-il arriver ?</summary>
-          <div class="faq__a" data-i18n="faq_a1">Nous partagerons une heure recommandée dès que les horaires sont finalisés.</div>
-        </details>
-
-        <details class="faq__item">
-          <summary class="faq__q" data-i18n="faq_q2">Puis-je venir accompagné(e) ?</summary>
-          <div class="faq__a" data-i18n="faq_a2">Merci de suivre l’invitation telle qu’elle vous a été adressée. Le RSVP précisera tout.</div>
-        </details>
-
-        <details class="faq__item">
-          <summary class="faq__q" data-i18n="faq_q3">Y aura-t-il des navettes ?</summary>
-          <div class="faq__a" data-i18n="faq_a3">Oui, si nécessaire. Les modalités seront publiées ici.</div>
-        </details>
-
-        <details class="faq__item">
-          <summary class="faq__q" data-i18n="faq_q4">Quelle météo prévoir en Sicile ?</summary>
-          <div class="faq__a" data-i18n="faq_a4">Chaleur agréable en juin. Prévoyez une étole légère pour le soir.</div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- RSVP -->
-  <section id="rsvp" class="section section--alt">
-    <div class="section__inner">
-      <h2 class="section__title" data-i18n="rsvp_title">RSVP</h2>
-      <p class="section__lead" data-i18n="rsvp_lead">
-        Merci de confirmer votre présence dès que possible (cela nous aide énormément).
-      </p>
-
-      <!-- Replace href with your Google Form / Typeform -->
-      <a class="btn btn--dark" href="#" id="rsvpLink" data-i18n="rsvp_open" onclick="return false;">
-        Ouvrir le formulaire
-      </a>
-
-      <p class="fineprint" data-i18n="rsvp_note">
-        Le formulaire sera activé prochainement. Revenez ici : tout sera toujours à jour.
-      </p>
-
-      <div class="contact">
-        <p class="contact__title" data-i18n="contact_title">Contact</p>
-        <p class="contact__text" data-i18n="contact_text">
-          En cas de question, écrivez-nous — nous vous répondrons avec plaisir.
-        </p>
-        <p class="contact__mail">
-          <a href="mailto:alicekevin2026@gmail.com">alicekevin2026@gmail.com</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>© Alice &amp; Kevin · 2026</p>
-  </footer>
+    </footer>
+  </main>
 
   <script src="app.js"></script>
 </body>
