@@ -1,107 +1,70 @@
-:root{
-  --paper: #f6f1ea; /* ivory paper tone (matches your design) */
-  --ease: cubic-bezier(.22,.61,.36,1);
-}
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alice & Kevin — Invitation</title>
+  <meta name="description" content="Invitation de mariage — Alice & Kevin" />
 
-*{ box-sizing: border-box; }
-html, body { height: 100%; }
-body{
-  margin:0;
-  background: var(--paper);
-  overflow:hidden;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-/* Fullscreen intro */
-.intro{
-  position:relative;
-  width:100%;
-  height:100vh;
-  display:grid;
-  place-items:center;
-  cursor:pointer;
-  user-select:none;
-  -webkit-tap-highlight-color: transparent;
-}
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-/* Responsive, elegant fitting:
-   - mobile: use most of the height
-   - desktop: keep correct ratio and avoid ugly cropping
-*/
-.intro-img{
-  width: min(92vw, 860px);
-  height: auto;
-  max-height: 92vh;
-  object-fit: contain;
-  border-radius: 14px;
-  box-shadow: 0 18px 50px rgba(0,0,0,.10);
-  transform: translateY(0);
-  opacity: 0;
-  animation: introIn 900ms var(--ease) forwards;
-}
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Retour à l'accueil">A&K</a>
 
-/* Premium “this is clickable” hint */
-.intro-hint{
-  position:absolute;
-  bottom: 28px;
-  font: 500 12px/1.2 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(50,50,50,.55);
-  opacity: 0;
-  animation: hintIn 900ms var(--ease) 650ms forwards;
-}
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
 
-/* Fade overlay (paper fade) */
-.fade-overlay{
-  position:absolute;
-  inset:0;
-  background: var(--paper);
-  opacity:0;
-  pointer-events:none;
-  transition: opacity 520ms var(--ease);
-}
+    <nav id="site-nav" class="nav" aria-label="Navigation principale">
+      <a href="#home" class="nav__link is-active">Accueil</a>
+      <a href="#schedule" class="nav__link">Programme</a>
+      <a href="#travel" class="nav__link">Infos pratiques</a>
+      <a href="#rsvp" class="nav__link">RSVP</a>
+    </nav>
+  </header>
 
-/* Hover micro-interaction (desktop only) */
-@media (hover:hover){
-  .intro:hover .intro-img{
-    transform: scale(1.01);
-    transition: transform 260ms var(--ease), filter 260ms var(--ease);
-    filter: saturate(1.02) contrast(0.99);
-  }
-}
+  <main id="home" class="hero">
+    <div class="hero__inner">
+      <p class="hero__kicker">Save the Date</p>
+      <h1 class="hero__title">Alice &amp; Kevin</h1>
+      <p class="hero__subtitle">Syracuse, Sicily · Juin 2026</p>
 
-/* Press feedback */
-.intro.is-pressing .intro-img{
-  transform: scale(1.006);
-  filter: brightness(0.99);
-  transition: transform 180ms var(--ease), filter 180ms var(--ease);
-}
+      <div class="hero__card">
+        <p class="hero__text">
+          Une célébration élégante, chaleureuse et intime.
+          Tous les détails arrivent bientôt — gardez cette page en favori.
+        </p>
 
-/* Exit animation */
-.intro.is-exiting .fade-overlay{ opacity: 1; }
-.intro.is-exiting .intro-img{
-  transform: translateY(-6px);
-  transition: transform 520ms var(--ease);
-}
+        <div class="hero__cta">
+          <a class="btn" href="#rsvp">Confirmer sa présence</a>
+          <a class="btn btn--ghost" href="#travel">Voir les infos</a>
+        </div>
+      </div>
+    </div>
+  </main>
 
-/* Keyframes */
-@keyframes introIn{
-  from { opacity:0; transform: translateY(10px); }
-  to   { opacity:1; transform: translateY(0); }
-}
-@keyframes hintIn{
-  from { opacity:0; transform: translateY(6px); }
-  to   { opacity:1; transform: translateY(0); }
-}
+  <section id="schedule" class="section">
+    <div class="section__inner">
+      <h2 class="section__title">Programme</h2>
+      <p class="section__lead">À ajuster dès que vos horaires sont finalisés.</p>
 
-/* Mobile tuning */
-@media (max-width: 480px){
-  .intro-img{
-    width: 92vw;
-    max-height: 88vh;
-    border-radius: 12px;
-  }
-  .intro-hint{
-    bottom: 18px;
-  }
-}
+      <div class="grid">
+        <article class="tile">
+          <h3>Vendredi</h3>
+          <p>Dîner / accueil (optionnel)</p>
+        </article>
+        <article class="tile">
+          <h3>Samedi</h3>
+          <p>Cérémonie au Duomo · Réception</p>
+        </article>
+        <article class="tile">
+          <h3>Dimanche</h3>
+          <p>Brunch / au revoir</p>
+        </article>
+      </div>
