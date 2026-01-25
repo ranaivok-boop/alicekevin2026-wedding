@@ -4,29 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alice & Kevin — Notre histoire</title>
-  <meta name="description" content="Notre histoire — Alice & Kevin" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
+  <meta name="description" content="Notre histoire — quelques souvenirs en images" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
-
-  <header class="sitebar" aria-label="Navigation principale">
-    <div class="sitebar__inner">
-      <a class="brand" href="index.html">Alice &amp; Kevin</a>
-
-      <nav class="nav">
+  <header class="header" aria-label="Menu">
+    <div class="header__inner">
+      <nav class="nav" aria-label="Navigation principale">
         <a href="index.html" data-i18n="nav_home">Accueil</a>
+        <a class="is-current" href="story.html" data-i18n="nav_story">Notre histoire</a>
         <a href="details.html" data-i18n="nav_programme">Programme</a>
-        <a href="travel.html" data-i18n="nav_travel">Voyage &amp; séjour</a>
-        <a href="gift.html" data-i18n="nav_gift">Cadeau</a>
+        <a href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
         <a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-        <a class="is-current" href="story.html" aria-current="page" data-i18n="nav_story">Notre histoire</a>
+        <a href="gift.html" data-i18n="nav_gift">Cadeau</a>
       </nav>
 
       <div class="lang" aria-label="Choisir la langue">
@@ -37,49 +28,37 @@
     </div>
   </header>
 
-  <main id="content" class="page">
+  <main class="page">
     <section class="section">
       <div class="section__inner">
         <h1 class="h1" data-i18n="story_title">Notre histoire</h1>
-        <p class="lead" data-i18n="story_intro">
-          Quelques instants qui comptent, pour raconter simplement notre chemin — en images.
-        </p>
+        <p class="lead" data-i18n="story_lead">Quelques images pour raconter, simplement, ce qui nous a menés jusqu’ici.</p>
+        <p class="note" data-i18n="story_hint">Ajoutez vos photos dans la page (modifiables à tout moment).</p>
 
-        <div class="gallery" aria-label="Galerie photos">
-          <div class="gcard" role="button" tabindex="0" data-lb-src="assets/story-01.jpg" data-lb-cap="" data-i18n="story_caption_1">
-            <img src="assets/story-01.jpg" alt="" loading="lazy">
-            <div class="gcap" data-i18n="story_caption_1">Un premier chapitre</div>
-          </div>
+        <!-- GALERIE : remplace les src par tes propres images quand tu veux -->
+        <div class="gallery">
+          <figure class="photo">
+            <img src="assets/hero-couple.jpg" alt="Alice & Kevin" loading="lazy">
+            <figcaption class="photo__cap">Un instant, une évidence.</figcaption>
+          </figure>
 
-          <div class="gcard" role="button" tabindex="0" data-lb-src="assets/story-02.jpg" data-lb-cap="" >
-            <img src="assets/story-02.jpg" alt="" loading="lazy">
-            <div class="gcap" data-i18n="story_caption_2">La douceur des jours</div>
-          </div>
+          <figure class="photo">
+            <img src="assets/hero-villa.jpg" alt="Sicile" loading="lazy">
+            <figcaption class="photo__cap">La Sicile, notre lumière.</figcaption>
+          </figure>
 
-          <div class="gcard" role="button" tabindex="0" data-lb-src="assets/story-03.jpg" data-lb-cap="" >
-            <img src="assets/story-03.jpg" alt="" loading="lazy">
-            <div class="gcap" data-i18n="story_caption_3">Vers la Sicile</div>
-          </div>
+          <figure class="photo">
+            <img src="assets/hero-couple.jpg" alt="Alice & Kevin" loading="lazy">
+            <figcaption class="photo__cap">Une histoire qui grandit.</figcaption>
+          </figure>
         </div>
-
       </div>
     </section>
 
     <footer class="footer">
-      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
+      <p class="footer__p" data-i18n="footer">© Alice &amp; Kevin · 2026</p>
     </footer>
   </main>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox__panel" role="dialog" aria-modal="true" aria-label="Agrandir la photo">
-      <img class="lightbox__img" src="" alt="">
-      <div class="lightbox__footer">
-        <div class="lightbox__cap"></div>
-        <button class="lightbox__close" type="button" data-lb-close>Fermer</button>
-      </div>
-    </div>
-  </div>
 
   <script src="app.js"></script>
 </body>
