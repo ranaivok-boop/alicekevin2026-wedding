@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alice & Kevin — Cadeau</title>
-  <meta name="description" content="Cadeau aux mariés — contribution par virement" />
+  <meta name="description" content="Cadeau — IBAN — Alice & Kevin" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,62 +13,60 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body data-title-key="title_gift">
+<body>
   <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
 
-  <div class="lang" aria-label="Choisir la langue">
-    <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
-    <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-    <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-  </div>
+  <header class="sitebar" aria-label="Navigation principale">
+    <div class="sitebar__inner">
+      <a class="brand" href="index.html">Alice &amp; Kevin</a>
+
+      <nav class="nav">
+        <a href="index.html" data-i18n="nav_home">Accueil</a>
+        <a href="details.html" data-i18n="nav_programme">Programme</a>
+        <a href="travel.html" data-i18n="nav_travel">Voyage &amp; séjour</a>
+        <a class="is-current" href="gift.html" aria-current="page" data-i18n="nav_gift">Cadeau</a>
+        <a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+        <a href="story.html" data-i18n="nav_story">Notre histoire</a>
+      </nav>
+
+      <div class="lang" aria-label="Choisir la langue">
+        <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
 
   <main id="content" class="page">
-    <header class="hero" role="banner">
-      <div class="hero__media" aria-hidden="true">
-        <img class="hero__img" src="assets/hero-couple.jpg" alt="" loading="eager">
-      </div>
-
-      <div class="hero__text">
-        <h1 class="h1" data-i18n="gift_h1">Cadeau aux mariés</h1>
-
-        <nav class="hero__nav" aria-label="Navigation principale">
-          <a class="navlink" href="index.html" data-i18n="nav_home">Notre mariage</a>
-          <span class="navdot">•</span>
-          <a class="navlink" href="details.html" data-i18n="nav_details">Détails</a>
-          <span class="navdot">•</span>
-          <a class="navlink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-        </nav>
-      </div>
-    </header>
-
     <section class="section">
       <div class="section__inner">
-        <div class="panel" id="gift">
-          <div class="gifthead">
-            <div>
-              <p class="p" data-i18n="gift_p1">
-                Votre présence à nos côtés sera, à elle seule, le plus précieux des cadeaux. Si toutefois vous souhaitiez nous témoigner une attention particulière, une contribution à notre avenir commun serait profondément appréciée.
-              </p>
-              <p class="p" style="margin-top:12px" data-i18n="gift_p2">
-                Les contributions s’effectuent exclusivement par virement bancaire, via l’IBAN indiqué ci-dessous.
-              </p>
-            </div>
+        <h1 class="h1" data-i18n="gift_title">Cadeau</h1>
+
+        <div class="panel">
+          <p class="p" data-i18n="gift_text">
+            Votre présence à nos côtés sera, à elle seule, le plus précieux des cadeaux. Si vous souhaitiez nous témoigner une attention, une contribution à notre avenir commun serait profondément appréciée.
+          </p>
+          <p class="p" style="margin-top:12px" data-i18n="gift_text_2">
+            Les contributions s’effectuent exclusivement par virement bancaire, via l’IBAN indiqué ci-dessous.
+          </p>
+
+          <div style="margin-top:14px">
             <img class="giftimg" src="assets/details-envelope.jpg" alt="" loading="lazy" aria-hidden="true">
           </div>
 
-          <div class="ibanbox" aria-label="IBAN">
-            <div class="ibanbox__label" data-i18n="iban_label">IBAN</div>
+          <div class="ibanbox">
+            <div class="ibanbox__label">IBAN</div>
             <div class="ibanbox__value" id="ibanValue">FR76 XXXX XXXX XXXX XXXX XXXX XXX</div>
-            <button class="btn" id="copyIban" type="button" data-i18n="copy_iban">Copier l’IBAN</button>
+            <button class="btn btn--dark" id="copyIban" type="button" data-i18n="copy_iban">Copier l’IBAN</button>
             <div class="toast" id="toast" aria-live="polite"></div>
           </div>
-
         </div>
+
       </div>
     </section>
 
     <footer class="footer">
-      <p class="footer__p" data-i18n="footer">© Alice &amp; Kevin · 2026</p>
+      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
     </footer>
   </main>
 
