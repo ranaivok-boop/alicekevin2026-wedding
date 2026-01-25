@@ -4,59 +4,78 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alice & Kevin — RSVP</title>
-  <meta name="description" content="RSVP — Confirmer votre présence au mariage d’Alice & Kevin en Sicile." />
+  <meta name="description" content="RSVP — Confirmer votre présence au mariage d’Alice & Kevin." />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
 
-  <!-- Header (menu + langues) -->
-  <header class="site-header" aria-label="En-tête">
+  <header class="site-header" role="banner">
     <div class="site-header__inner">
-      <nav class="nav" aria-label="Navigation principale">
-        <a class="nav__link" href="index.html" data-i18n="nav_home">Accueil</a>
-        <a class="nav__link" href="story.html" data-i18n="nav_story">Notre histoire</a>
-        <a class="nav__link" href="programme.html" data-i18n="nav_programme">Programme</a>
-        <a class="nav__link" href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
-        <a class="nav__link" href="gift.html" data-i18n="nav_gift">Cadeau</a>
-        <a class="nav__link is-current" href="rsvp.html" aria-current="page" data-i18n="nav_rsvp">RSVP</a>
+      <button class="menu-btn" type="button" id="menuBtn" aria-haspopup="dialog" aria-expanded="false" data-i18n="menu_open">Menu</button>
+
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a class="navlink" href="index.html" data-i18n="nav_home">Accueil</a>
+        <a class="navlink" href="story.html" data-i18n="nav_story">Notre histoire</a>
+        <a class="navlink" href="details.html" data-i18n="nav_programme">Programme</a>
+        <a class="navlink" href="travel.html" data-i18n="nav_travel">Voyage &amp; séjour</a>
+        <a class="navlink is-current" href="rsvp.html" aria-current="page" data-i18n="nav_rsvp">RSVP</a>
+        <a class="navlink" href="gift.html" data-i18n="nav_gift">Cadeau</a>
       </nav>
 
-      <div class="lang lang--inline" aria-label="Choisir la langue">
+      <div class="lang" aria-label="Choisir la langue">
         <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
         <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
         <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
     </div>
+
+    <div class="menu-panel" id="menuPanel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="menu-panel__card">
+        <div class="menu-panel__top">
+          <div class="menu-panel__title" data-i18n="menu_title">Menu</div>
+          <button class="menu-close" type="button" id="menuClose" data-i18n="menu_close">Fermer</button>
+        </div>
+        <div class="menu-panel__grid">
+          <a class="menulink" href="index.html" data-i18n="nav_home">Accueil</a>
+          <a class="menulink" href="story.html" data-i18n="nav_story">Notre histoire</a>
+          <a class="menulink" href="details.html" data-i18n="nav_programme">Programme</a>
+          <a class="menulink" href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
+          <a class="menulink is-current" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+          <a class="menulink" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+        </div>
+        <div class="menu-panel__langs" aria-label="Choisir la langue">
+          <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+          <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main id="content" class="page">
-    <!-- Hero banner -->
-    <section class="banner" aria-label="RSVP">
+    <section class="banner banner--rsvp" aria-label="RSVP">
+      <div class="banner__overlay"></div>
       <div class="banner__inner">
-        <h1 class="banner__title" data-i18n="rsvp_h1">RSVP</h1>
+        <div class="banner__kicker" data-i18n="rsvp_kicker">RSVP</div>
+        <h1 class="banner__title" data-i18n="rsvp_title">Confirmation de présence</h1>
         <p class="banner__lead" data-i18n="rsvp_lead">
-          Nous vous remercions de confirmer votre présence via le formulaire ci-dessous avant le 1ᵉʳ avril 2026.
-          Le formulaire vous permettra également d’indiquer votre participation à la journée du dimanche.
+          Merci de confirmer votre présence avant le 1er avril 2026.
         </p>
       </div>
     </section>
 
-    <!-- Content -->
     <section class="section">
       <div class="section__inner">
         <div class="panel">
-          <h2 class="h2" data-i18n="rsvp_form_title">Confirmation de présence</h2>
           <p class="p" data-i18n="rsvp_form_text">
-            Merci de compléter le formulaire. Cela nous aide énormément à organiser ces deux journées avec précision et soin.
+            Le formulaire vous permettra également d’indiquer votre participation à la journée du dimanche.
           </p>
 
           <div class="formwrap" aria-label="Formulaire RSVP">
