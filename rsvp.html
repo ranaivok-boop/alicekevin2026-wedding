@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body data-title-key="title_rsvp">
   <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
 
   <div class="lang" aria-label="Choisir la langue">
@@ -23,10 +23,15 @@
   </div>
 
   <main id="content" class="page">
-    <header class="topbar">
-      <div class="topbar__inner">
-        <a class="topbar__brand" href="index.html">Alice &amp; Kevin</a>
-        <nav class="topbar__nav" aria-label="Navigation principale">
+    <header class="hero" role="banner">
+      <div class="hero__media" aria-hidden="true">
+        <img class="hero__img" src="assets/hero-couple.jpg" alt="" loading="eager">
+      </div>
+
+      <div class="hero__text">
+        <h1 class="h1" data-i18n="rsvp_h1">RSVP · Confirmation de présence</h1>
+
+        <nav class="hero__nav" aria-label="Navigation principale">
           <a class="navlink" href="index.html" data-i18n="nav_home">Notre mariage</a>
           <span class="navdot">•</span>
           <a class="navlink" href="details.html" data-i18n="nav_details">Détails</a>
@@ -38,20 +43,18 @@
 
     <section class="section">
       <div class="section__inner">
-        <h1 class="h1" data-i18n="rsvp_title">RSVP</h1>
-
-        <p class="lead" data-i18n="rsvp_lead">
-          Merci de confirmer votre présence avant le 01/04/2026. Cela nous aide énormément.
-        </p>
-
         <div class="panel">
-          <h2 class="h2" data-i18n="rsvp_form_title">Formulaire</h2>
-          <p class="p" data-i18n="rsvp_form_text">
-            Le formulaire inclut également votre présence au Jour 2.
+          <p class="p" data-i18n="rsvp_p1">
+            Nous vous remercions de bien vouloir confirmer votre présence via le formulaire ci-dessous avant le 1ᵉʳ avril 2026. Le formulaire vous permettra également d’indiquer votre participation à la journée du dimanche.
           </p>
 
-          <!-- Embed Google Form -->
-          <div class="formwrap" aria-label="Formulaire RSVP">
+          <div style="margin-top:14px">
+            <a class="btn btn--dark" href="https://forms.gle/KiUemn5CTQhzXHHbA" target="_blank" rel="noopener" data-i18n="rsvp_cta">
+              Confirmer ma présence
+            </a>
+          </div>
+
+          <div class="formwrap" aria-label="Formulaire RSVP" style="margin-top:14px">
             <iframe
               class="form"
               src="https://forms.gle/KiUemn5CTQhzXHHbA"
@@ -65,7 +68,7 @@
             Si le formulaire ne s’affiche pas sur votre appareil, vous pouvez l’ouvrir dans un nouvel onglet.
           </p>
 
-          <a class="btn btn--dark" href="https://forms.gle/KiUemn5CTQhzXHHbA" target="_blank" rel="noopener" data-i18n="rsvp_open">
+          <a class="maplink" href="https://forms.gle/KiUemn5CTQhzXHHbA" target="_blank" rel="noopener" data-i18n="rsvp_open">
             Ouvrir le formulaire
           </a>
         </div>
@@ -73,7 +76,7 @@
     </section>
 
     <footer class="footer">
-      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
+      <p class="footer__p" data-i18n="footer">© Alice &amp; Kevin · 2026</p>
     </footer>
   </main>
 
