@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alice & Kevin — Mariage</title>
-  <meta name="description" content="Invitation — Alice & Kevin — Syracuse, Sicile" />
+  <title>Alice & Kevin — Invitation</title>
+  <meta name="description" content="Invitation de mariage — Alice & Kevin — Syracuse, Sicile — Italie" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,132 +13,134 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="page">
+<body class="home">
   <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
 
-  <!-- Header -->
-  <header class="header" aria-label="Navigation">
-    <div class="header__inner">
-      <div class="pillbar">
-        <button id="menuBtn" class="menuBtn" type="button" aria-expanded="false" aria-controls="menuPanel">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16"/>
-          </svg>
-          <span class="sr-only" data-i18n="menu_open">Ouvrir le menu</span>
-        </button>
+  <!-- Header (pas de “Alice & Kevin” à gauche) -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <button class="menu-btn" type="button" id="menuBtn" aria-haspopup="dialog" aria-expanded="false" data-i18n="menu_open">
+        Menu
+      </button>
 
-        <!-- Desktop nav -->
-        <nav class="nav" aria-label="Menu principal">
-          <a class="is-current" href="index.html" data-i18n="nav_home">Accueil</a>
-          <a href="story.html" data-i18n="nav_story">Notre histoire</a>
-          <a href="details.html" data-i18n="nav_programme">Programme</a>
-          <a href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
-          <a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-          <a href="gift.html" data-i18n="nav_gift">Cadeau</a>
-        </nav>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a class="navlink is-current" href="index.html" aria-current="page" data-i18n="nav_home">Accueil</a>
+        <a class="navlink" href="story.html" data-i18n="nav_story">Notre histoire</a>
+        <a class="navlink" href="details.html" data-i18n="nav_programme">Programme</a>
+        <a class="navlink" href="travel.html" data-i18n="nav_travel">Voyage &amp; séjour</a>
+        <a class="navlink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+        <a class="navlink" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+      </nav>
 
-        <!-- Lang -->
-        <div class="lang" aria-label="Choisir la langue">
+      <div class="lang" aria-label="Choisir la langue">
+        <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+
+    <!-- Mobile menu panel -->
+    <div class="menu-panel" id="menuPanel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="menu-panel__card">
+        <div class="menu-panel__top">
+          <div class="menu-panel__title" data-i18n="menu_title">Menu</div>
+          <button class="menu-close" type="button" id="menuClose" aria-label="Fermer" data-i18n="menu_close">Fermer</button>
+        </div>
+
+        <div class="menu-panel__grid">
+          <a class="menulink is-current" href="index.html" data-i18n="nav_home">Accueil</a>
+          <a class="menulink" href="story.html" data-i18n="nav_story">Notre histoire</a>
+          <a class="menulink" href="details.html" data-i18n="nav_programme">Programme</a>
+          <a class="menulink" href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
+          <a class="menulink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+          <a class="menulink" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+        </div>
+
+        <div class="menu-panel__langs" aria-label="Choisir la langue">
           <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
           <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
           <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
         </div>
       </div>
-
-      <!-- Mobile panel -->
-      <div id="menuPanel" class="menuPanel" aria-label="Menu mobile">
-        <div class="menuPanel__inner">
-          <nav class="nav" aria-label="Menu principal">
-            <a class="is-current" href="index.html" data-i18n="nav_home">Accueil</a>
-            <a href="story.html" data-i18n="nav_story">Notre histoire</a>
-            <a href="details.html" data-i18n="nav_programme">Programme</a>
-            <a href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
-            <a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-            <a href="gift.html" data-i18n="nav_gift">Cadeau</a>
-          </nav>
-
-          <div class="lang" aria-label="Choisir la langue">
-            <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
-            <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-            <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-          </div>
-        </div>
-      </div>
     </div>
   </header>
 
-  <!-- Content -->
-  <main id="content" class="homeHero" role="main">
-    <div class="homeHero__inner">
-      <h1 class="h1" data-i18n="hero_title">Alice &amp; Kevin</h1>
-      <p class="heroSubtitle" data-i18n="hero_subtitle">
-        Ont l’honneur de vous convier à la célébration de leur union
-      </p>
-      <p class="heroMeta" data-i18n="hero_meta">
-        Samedi 6 juin 2026 — Syracuse, Sicile — Italie
-      </p>
+  <main id="content" class="cover" aria-label="Accueil">
+    <!-- Hero plein écran : image en fond + overlay -->
+    <section class="cover__hero" aria-label="Invitation">
+      <div class="cover__inner">
+        <h1 class="cover__title">Alice &amp; Kevin</h1>
 
-      <div class="homeBlock">
-        <h2 class="h2" data-i18n="home_h2">Notre mariage</h2>
-        <p class="lead" data-i18n="home_lead">
-          Nous serons heureux de vous retrouver en Sicile pour deux journées de célébration, entre lumière, élégance et douceur méditerranéenne.
+        <p class="cover__invite" data-i18n="hero_invite">
+          Ont l’honneur de vous convier à la célébration de leur union
         </p>
 
-        <!-- Cards (ORDER requested) -->
-        <div class="cards" aria-label="Accès rapides">
-          <!-- 1 Notre histoire (heart) -->
+        <p class="cover__meta" data-i18n="hero_meta">
+          Samedi 6 juin 2026 — Syracuse, Sicile — Italie
+        </p>
+
+        <div class="cover__divider" aria-hidden="true"></div>
+
+        <h2 class="cover__h2" data-i18n="home_title">Notre mariage</h2>
+        <p class="cover__lead" data-i18n="home_lead_short">
+          Deux jours pour se retrouver, entre lumière sicilienne et élégance méditerranéenne.
+        </p>
+
+        <!-- Cartes (ordre demandé) : Notre histoire, Programme, Voyage & séjour, RSVP, Cadeau -->
+        <div class="cards cards--5" aria-label="Accès rapide">
           <a class="card" href="story.html">
             <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" class="icon">
-                <path d="M12 21s-7-4.6-9.4-8.7C.9 8.8 3 6 6.1 6c1.8 0 3.2 1 3.9 2.1C10.8 7 12.2 6 13.9 6c3.1 0 5.2 2.8 3.5 6.3C19 16.4 12 21 12 21Z"/>
+              <!-- coeur -->
+              <svg viewBox="0 0 24 24" class="icon icon--lg">
+                <path d="M12 21s-7-4.6-9.4-8.6C.6 8.8 3 6 6 6c2 0 3.2 1.2 4 2.2C10.8 7.2 12 6 14 6c3 0 5.4 2.8 3.4 6.4C19 16.4 12 21 12 21Z"/>
               </svg>
             </div>
             <div class="card__title" data-i18n="card_story">Notre histoire</div>
             <div class="card__sub" data-i18n="card_story_sub">Quelques souvenirs, simplement</div>
           </a>
 
-          <!-- 2 Programme -->
           <a class="card" href="details.html">
             <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" class="icon">
+              <!-- arche -->
+              <svg viewBox="0 0 24 24" class="icon icon--lg">
                 <path d="M6 20V10a6 6 0 0 1 12 0v10" />
                 <path d="M4 20h16" />
                 <path d="M8 20v-8m8 8v-8" />
               </svg>
             </div>
             <div class="card__title" data-i18n="card_programme">Programme</div>
-            <div class="card__sub" data-i18n="card_programme_sub">Cérémonie & réception</div>
+            <div class="card__sub" data-i18n="card_programme_sub">Cérémonie &amp; réception</div>
           </a>
 
-          <!-- 3 Voyage & séjour (clearer icon: suitcase) -->
           <a class="card" href="travel.html">
             <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" class="icon">
-                <path d="M8 7V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1"/>
-                <path d="M6 7h12a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V9a2 2 0 0 1 2-2Z"/>
-                <path d="M9 12h6"/>
+              <!-- valise (plus clair que l'avion) -->
+              <svg viewBox="0 0 24 24" class="icon icon--lg">
+                <path d="M9 7V6a3 3 0 0 1 6 0v1" />
+                <path d="M6 7h12a2 2 0 0 1 2 2v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V9a2 2 0 0 1 2-2Z" />
+                <path d="M8 12v6m8-6v6" />
               </svg>
             </div>
             <div class="card__title" data-i18n="card_travel">Voyage &amp; séjour</div>
             <div class="card__sub" data-i18n="card_travel_sub">Arriver, se déplacer, se loger</div>
           </a>
 
-          <!-- 4 RSVP -->
           <a class="card" href="rsvp.html">
             <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" class="icon">
-                <path d="M4 6h16v12H4z"/>
-                <path d="M4 7l8 6 8-6"/>
+              <!-- plume / RSVP -->
+              <svg viewBox="0 0 24 24" class="icon icon--lg">
+                <path d="M20 7c-3 0-6 3-8 5L7 17l-3 1 1-3 5-5c2-2 5-8 10-8 0 3-2 5-0 5Z" />
+                <path d="M7 17l4 0" />
               </svg>
             </div>
             <div class="card__title" data-i18n="card_rsvp">RSVP</div>
             <div class="card__sub" data-i18n="card_rsvp_sub">Confirmer votre présence</div>
           </a>
 
-          <!-- 5 Cadeau -->
           <a class="card" href="gift.html">
             <div class="card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" class="icon">
+              <!-- cadeau -->
+              <svg viewBox="0 0 24 24" class="icon icon--lg">
                 <path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8" />
                 <path d="M2 12h20" />
                 <path d="M12 12v10" />
@@ -146,15 +148,15 @@
               </svg>
             </div>
             <div class="card__title" data-i18n="card_gift">Cadeau</div>
-            <div class="card__sub" data-i18n="card_gift_sub">Une attention pour la suite</div>
+            <div class="card__sub" data-i18n="card_gift_sub">Un geste pour la suite</div>
           </a>
         </div>
-      </div>
-    </div>
 
-    <footer class="footer">
-      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
-    </footer>
+        <footer class="cover__footer">
+          <p class="footer__p">© Alice &amp; Kevin · 2026</p>
+        </footer>
+      </div>
+    </section>
   </main>
 
   <script src="app.js"></script>
