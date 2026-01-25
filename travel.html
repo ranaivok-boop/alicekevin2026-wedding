@@ -1,11 +1,10 @@
-
 <!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alice & Kevin — Voyage & séjour</title>
-  <meta name="description" content="Voyage et séjour — informations pratiques pour la Sicile" />
+  <meta name="description" content="Voyage & séjour — informations pratiques — Alice & Kevin" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,65 +13,65 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body data-title-key="title_travel">
+<body>
   <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
 
-  <div class="lang" aria-label="Choisir la langue">
-    <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
-    <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-    <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-  </div>
+  <header class="sitebar" aria-label="Navigation principale">
+    <div class="sitebar__inner">
+      <a class="brand" href="index.html">Alice &amp; Kevin</a>
+
+      <nav class="nav">
+        <a href="index.html" data-i18n="nav_home">Accueil</a>
+        <a href="details.html" data-i18n="nav_programme">Programme</a>
+        <a class="is-current" href="travel.html" aria-current="page" data-i18n="nav_travel">Voyage &amp; séjour</a>
+        <a href="gift.html" data-i18n="nav_gift">Cadeau</a>
+        <a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+        <a href="story.html" data-i18n="nav_story">Notre histoire</a>
+      </nav>
+
+      <div class="lang" aria-label="Choisir la langue">
+        <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
 
   <main id="content" class="page">
-    <header class="hero" role="banner">
-      <div class="hero__media" aria-hidden="true">
-        <img class="hero__img" src="assets/hero-couple.jpg" alt="" loading="eager">
-      </div>
-
-      <div class="hero__text">
-        <h1 class="h1" data-i18n="travel_h1">Voyage & séjour en Sicile</h1>
-
-        <nav class="hero__nav" aria-label="Navigation principale">
-          <a class="navlink" href="index.html" data-i18n="nav_home">Notre mariage</a>
-          <span class="navdot">•</span>
-          <a class="navlink" href="details.html" data-i18n="nav_details">Détails</a>
-          <span class="navdot">•</span>
-          <a class="navlink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-        </nav>
-      </div>
-    </header>
-
     <section class="section">
       <div class="section__inner">
-        <p class="lead" data-i18n="travel_lead">
-          Nos invités viendront des quatre coins du monde — Europe, Amériques, Asie et Moyen-Orient — et nous sommes ravis de vous accueillir à Syracuse pour ce mariage en Sicile.
+        <h1 class="h1" data-i18n="travel_title">Voyage & séjour</h1>
+        <p class="lead" data-i18n="travel_intro">
+          Nous sommes heureux de vous accueillir à Syracuse. Voici l’essentiel pour organiser votre venue en toute sérénité.
         </p>
 
         <div class="panel">
           <div class="grid2">
             <div class="box">
-              <h3 class="h3" data-i18n="travel_airport_h3">Aéroport recommandé</h3>
-              <p class="p" data-i18n="travel_airport_p">Aéroport de Catane (CTA)</p>
-              <a class="maplink" href="https://www.google.com/maps?q=Aeroporto%20di%20Catania%20CTA" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+              <h2 class="h3" data-i18n="travel_airport_title">Aéroport recommandé</h2>
+              <p class="p" data-i18n="travel_airport_text">Aéroport de Catane (CTA).</p>
+              <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Aeroporto%20di%20Catania%20CTA" target="_blank" rel="noopener">Google Maps</a>
             </div>
 
             <div class="box">
-              <h3 class="h3" data-i18n="travel_car_h3">Location de voiture</h3>
-              <p class="p" data-i18n="travel_car_p">
-                La location d’un véhicule est vivement recommandée dès votre arrivée à l’aéroport de Catane. (Europcar, Sicily by Car, Sixt — réservation anticipée conseillée)
+              <h2 class="h3" data-i18n="travel_car_title">Location de voiture</h2>
+              <p class="p" data-i18n="travel_car_text">
+                La location d’un véhicule est vivement recommandée dès votre arrivée à l’aéroport de Catane (Europcar, Sicily by Car, Sixt — réservation anticipée conseillée).
               </p>
             </div>
 
             <div class="box">
-              <h3 class="h3" data-i18n="travel_stay_h3">Hébergement conseillé</h3>
-              <p class="p" data-i18n="travel_stay_p1">Lentini — Badiula</p>
-              <p class="p" style="margin-top:8px" data-i18n="travel_stay_p2">Tarifs préférentiels avec le code “WeddingAK” (valable jusqu’au 31 mars 2026)</p>
+              <h2 class="h3" data-i18n="travel_stay_title">Hébergement conseillé</h2>
+              <p class="p" data-i18n="travel_stay_text">
+                Lentini — Badiula. Tarifs préférentiels avec le code “WeddingAK” (valable jusqu’au 31 mars 2026).
+              </p>
             </div>
 
             <div class="box">
-              <h3 class="h3" data-i18n="nav_biviere">Le domaine</h3>
-              <p class="p">Villa Biviere Borghese — Lentini</p>
-              <a class="maplink" href="biviere.html">Ouvrir</a>
+              <h2 class="h3" data-i18n="kids_title">Enfants</h2>
+              <p class="p" data-i18n="kids_text">
+                Afin de garantir une organisation harmonieuse et permettre à chacun de profiter pleinement, nous avons choisi de célébrer notre mariage sans enfants. Le domaine ne disposant pas de service de garde, cette décision facilite aussi le travail de nos équipes. Merci sincèrement de votre compréhension.
+              </p>
             </div>
           </div>
         </div>
@@ -81,7 +80,7 @@
     </section>
 
     <footer class="footer">
-      <p class="footer__p" data-i18n="footer">© Alice &amp; Kevin · 2026</p>
+      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
     </footer>
   </main>
 
