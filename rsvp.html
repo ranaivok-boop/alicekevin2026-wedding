@@ -4,23 +4,33 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alice & Kevin — RSVP</title>
-  <meta name="description" content="RSVP — confirmer votre présence" />
+  <meta name="description" content="RSVP — Confirmer votre présence au mariage d’Alice & Kevin en Sicile." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header class="header" aria-label="Menu">
-    <div class="header__inner">
+  <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
+
+  <!-- Header (menu + langues) -->
+  <header class="site-header" aria-label="En-tête">
+    <div class="site-header__inner">
       <nav class="nav" aria-label="Navigation principale">
-        <a href="index.html" data-i18n="nav_home">Accueil</a>
-        <a href="story.html" data-i18n="nav_story">Notre histoire</a>
-        <a href="details.html" data-i18n="nav_programme">Programme</a>
-        <a href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
-        <a class="is-current" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-        <a href="gift.html" data-i18n="nav_gift">Cadeau</a>
+        <a class="nav__link" href="index.html" data-i18n="nav_home">Accueil</a>
+        <a class="nav__link" href="story.html" data-i18n="nav_story">Notre histoire</a>
+        <a class="nav__link" href="programme.html" data-i18n="nav_programme">Programme</a>
+        <a class="nav__link" href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
+        <a class="nav__link" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+        <a class="nav__link is-current" href="rsvp.html" aria-current="page" data-i18n="nav_rsvp">RSVP</a>
       </nav>
 
-      <div class="lang" aria-label="Choisir la langue">
+      <div class="lang lang--inline" aria-label="Choisir la langue">
         <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
         <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
         <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
@@ -28,16 +38,26 @@
     </div>
   </header>
 
-  <main class="page">
+  <main id="content" class="page">
+    <!-- Hero banner -->
+    <section class="banner" aria-label="RSVP">
+      <div class="banner__inner">
+        <h1 class="banner__title" data-i18n="rsvp_h1">RSVP</h1>
+        <p class="banner__lead" data-i18n="rsvp_lead">
+          Nous vous remercions de confirmer votre présence via le formulaire ci-dessous avant le 1ᵉʳ avril 2026.
+          Le formulaire vous permettra également d’indiquer votre participation à la journée du dimanche.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
     <section class="section">
       <div class="section__inner">
-        <h1 class="h1" data-i18n="rsvp_title">RSVP</h1>
-        <p class="lead" data-i18n="rsvp_lead">
-          Merci de confirmer votre présence avant le 1ᵉʳ avril 2026. Le formulaire permet aussi d’indiquer votre participation au dimanche.
-        </p>
-
         <div class="panel">
           <h2 class="h2" data-i18n="rsvp_form_title">Confirmation de présence</h2>
+          <p class="p" data-i18n="rsvp_form_text">
+            Merci de compléter le formulaire. Cela nous aide énormément à organiser ces deux journées avec précision et soin.
+          </p>
 
           <div class="formwrap" aria-label="Formulaire RSVP">
             <iframe
@@ -45,22 +65,23 @@
               src="https://forms.gle/KiUemn5CTQhzXHHbA"
               title="RSVP — Alice & Kevin"
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
 
           <p class="note" data-i18n="rsvp_alt">
             Si le formulaire ne s’affiche pas sur votre appareil, vous pouvez l’ouvrir dans un nouvel onglet.
           </p>
 
-          <a class="btn btn--soft" href="https://forms.gle/KiUemn5CTQhzXHHbA" target="_blank" rel="noopener" data-i18n="rsvp_open">
-            Ouvrir le formulaire
+          <a class="btn btn--dark" href="https://forms.gle/KiUemn5CTQhzXHHbA" target="_blank" rel="noopener" data-i18n="rsvp_open">
+            Confirmer ma présence
           </a>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <p class="footer__p" data-i18n="footer">© Alice &amp; Kevin · 2026</p>
+      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
     </footer>
   </main>
 
