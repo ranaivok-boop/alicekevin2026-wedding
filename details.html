@@ -4,29 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alice & Kevin — Programme</title>
-  <meta name="description" content="Programme — cérémonie, réception — Alice & Kevin" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
+  <meta name="description" content="Programme — cérémonie, domaine, déroulé du week-end" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
-
-  <header class="sitebar" aria-label="Navigation principale">
-    <div class="sitebar__inner">
-      <a class="brand" href="index.html">Alice &amp; Kevin</a>
-
-      <nav class="nav">
+  <header class="header" aria-label="Menu">
+    <div class="header__inner">
+      <nav class="nav" aria-label="Navigation principale">
         <a href="index.html" data-i18n="nav_home">Accueil</a>
-        <a class="is-current" href="details.html" aria-current="page" data-i18n="nav_programme">Programme</a>
-        <a href="travel.html" data-i18n="nav_travel">Voyage &amp; séjour</a>
-        <a href="gift.html" data-i18n="nav_gift">Cadeau</a>
-        <a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
         <a href="story.html" data-i18n="nav_story">Notre histoire</a>
+        <a class="is-current" href="details.html" data-i18n="nav_programme">Programme</a>
+        <a href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
+        <a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+        <a href="gift.html" data-i18n="nav_gift">Cadeau</a>
       </nav>
 
       <div class="lang" aria-label="Choisir la langue">
@@ -37,92 +28,92 @@
     </div>
   </header>
 
-  <main id="content" class="page">
-    <header class="hero" role="banner">
+  <main class="page">
+    <section class="hero" aria-label="Le domaine">
       <div class="hero__media" aria-hidden="true">
+        <!-- HERO VILLA CONSERVÉE ICI -->
         <img class="hero__img" src="assets/hero-villa.jpg" alt="" loading="eager">
       </div>
+
       <div class="hero__text">
         <h1 class="hero__title" data-i18n="programme_title">Programme</h1>
+        <p class="lead" data-i18n="programme_lead">
+          Un déroulé pensé pour vous laisser le temps : célébrer, flâner à Ortigia, puis rejoindre le domaine pour une soirée à la campagne.
+        </p>
       </div>
-    </header>
+    </section>
 
     <section class="section">
       <div class="section__inner">
 
         <div class="panel">
-          <h2 class="h2" data-i18n="programme_day1">Samedi 6 juin 2026</h2>
+          <h2 class="h2" data-i18n="day1_title">Samedi 6 juin 2026</h2>
 
           <div class="timeline">
             <div class="titem">
               <div class="titem__time">11:30</div>
               <div class="titem__body">
-                <div class="titem__title" data-i18n="programme_ceremony">Cérémonie religieuse</div>
+                <div class="titem__title" data-i18n="ceremony_title">Cérémonie religieuse</div>
                 <div class="titem__place">Duomo di Siracusa — Ortigia</div>
-                <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Duomo%20di%20Siracusa%20Ortigia" target="_blank" rel="noopener" data-i18n="programme_open_maps">Ouvrir sur Google Maps</a>
+                <a class="maplink" href="https://www.google.com/maps?q=Duomo%20di%20Siracusa%20Ortigia" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
               </div>
             </div>
 
             <div class="titem">
               <div class="titem__time">13:00</div>
               <div class="titem__body">
-                <div class="titem__title" data-i18n="programme_aperitivo">Aperitivo italien</div>
+                <div class="titem__title" data-i18n="aperitivo_title">Aperitivo italien</div>
                 <div class="titem__place">Caffè Archimede — Ortigia</div>
-                <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Caff%C3%A8%20Archimede%20Siracusa" target="_blank" rel="noopener" data-i18n="programme_open_maps">Ouvrir sur Google Maps</a>
+                <a class="maplink" href="https://www.google.com/maps?q=Caff%C3%A8%20Archimede%20Siracusa" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
               </div>
             </div>
 
             <div class="titem">
               <div class="titem__time">15:00</div>
               <div class="titem__body">
-                <div class="titem__title" data-i18n="programme_walk">Promenade à Ortigia</div>
-                <div class="titem__sub" data-i18n="programme_walk_sub">Découverte libre du centre historique</div>
+                <div class="titem__title" data-i18n="walk_title">Promenade à Ortigia</div>
+                <div class="titem__place" data-i18n="walk_place">Découverte libre du centre historique</div>
               </div>
             </div>
 
             <div class="titem">
               <div class="titem__time">17:30</div>
               <div class="titem__body">
-                <div class="titem__title" data-i18n="programme_reception">Réception</div>
+                <div class="titem__title" data-i18n="reception_title">Réception au domaine</div>
                 <div class="titem__place">Villa Biviere Borghese — Lentini</div>
-                <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Villa%20Biviere%20Borghese%20Lentini" target="_blank" rel="noopener" data-i18n="programme_open_maps">Ouvrir sur Google Maps</a>
+                <a class="maplink" href="https://www.google.com/maps?q=Villa%20Biviere%20Borghese%20Lentini" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
               </div>
             </div>
-          </div>
-
-          <div class="panel" style="margin-top:16px">
-            <h3 class="h3" data-i18n="programme_domain">Le domaine</h3>
-            <p class="p" data-i18n="programme_domain_text">
-              Villa Biviere Borghese, à Lentini — un lieu d’exception pour célébrer ensemble, jusqu’au bout de la nuit.
-            </p>
           </div>
         </div>
 
         <div class="panel">
-          <h2 class="h2" data-i18n="programme_day2">Dimanche 7 juin 2026</h2>
+          <h2 class="h2" data-i18n="day2_title">Dimanche 7 juin 2026</h2>
           <div class="timeline">
             <div class="titem">
               <div class="titem__time">14:00</div>
               <div class="titem__body">
-                <div class="titem__title" data-i18n="programme_day2_title">Apéritivo Italiano</div>
+                <div class="titem__title" data-i18n="sunday_title">Apéritivo Italiano</div>
                 <div class="titem__place">Villa Nunziatina</div>
-                <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Villa%20Nunziatina%20Siracusa" target="_blank" rel="noopener" data-i18n="programme_open_maps">Ouvrir sur Google Maps</a>
-                <p class="note" data-i18n="programme_day2_text">
-                  Nous serons ravis de prolonger les festivités dans une atmosphère détendue, conviviale et typiquement sicilienne.
-                </p>
-                <p class="p" style="margin-top:10px; color:rgba(43,43,43,.66)" data-i18n="programme_day2_time">
-                  À partir de 14h00 et jusqu’au soir
-                </p>
+                <a class="maplink" href="https://www.google.com/maps?q=Villa%20Nunziatina%20Siracusa" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+                <div class="note" data-i18n="sunday_note">Une atmosphère détendue, conviviale et typiquement sicilienne — à partir de 14h00 et jusqu’au soir.</div>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="panel">
+          <h2 class="h2" data-i18n="venue_title">Le domaine</h2>
+          <p class="p" data-i18n="venue_text">
+            La réception se tiendra à la Villa Biviere Borghese, à Lentini — un cadre élégant et végétal, idéal pour vivre la soirée au rythme sicilien.
+          </p>
         </div>
 
       </div>
     </section>
 
     <footer class="footer">
-      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
+      <p class="footer__p" data-i18n="footer">© Alice &amp; Kevin · 2026</p>
     </footer>
   </main>
 
