@@ -15,7 +15,7 @@
       // Home
       hero_title: "Alice & Kevin",
       hero_subtitle: "Ont l’honneur de vous convier à la célébration de leur union",
-      hero_meta: "Samedi 6 juin 2026 — Syracuse, Sicile — Italie",
+      hero_meta: "Samedi 20 juin 2026 — Syracuse, Sicile — Italie",
       home_h2: "Notre mariage",
       home_lead:
         "Nous serons heureux de vous retrouver en Sicile pour deux journées de célébration, entre lumière, élégance et douceur méditerranéenne.",
@@ -35,8 +35,8 @@
       programme_title: "Programme",
       programme_lead:
         "Les temps forts du week-end, pour profiter sereinement de chaque moment.",
-      day1_title: "Samedi 6 juin 2026",
-      day2_title: "Dimanche 7 juin 2026",
+      day1_title: "Samedi 20 juin 2026",
+      day2_title: "Dimanche 21 juin 2026",
 
       ceremony_title: "Cérémonie religieuse",
       ceremony_place: "Duomo di Siracusa — Ortigia",
@@ -117,7 +117,7 @@
 
       hero_title: "Alice & Kevin",
       hero_subtitle: "hanno l’onore di invitarvi alla celebrazione della loro unione",
-      hero_meta: "Sabato 6 giugno 2026 — Siracusa, Sicilia — Italia",
+      hero_meta: "Sabato 20 giugno 2026 — Siracusa, Sicilia — Italia",
       home_h2: "Il nostro matrimonio",
       home_lead:
         "Saremo felici di ritrovarvi in Sicilia per due giornate di festa, tra luce, eleganza e dolcezza mediterranea.",
@@ -136,8 +136,8 @@
       programme_title: "Programma",
       programme_lead:
         "I momenti chiave del weekend, per vivere ogni istante con serenità.",
-      day1_title: "Sabato 6 giugno 2026",
-      day2_title: "Domenica 7 giugno 2026",
+      day1_title: "Sabato 20 giugno 2026",
+      day2_title: "Domenica 21 giugno 2026",
 
       ceremony_title: "Cerimonia religiosa",
       ceremony_place: "Duomo di Siracusa — Ortigia",
@@ -212,7 +212,7 @@
 
       hero_title: "Alice & Kevin",
       hero_subtitle: "request the honour of your presence at the celebration of their union",
-      hero_meta: "Saturday, June 6th, 2026 — Syracuse, Sicily — Italy",
+      hero_meta: "Saturday, June 20th, 2026 — Syracuse, Sicily — Italy",
       home_h2: "Our wedding",
       home_lead:
         "We’ll be delighted to welcome you to Sicily for two days of celebration, filled with light, elegance and Mediterranean softness.",
@@ -231,8 +231,8 @@
       programme_title: "Programme",
       programme_lead:
         "The weekend highlights, so you can enjoy every moment with ease.",
-      day1_title: "Saturday, June 6th, 2026",
-      day2_title: "Sunday, June 7th, 2026",
+      day1_title: "Saturday, June 20th, 2026",
+      day2_title: "Sunday, June 21th, 2026",
 
       ceremony_title: "Religious ceremony",
       ceremony_place: "Duomo di Siracusa — Ortigia",
