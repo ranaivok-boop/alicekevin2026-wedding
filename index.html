@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alice & Kevin — Détails</title>
-  <meta name="description" content="Détails — Alice & Kevin" />
+  <title>Alice & Kevin — Mariage</title>
+  <meta name="description" content="Site d’invitation — Alice & Kevin" />
 
+  <!-- Fonts (premium, proche maquette) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=EB+Garamond:wght@400;500&family=Italianno&display=swap" rel="stylesheet">
@@ -16,6 +17,7 @@
 <body>
   <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
 
+  <!-- Language switch -->
   <div class="lang" aria-label="Choisir la langue">
     <button class="lang__btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
     <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
@@ -23,14 +25,25 @@
   </div>
 
   <header class="shell">
-    <div class="hero hero--compact" id="content">
-      <h1 class="hero__title hero__title--small">Alice &amp; Kevin</h1>
-      <p class="hero__dateplace" data-i18n="hero_dateplace">Samedi 06 juin 2026 — Syracuse, Sicile — Italie</p>
+    <div class="hero" id="content">
+      <figure class="hero__figure" aria-label="Illustration">
+        <img class="hero__img" src="assets/hero-villa.jpg" alt="Illustration d’une villa sicilienne" loading="eager">
+      </figure>
+
+      <h1 class="hero__title">Alice &amp; Kevin</h1>
+
+      <p class="hero__dateplace" data-i18n="hero_dateplace">
+        Samedi 06 juin 2026 — Syracuse, Sicile — Italie
+      </p>
+
+      <p class="hero__baseline" data-i18n="hero_baseline">
+        Ont l’honneur de vous convier à leur mariage.
+      </p>
 
       <nav class="nav-pill" aria-label="Navigation principale">
-        <a class="nav-pill__link" href="index.html" data-i18n="nav_home">Notre mariage</a>
+        <a class="nav-pill__link is-active" href="index.html" data-i18n="nav_home">Notre mariage</a>
         <span class="nav-pill__dot">•</span>
-        <a class="nav-pill__link is-active" href="details.html" data-i18n="nav_details">Détails</a>
+        <a class="nav-pill__link" href="details.html" data-i18n="nav_details">Détails</a>
         <span class="nav-pill__dot">•</span>
         <a class="nav-pill__link" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
       </nav>
@@ -39,103 +52,65 @@
 
   <main class="shell shell--tight">
     <section class="section">
-      <h2 class="script-title" data-i18n="details_title">Détails</h2>
-      <p class="lead" data-i18n="details_lead">Deux jours pour se retrouver, célébrer, et profiter pleinement de la Sicile.</p>
+      <h2 class="script-title" data-i18n="home_title">Notre mariage</h2>
+      <p class="lead" data-i18n="home_lead_1">
+        Nous serons très heureux de vous accueillir en Sicile, entourés de nos proches venus du monde entier.
+      </p>
+      <p class="lead lead--italic" data-i18n="home_lead_2">
+        Deux jours pensés comme une parenthèse élégante, entre Ortigia et la campagne sicilienne.
+      </p>
 
-      <div class="details-grid" id="day1">
-        <div class="paper-card">
-          <h3 class="paper-card__h" data-i18n="day1_title">Jour 1 — Samedi 06 juin 2026</h3>
-
-          <ol class="timeline">
-            <li class="timeline__item">
-              <div class="timeline__time">11:30</div>
-              <div class="timeline__body">
-                <div class="timeline__title" data-i18n="t1_title">Cérémonie religieuse</div>
-                <div class="timeline__meta" data-i18n="t1_meta">Duomo di Siracusa — Ortigia</div>
-                <a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Duomo+di+Siracusa+Ortigia" data-i18n="map_open">Ouvrir sur Google Maps</a>
-              </div>
-            </li>
-
-            <li class="timeline__item">
-              <div class="timeline__time">13:00</div>
-              <div class="timeline__body">
-                <div class="timeline__title" data-i18n="t2_title">Aperitivo / rinfresco</div>
-                <div class="timeline__meta" data-i18n="t2_meta">Caffè Archimede — Ortigia</div>
-                <a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Caff%C3%A8+Archimede+Siracusa" data-i18n="map_open">Ouvrir sur Google Maps</a>
-              </div>
-            </li>
-
-            <li class="timeline__item">
-              <div class="timeline__time">15:00</div>
-              <div class="timeline__body">
-                <div class="timeline__title" data-i18n="t3_title">Promenade à Ortigia</div>
-                <div class="timeline__meta" data-i18n="t3_meta">Découvrir la ville — libre</div>
-              </div>
-            </li>
-
-            <li class="timeline__item" id="reception">
-              <div class="timeline__time">17:30</div>
-              <div class="timeline__body">
-                <div class="timeline__title" data-i18n="t4_title">Réception</div>
-                <div class="timeline__meta" data-i18n="t4_meta">Villa Biviere Borghese — Lentini</div>
-                <a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Villa+Biviere+Borghese+Lentini" data-i18n="map_open">Ouvrir sur Google Maps</a>
-              </div>
-            </li>
-          </ol>
-
-          <div class="note-box">
-            <p class="note-box__p" data-i18n="dress_note">
-              Tenue : élégante et estivale. Nous serons en Sicile — chaleur en journée, douceur le soir.
-            </p>
+      <div class="cards">
+        <!-- Ceremonie -->
+        <a class="card" href="details.html#day1" aria-label="La cérémonie">
+          <div class="card__icon" aria-hidden="true">
+            <!-- pictogramme ligne (doré, fin) -->
+            <svg viewBox="0 0 64 64" class="ico">
+              <path d="M14 30h36M20 30v-6c0-7 6-12 12-12s12 5 12 12v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M18 30v16M46 30v16M22 46h20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
           </div>
-        </div>
+          <div class="card__title" data-i18n="card_ceremony_title">La cérémonie</div>
+          <div class="card__text" data-i18n="card_ceremony_text">Duomo di Siracusa — Ortigia</div>
+        </a>
 
-        <figure class="details-art" aria-label="Illustration enveloppe">
-          <img class="details-art__img" src="assets/details-envelope.jpg" alt="Illustration enveloppe citrons" loading="lazy">
-        </figure>
-      </div>
-
-      <div class="paper-card paper-card--spaced" id="day2">
-        <h3 class="paper-card__h" data-i18n="day2_title">Jour 2 — Dimanche</h3>
-        <p class="paper-card__p" data-i18n="day2_text">
-          Une journée “Aperitivo Italiano” à partir de 14:00, jusqu’au soir, à la Villa Nunziatina.
-        </p>
-        <a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Villa+Nunziatina+Siracusa" data-i18n="map_open">Ouvrir sur Google Maps</a>
-      </div>
-
-      <div class="paper-card paper-card--spaced" id="travel">
-        <h3 class="paper-card__h" data-i18n="travel_title">Voyage & séjour</h3>
-
-        <div class="two-cols">
-          <div>
-            <h4 class="mini-h" data-i18n="airport_title">Aéroport</h4>
-            <p class="paper-card__p" data-i18n="airport_text">
-              Aéroport conseillé : Catane (CTA).
-            </p>
-            <a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Catania+Airport" data-i18n="map_open">Ouvrir sur Google Maps</a>
+        <!-- Reception -->
+        <a class="card" href="details.html#reception" aria-label="La réception">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" class="ico">
+              <path d="M22 14h20M26 14v10c0 3 2 6 6 6s6-3 6-6V14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M32 30v20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M22 50h20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
           </div>
+          <div class="card__title" data-i18n="card_reception_title">La réception</div>
+          <div class="card__text" data-i18n="card_reception_text">Villa Biviere Borghese — Lentini</div>
+        </a>
 
-          <div>
-            <h4 class="mini-h" data-i18n="car_title">Location de voiture</h4>
-            <p class="paper-card__p" data-i18n="car_text">
-              Location de voiture recommandée dès l’arrivée (Europcar, Sicily by Car, Sixt…) — pensez à réserver à l’avance.
-            </p>
+        <!-- Travel -->
+        <a class="card" href="details.html#travel" aria-label="Voyage et séjour">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" class="ico">
+              <path d="M10 34l44-16-14 44-6-18-24-10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M34 44l10-10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
           </div>
-        </div>
+          <div class="card__title" data-i18n="card_travel_title">Voyage &amp; séjour</div>
+          <div class="card__text" data-i18n="card_travel_text">Arriver, se déplacer, se loger</div>
+        </a>
 
-        <div class="divider"></div>
-
-        <h4 class="mini-h" data-i18n="stay_title">Où loger</h4>
-        <p class="paper-card__p" data-i18n="stay_text">
-          Nous vous conseillons de loger du côté de Lentini. Badiula propose des tarifs préférentiels avec le code “WeddingAK” (valable jusqu’au 31 mars 2026).
-        </p>
-      </div>
-
-      <div class="paper-card paper-card--spaced">
-        <h3 class="paper-card__h" data-i18n="kids_title">À propos des enfants</h3>
-        <p class="paper-card__p" data-i18n="kids_text">
-          Pour préserver la sérénité de la journée (et parce qu’aucune garde d’enfants ne pourra être organisée), nous vous remercions de prévoir une célébration entre adultes. Cela facilitera également le travail de nos équipes photo/vidéo et permettra à chacun de profiter pleinement.
-        </p>
+        <!-- Gift -->
+        <a class="card" href="gift.html" aria-label="Cadeau">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" class="ico">
+              <path d="M14 28h36v26H14V28z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M32 28v26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M14 28h36M20 28c-4-8 5-14 12-6m12 6c4-8-5-14-12-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="card__title" data-i18n="card_gift_title">Cadeau</div>
+          <div class="card__text" data-i18n="card_gift_text">Un geste pour la suite</div>
+        </a>
       </div>
     </section>
   </main>
@@ -144,9 +119,9 @@
     <div class="shell footer__inner">
       <p class="footer__p">© Alice &amp; Kevin — 2026</p>
       <p class="footer__p footer__p--links">
-        <a href="index.html" data-i18n="nav_home">Notre mariage</a>
+        <a href="details.html" data-i18n="footer_details">Détails</a>
         <span aria-hidden="true">·</span>
-        <a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+        <a href="rsvp.html" data-i18n="footer_rsvp">RSVP</a>
         <span aria-hidden="true">·</span>
         <a href="gift.html" data-i18n="footer_gift">Cadeau</a>
       </p>
