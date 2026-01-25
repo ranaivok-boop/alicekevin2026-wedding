@@ -4,117 +4,191 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alice & Kevin — Programme</title>
-  <meta name="description" content="Programme — cérémonie, domaine, déroulé du week-end" />
+  <meta name="description" content="Programme — Alice & Kevin" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header class="header" aria-label="Menu">
-    <div class="header__inner">
-      <nav class="nav" aria-label="Navigation principale">
-        <a href="index.html" data-i18n="nav_home">Accueil</a>
-        <a href="story.html" data-i18n="nav_story">Notre histoire</a>
-        <a class="is-current" href="details.html" data-i18n="nav_programme">Programme</a>
-        <a href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
-        <a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-        <a href="gift.html" data-i18n="nav_gift">Cadeau</a>
-      </nav>
+  <header class="sitebar" aria-label="Navigation">
+    <button id="navToggle" class="sitebar__burger" type="button" aria-expanded="false" aria-controls="navPanel" aria-label="Menu">
+      <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
 
-      <div class="lang" aria-label="Choisir la langue">
-        <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
-        <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-      </div>
+    <nav class="sitebar__nav" aria-label="Navigation principale">
+      <a class="sitebar__link" href="story.html" data-i18n="nav_story">Notre histoire</a>
+      <a class="sitebar__link is-current" href="details.html" data-i18n="nav_program">Programme</a>
+      <a class="sitebar__link" href="travel.html" data-i18n="nav_travel">Voyage &amp; séjour</a>
+      <a class="sitebar__link" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+      <a class="sitebar__link" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+    </nav>
+
+    <div class="lang" aria-label="Choisir la langue">
+      <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+      <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
     </div>
   </header>
 
+  <div class="navpanel" id="navPanel" aria-hidden="true">
+    <div class="navpanel__backdrop"></div>
+    <div class="navpanel__sheet" role="dialog" aria-label="Menu">
+      <div class="navpanel__grid">
+        <a class="navpanel__link" href="story.html" data-i18n="nav_story">Notre histoire</a>
+        <a class="navpanel__link" href="details.html" data-i18n="nav_program">Programme</a>
+        <a class="navpanel__link" href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
+        <a class="navpanel__link" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+        <a class="navpanel__link" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+      </div>
+      <div class="navpanel__row">
+        <div class="lang" aria-label="Choisir la langue">
+          <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+          <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <main class="page">
-    <section class="hero" aria-label="Le domaine">
-      <div class="hero__media" aria-hidden="true">
-        <!-- HERO VILLA CONSERVÉE ICI -->
-        <img class="hero__img" src="assets/hero-villa.jpg" alt="" loading="eager">
-      </div>
-
-      <div class="hero__text">
-        <h1 class="hero__title" data-i18n="programme_title">Programme</h1>
-        <p class="lead" data-i18n="programme_lead">
-          Un déroulé pensé pour vous laisser le temps : célébrer, flâner à Ortigia, puis rejoindre le domaine pour une soirée à la campagne.
-        </p>
-      </div>
-    </section>
-
     <section class="section">
       <div class="section__inner">
 
+        <div class="banner">
+          <div class="banner__shade">
+            <img class="banner__img" src="assets/hero-villa.jpg" alt="" loading="eager">
+          </div>
+        </div>
+
+        <h1 class="h1" data-i18n="program_title">Programme</h1>
+        <p class="p" data-i18n="program_lead">
+          Deux journées en Sicile, pensées pour prendre le temps, se retrouver et célébrer.
+        </p>
+
         <div class="panel">
-          <h2 class="h2" data-i18n="day1_title">Samedi 6 juin 2026</h2>
-
-          <div class="timeline">
-            <div class="titem">
-              <div class="titem__time">11:30</div>
-              <div class="titem__body">
-                <div class="titem__title" data-i18n="ceremony_title">Cérémonie religieuse</div>
-                <div class="titem__place">Duomo di Siracusa — Ortigia</div>
-                <a class="maplink" href="https://www.google.com/maps?q=Duomo%20di%20Siracusa%20Ortigia" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
-              </div>
+          <div class="head">
+            <div class="head__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 3v3M17 3v3"/><path d="M4 7h16"/><path d="M5 5h14a1 1 0 0 1 1 1v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a1 1 0 0 1 1-1Z"/></svg>
             </div>
+            <div>
+              <div class="h2" data-i18n="day1_title">Samedi 6 juin 2026</div>
 
-            <div class="titem">
-              <div class="titem__time">13:00</div>
-              <div class="titem__body">
-                <div class="titem__title" data-i18n="aperitivo_title">Aperitivo italien</div>
-                <div class="titem__place">Caffè Archimede — Ortigia</div>
-                <a class="maplink" href="https://www.google.com/maps?q=Caff%C3%A8%20Archimede%20Siracusa" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
-              </div>
-            </div>
+              <div class="timeline">
+                <div class="titem">
+                  <div class="titem__time">11:30</div>
+                  <div class="titem__body">
+                    <div class="titem__title" data-i18n="ceremony_title">Cérémonie religieuse</div>
+                    <div class="titem__place" data-i18n="ceremony_place">Duomo di Siracusa — Ortigia</div>
+                    <a class="maplink" href="https://www.google.com/maps?q=Duomo%20di%20Siracusa%20Ortigia" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+                  </div>
+                </div>
 
-            <div class="titem">
-              <div class="titem__time">15:00</div>
-              <div class="titem__body">
-                <div class="titem__title" data-i18n="walk_title">Promenade à Ortigia</div>
-                <div class="titem__place" data-i18n="walk_place">Découverte libre du centre historique</div>
-              </div>
-            </div>
+                <div class="titem">
+                  <div class="titem__time">13:00</div>
+                  <div class="titem__body">
+                    <div class="titem__title" data-i18n="aperitivo_title">Aperitivo italien</div>
+                    <div class="titem__place" data-i18n="aperitivo_place">Caffè Archimede — Ortigia</div>
+                    <a class="maplink" href="https://www.google.com/maps?q=Caff%C3%A8%20Archimede%20Siracusa" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+                  </div>
+                </div>
 
-            <div class="titem">
-              <div class="titem__time">17:30</div>
-              <div class="titem__body">
-                <div class="titem__title" data-i18n="reception_title">Réception au domaine</div>
-                <div class="titem__place">Villa Biviere Borghese — Lentini</div>
-                <a class="maplink" href="https://www.google.com/maps?q=Villa%20Biviere%20Borghese%20Lentini" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+                <div class="titem">
+                  <div class="titem__time">15:00</div>
+                  <div class="titem__body">
+                    <div class="titem__title" data-i18n="walk_title">Promenade à Ortigia</div>
+                    <div class="titem__place" data-i18n="walk_place">Découverte libre du centre historique</div>
+                  </div>
+                </div>
+
+                <div class="titem">
+                  <div class="titem__time">17:30</div>
+                  <div class="titem__body">
+                    <div class="titem__title" data-i18n="reception_title">Réception</div>
+                    <div class="titem__place" data-i18n="reception_place">Villa Biviere Borghese — Lentini</div>
+                    <a class="maplink" href="biviere.html">Découvrir le domaine</a>
+                    <span aria-hidden="true"> · </span>
+                    <a class="maplink" href="https://www.google.com/maps?q=Villa%20Biviere%20Borghese%20Lentini" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         <div class="panel">
-          <h2 class="h2" data-i18n="day2_title">Dimanche 7 juin 2026</h2>
-          <div class="timeline">
-            <div class="titem">
-              <div class="titem__time">14:00</div>
-              <div class="titem__body">
-                <div class="titem__title" data-i18n="sunday_title">Apéritivo Italiano</div>
-                <div class="titem__place">Villa Nunziatina</div>
-                <a class="maplink" href="https://www.google.com/maps?q=Villa%20Nunziatina%20Siracusa" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
-                <div class="note" data-i18n="sunday_note">Une atmosphère détendue, conviviale et typiquement sicilienne — à partir de 14h00 et jusqu’au soir.</div>
+          <div class="head">
+            <div class="head__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9C1 8.6 3 6 6 6c1.7 0 3.2.9 4 2.1C10.8 6.9 12.3 6 14 6c3 0 5 2.6 3.3 6C19 16.4 12 21 12 21Z"/></svg>
+            </div>
+            <div>
+              <div class="h2" data-i18n="day2_title">Dimanche 7 juin 2026</div>
+
+              <div class="timeline">
+                <div class="titem">
+                  <div class="titem__time">14:00</div>
+                  <div class="titem__body">
+                    <div class="titem__title" data-i18n="sunday_title">Apéritivo Italiano</div>
+                    <div class="titem__place" data-i18n="sunday_place">Villa Nunziatina</div>
+                    <div class="note" data-i18n="sunday_note">À partir de 14h00 et jusqu’au soir</div>
+                    <a class="maplink" href="https://www.google.com/maps?q=Villa%20Nunziatina%20Siracusa" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+                  </div>
+                </div>
               </div>
+
             </div>
           </div>
         </div>
 
+        <!-- Embedded maps -->
         <div class="panel">
-          <h2 class="h2" data-i18n="venue_title">Le domaine</h2>
-          <p class="p" data-i18n="venue_text">
-            La réception se tiendra à la Villa Biviere Borghese, à Lentini — un cadre élégant et végétal, idéal pour vivre la soirée au rythme sicilien.
-          </p>
+          <div class="head">
+            <div class="head__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21s7-5 7-11a7 7 0 1 0-14 0c0 6 7 11 7 11Z"/><path d="M12 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg>
+            </div>
+            <div>
+              <div class="h2" data-i18n="maps_title">Plans & accès</div>
+              <p class="p" data-i18n="maps_lead">Les cartes sont intégrées ci-dessous pour une navigation simple.</p>
+
+              <div class="maps">
+                <div class="mapbox">
+                  <div class="mapbox__head">
+                    <div class="mapbox__title">Duomo di Siracusa — Ortigia</div>
+                    <a class="maplink" href="https://www.google.com/maps?q=Duomo%20di%20Siracusa%20Ortigia" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+                  </div>
+                  <iframe src="https://www.google.com/maps?q=Duomo%20di%20Siracusa%20Ortigia&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Duomo di Siracusa"></iframe>
+                </div>
+
+                <div class="mapbox">
+                  <div class="mapbox__head">
+                    <div class="mapbox__title">Caffè Archimede — Ortigia</div>
+                    <a class="maplink" href="https://www.google.com/maps?q=Caff%C3%A8%20Archimede%20Siracusa" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+                  </div>
+                  <iframe src="https://www.google.com/maps?q=Caff%C3%A8%20Archimede%20Siracusa&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Caffè Archimede"></iframe>
+                </div>
+
+                <div class="mapbox">
+                  <div class="mapbox__head">
+                    <div class="mapbox__title">Villa Biviere Borghese — Lentini</div>
+                    <a class="maplink" href="https://www.google.com/maps?q=Villa%20Biviere%20Borghese%20Lentini" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+                  </div>
+                  <iframe src="https://www.google.com/maps?q=Villa%20Biviere%20Borghese%20Lentini&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Villa Biviere Borghese"></iframe>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
+
+        <footer class="footer">
+          <p class="footer__p">© Alice &amp; Kevin · 2026</p>
+        </footer>
 
       </div>
     </section>
-
-    <footer class="footer">
-      <p class="footer__p" data-i18n="footer">© Alice &amp; Kevin · 2026</p>
-    </footer>
   </main>
 
   <script src="app.js"></script>
