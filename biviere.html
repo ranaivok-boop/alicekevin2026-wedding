@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alice & Kevin — Villa Biviere Borghese</title>
-  <meta name="description" content="Le domaine — Villa Biviere Borghese, Lentini" />
+  <meta name="description" content="Le domaine — Villa Biviere Borghese, Lentini." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,65 +13,89 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body data-title-key="title_biviere">
+<body>
   <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
 
-  <div class="lang" aria-label="Choisir la langue">
-    <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
-    <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-    <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-  </div>
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <button class="menu-btn" type="button" id="menuBtn" aria-haspopup="dialog" aria-expanded="false" data-i18n="menu_open">Menu</button>
+
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a class="navlink" href="index.html" data-i18n="nav_home">Accueil</a>
+        <a class="navlink" href="story.html" data-i18n="nav_story">Notre histoire</a>
+        <a class="navlink" href="details.html" data-i18n="nav_programme">Programme</a>
+        <a class="navlink" href="travel.html" data-i18n="nav_travel">Voyage &amp; séjour</a>
+        <a class="navlink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+        <a class="navlink" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+      </nav>
+
+      <div class="lang" aria-label="Choisir la langue">
+        <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+
+    <div class="menu-panel" id="menuPanel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="menu-panel__card">
+        <div class="menu-panel__top">
+          <div class="menu-panel__title" data-i18n="menu_title">Menu</div>
+          <button class="menu-close" type="button" id="menuClose" data-i18n="menu_close">Fermer</button>
+        </div>
+        <div class="menu-panel__grid">
+          <a class="menulink" href="index.html" data-i18n="nav_home">Accueil</a>
+          <a class="menulink" href="story.html" data-i18n="nav_story">Notre histoire</a>
+          <a class="menulink" href="details.html" data-i18n="nav_programme">Programme</a>
+          <a class="menulink" href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
+          <a class="menulink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+          <a class="menulink" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+        </div>
+        <div class="menu-panel__langs" aria-label="Choisir la langue">
+          <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+          <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <main id="content" class="page">
-    <header class="hero" role="banner">
-      <div class="hero__media" aria-hidden="true">
-        <img class="hero__img" src="assets/hero-villa.jpg" alt="" loading="eager">
+    <section class="banner banner--biviere" aria-label="Villa Biviere Borghese">
+      <div class="banner__overlay"></div>
+      <div class="banner__inner">
+        <div class="banner__kicker" data-i18n="biviere_kicker">Le domaine</div>
+        <h1 class="banner__title">Villa Biviere Borghese</h1>
+        <p class="banner__lead" data-i18n="biviere_lead">
+          Un cadre de campagne sicilienne, élégant et lumineux, à quelques minutes de Syracuse.
+        </p>
       </div>
-
-      <div class="hero__text">
-        <h1 class="h1" data-i18n="biviere_h1">Villa Biviere Borghese</h1>
-        <p class="hero__meta" data-i18n="biviere_lead">Lentini — Sicile</p>
-
-        <nav class="hero__nav" aria-label="Navigation principale">
-          <a class="navlink" href="index.html" data-i18n="nav_home">Notre mariage</a>
-          <span class="navdot">•</span>
-          <a class="navlink" href="details.html" data-i18n="nav_details">Détails</a>
-          <span class="navdot">•</span>
-          <a class="navlink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-        </nav>
-      </div>
-    </header>
+    </section>
 
     <section class="section">
       <div class="section__inner">
         <div class="panel">
-          <p class="p" data-i18n="biviere_p">
-            Le domaine accueillera la réception du samedi soir, dans un cadre élégant et lumineux, au cœur de la campagne sicilienne.
+          <p class="p" data-i18n="biviere_text">
+            La réception se tiendra à Lentini, dans un domaine d’exception. Vous y retrouverez l’essentiel : accueil, célébration, dîner et soirée, dans une atmosphère chaleureuse et raffinée.
           </p>
-        </div>
 
-        <div class="panel">
-          <h2 class="h2" data-i18n="biviere_access_h2">Accès</h2>
-          <p class="p" data-i18n="biviere_access_p">
-            Nous vous recommandons de privilégier la voiture (ou taxi/VTC selon votre hébergement).
-          </p>
-          <a class="maplink" href="https://www.google.com/maps?q=Villa%20Biviere%20Borghese%20Lentini" target="_blank" rel="noopener" data-i18n="biviere_maps">
-            Ouvrir sur Google Maps
-          </a>
+          <div class="map-embed-wrap">
+            <iframe class="map-embed"
+              src="https://www.google.com/maps?q=Villa%20Biviere%20Borghese%20Lentini&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Villa Biviere Borghese"></iframe>
+          </div>
 
-          <p class="note" style="margin-top:14px">
-            <a class="maplink" href="index.html" data-i18n="back_home">Retour à la page d’accueil</a>
-          </p>
+          <div class="titem__actions">
+            <a class="btn btn--soft" href="details.html" data-i18n="back_to_programme">Retour au programme</a>
+          </div>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <p class="footer__p" data-i18n="footer">© Alice &amp; Kevin · 2026</p>
+      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
     </footer>
   </main>
 
   <script src="app.js"></script>
 </body>
 </html>
-
