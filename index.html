@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alice & Kevin — Mariage</title>
-  <meta name="description" content="Site d’invitation — Alice & Kevin" />
+  <meta name="description" content="Invitation de mariage — Alice & Kevin — Syracuse, Sicile" />
 
-  <!-- Fonts (premium, proche maquette) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=EB+Garamond:wght@400;500&family=Italianno&display=swap" rel="stylesheet">
+  <!-- Titres: Cormorant (proche “Vogue” dans l’esprit) / Texte: Inter (propre et premium) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -17,116 +17,115 @@
 <body>
   <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
 
-  <!-- Language switch -->
+  <!-- Lang switch -->
   <div class="lang" aria-label="Choisir la langue">
-    <button class="lang__btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+    <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
     <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
     <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
   </div>
 
-  <header class="shell">
-    <div class="hero" id="content">
-      <figure class="hero__figure" aria-label="Illustration">
-        <img class="hero__img" src="assets/hero-villa.jpg" alt="Illustration d’une villa sicilienne" loading="eager">
-      </figure>
+  <main id="content" class="page">
+    <!-- HERO : image + nom + date/lieu + nav (comme maquette) -->
+    <header class="hero" role="banner">
+      <div class="hero__media" aria-hidden="true">
+        <!-- IMPORTANT : PAS de bords arrondis -->
+        <img class="hero__img" src="assets/hero-villa.jpg" alt="" loading="eager">
+      </div>
 
-      <h1 class="hero__title">Alice &amp; Kevin</h1>
+      <div class="hero__text">
+        <h1 class="hero__title">Alice &amp; Kevin</h1>
 
-      <p class="hero__dateplace" data-i18n="hero_dateplace">
-        Samedi 06 juin 2026 — Syracuse, Sicile — Italie
-      </p>
+        <p class="hero__meta" data-i18n="hero_meta">
+          Samedi 06 juin 2026 — Syracuse, Sicile — Italie
+        </p>
 
-      <p class="hero__baseline" data-i18n="hero_baseline">
-        Ont l’honneur de vous convier à leur mariage.
-      </p>
+        <p class="hero__baseline" data-i18n="hero_baseline">
+          Ont l’honneur de vous convier à leur mariage.
+        </p>
 
-      <nav class="nav-pill" aria-label="Navigation principale">
-        <a class="nav-pill__link is-active" href="index.html" data-i18n="nav_home">Notre mariage</a>
-        <span class="nav-pill__dot">•</span>
-        <a class="nav-pill__link" href="details.html" data-i18n="nav_details">Détails</a>
-        <span class="nav-pill__dot">•</span>
-        <a class="nav-pill__link" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-      </nav>
-    </div>
-  </header>
+        <nav class="hero__nav" aria-label="Navigation principale">
+          <a class="navlink" href="index.html" data-i18n="nav_home">Notre mariage</a>
+          <span class="navdot">•</span>
+          <a class="navlink" href="details.html" data-i18n="nav_details">Détails</a>
+          <span class="navdot">•</span>
+          <a class="navlink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+        </nav>
+      </div>
+    </header>
 
-  <main class="shell shell--tight">
+    <!-- SECTION "Notre mariage" (comme maquette) -->
     <section class="section">
-      <h2 class="script-title" data-i18n="home_title">Notre mariage</h2>
-      <p class="lead" data-i18n="home_lead_1">
-        Nous serons très heureux de vous accueillir en Sicile, entourés de nos proches venus du monde entier.
-      </p>
-      <p class="lead lead--italic" data-i18n="home_lead_2">
-        Deux jours pensés comme une parenthèse élégante, entre Ortigia et la campagne sicilienne.
-      </p>
+      <div class="section__inner section__inner--center">
+        <h2 class="script" data-i18n="home_title">Notre mariage</h2>
 
-      <div class="cards">
-        <!-- Ceremonie -->
-        <a class="card" href="details.html#day1" aria-label="La cérémonie">
-          <div class="card__icon" aria-hidden="true">
-            <!-- pictogramme ligne (doré, fin) -->
-            <svg viewBox="0 0 64 64" class="ico">
-              <path d="M14 30h36M20 30v-6c0-7 6-12 12-12s12 5 12 12v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M18 30v16M46 30v16M22 46h20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="card__title" data-i18n="card_ceremony_title">La cérémonie</div>
-          <div class="card__text" data-i18n="card_ceremony_text">Duomo di Siracusa — Ortigia</div>
-        </a>
+        <p class="lead" data-i18n="home_lead_1">
+          Nous serons très heureux de vous accueillir en Sicile, entourés de nos proches venus du monde entier.
+        </p>
+        <p class="lead lead--muted" data-i18n="home_lead_2">
+          Deux jours pensés comme une parenthèse élégante, entre Ortigia et la campagne sicilienne.
+        </p>
 
-        <!-- Reception -->
-        <a class="card" href="details.html#reception" aria-label="La réception">
-          <div class="card__icon" aria-hidden="true">
-            <svg viewBox="0 0 64 64" class="ico">
-              <path d="M22 14h20M26 14v10c0 3 2 6 6 6s6-3 6-6V14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M32 30v20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M22 50h20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="card__title" data-i18n="card_reception_title">La réception</div>
-          <div class="card__text" data-i18n="card_reception_text">Villa Biviere Borghese — Lentini</div>
-        </a>
+        <!-- 4 cartes (pictos fins, teinte dorée, taille maîtrisée) -->
+        <div class="cards">
+          <a class="card" href="details.html#ceremony">
+            <div class="card__icon" aria-hidden="true">
+              <!-- arche (fin, doré) -->
+              <svg viewBox="0 0 24 24" class="icon">
+                <path d="M6 20V10a6 6 0 0 1 12 0v10" />
+                <path d="M4 20h16" />
+                <path d="M8 20v-8m8 8v-8" />
+              </svg>
+            </div>
+            <div class="card__title" data-i18n="card_ceremony">La cérémonie</div>
+            <div class="card__sub" data-i18n="card_ceremony_sub">Duomo di Siracusa — Ortigia</div>
+          </a>
 
-        <!-- Travel -->
-        <a class="card" href="details.html#travel" aria-label="Voyage et séjour">
-          <div class="card__icon" aria-hidden="true">
-            <svg viewBox="0 0 64 64" class="ico">
-              <path d="M10 34l44-16-14 44-6-18-24-10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-              <path d="M34 44l10-10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="card__title" data-i18n="card_travel_title">Voyage &amp; séjour</div>
-          <div class="card__text" data-i18n="card_travel_text">Arriver, se déplacer, se loger</div>
-        </a>
+          <a class="card" href="details.html#reception">
+            <div class="card__icon" aria-hidden="true">
+              <!-- verre -->
+              <svg viewBox="0 0 24 24" class="icon">
+                <path d="M8 3h8l-1 7a4 4 0 0 1-6 0L8 3Z" />
+                <path d="M12 10v8" />
+                <path d="M8 22h8" />
+              </svg>
+            </div>
+            <div class="card__title" data-i18n="card_reception">La réception</div>
+            <div class="card__sub" data-i18n="card_reception_sub">Villa Biviere Borghese — Lentini</div>
+          </a>
 
-        <!-- Gift -->
-        <a class="card" href="gift.html" aria-label="Cadeau">
-          <div class="card__icon" aria-hidden="true">
-            <svg viewBox="0 0 64 64" class="ico">
-              <path d="M14 28h36v26H14V28z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-              <path d="M32 28v26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M14 28h36M20 28c-4-8 5-14 12-6m12 6c4-8-5-14-12-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="card__title" data-i18n="card_gift_title">Cadeau</div>
-          <div class="card__text" data-i18n="card_gift_text">Un geste pour la suite</div>
-        </a>
+          <a class="card" href="details.html#travel">
+            <div class="card__icon" aria-hidden="true">
+              <!-- avion -->
+              <svg viewBox="0 0 24 24" class="icon">
+                <path d="M2 16l20-6-20-6 6 6 6 2-6 2-6 6Z" />
+              </svg>
+            </div>
+            <div class="card__title" data-i18n="card_travel">Voyage &amp; séjour</div>
+            <div class="card__sub" data-i18n="card_travel_sub">Arriver, se déplacer, se loger</div>
+          </a>
+
+          <a class="card" href="details.html#gift">
+            <div class="card__icon" aria-hidden="true">
+              <!-- cadeau -->
+              <svg viewBox="0 0 24 24" class="icon">
+                <path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8" />
+                <path d="M2 12h20" />
+                <path d="M12 12v10" />
+                <path d="M7.5 7.5c0-1.7 2.5-2.8 4.5.5 2-3.3 4.5-2.2 4.5-.5 0 2-2.4 3-4.5 3s-4.5-1-4.5-3Z" />
+              </svg>
+            </div>
+            <div class="card__title" data-i18n="card_gift">Cadeau</div>
+            <div class="card__sub" data-i18n="card_gift_sub">Un geste pour la suite</div>
+          </a>
+        </div>
       </div>
     </section>
-  </main>
 
-  <footer class="footer">
-    <div class="shell footer__inner">
-      <p class="footer__p">© Alice &amp; Kevin — 2026</p>
-      <p class="footer__p footer__p--links">
-        <a href="details.html" data-i18n="footer_details">Détails</a>
-        <span aria-hidden="true">·</span>
-        <a href="rsvp.html" data-i18n="footer_rsvp">RSVP</a>
-        <span aria-hidden="true">·</span>
-        <a href="gift.html" data-i18n="footer_gift">Cadeau</a>
-      </p>
-    </div>
-  </footer>
+    <!-- Footer discret -->
+    <footer class="footer">
+      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
+    </footer>
+  </main>
 
   <script src="app.js"></script>
 </body>
