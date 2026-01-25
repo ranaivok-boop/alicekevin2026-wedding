@@ -4,20 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alice & Kevin — Cadeau</title>
-  <meta name="description" content="Cadeau — contribution par virement bancaire" />
+  <meta name="description" content="Cadeau de mariage — contribution par virement bancaire (IBAN)." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header class="header" aria-label="Menu">
-    <div class="header__inner">
-      <nav class="nav" aria-label="Navigation principale">
-        <a href="index.html" data-i18n="nav_home">Accueil</a>
-        <a href="story.html" data-i18n="nav_story">Notre histoire</a>
-        <a href="details.html" data-i18n="nav_programme">Programme</a>
-        <a href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
-        <a href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-        <a class="is-current" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+  <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
+
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <button class="menu-btn" type="button" id="menuBtn" aria-haspopup="dialog" aria-expanded="false" data-i18n="menu_open">Menu</button>
+
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a class="navlink" href="index.html" data-i18n="nav_home">Accueil</a>
+        <a class="navlink" href="story.html" data-i18n="nav_story">Notre histoire</a>
+        <a class="navlink" href="details.html" data-i18n="nav_programme">Programme</a>
+        <a class="navlink" href="travel.html" data-i18n="nav_travel">Voyage &amp; séjour</a>
+        <a class="navlink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+        <a class="navlink is-current" href="gift.html" aria-current="page" data-i18n="nav_gift">Cadeau</a>
       </nav>
 
       <div class="lang" aria-label="Choisir la langue">
@@ -26,33 +35,61 @@
         <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
     </div>
+
+    <div class="menu-panel" id="menuPanel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="menu-panel__card">
+        <div class="menu-panel__top">
+          <div class="menu-panel__title" data-i18n="menu_title">Menu</div>
+          <button class="menu-close" type="button" id="menuClose" data-i18n="menu_close">Fermer</button>
+        </div>
+        <div class="menu-panel__grid">
+          <a class="menulink" href="index.html" data-i18n="nav_home">Accueil</a>
+          <a class="menulink" href="story.html" data-i18n="nav_story">Notre histoire</a>
+          <a class="menulink" href="details.html" data-i18n="nav_programme">Programme</a>
+          <a class="menulink" href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
+          <a class="menulink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+          <a class="menulink is-current" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+        </div>
+        <div class="menu-panel__langs" aria-label="Choisir la langue">
+          <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+          <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <main class="page">
+  <main id="content" class="page">
+    <section class="banner banner--gift" aria-label="Cadeau">
+      <div class="banner__overlay"></div>
+      <div class="banner__inner">
+        <div class="banner__kicker" data-i18n="gift_kicker">Cadeau</div>
+        <h1 class="banner__title" data-i18n="gift_title">Cadeau aux mariés</h1>
+        <p class="banner__lead" data-i18n="gift_text">
+          Votre présence est le plus précieux des cadeaux. Si vous le souhaitez, une contribution par virement est possible.
+        </p>
+      </div>
+    </section>
+
     <section class="section">
       <div class="section__inner">
-        <h1 class="h1" data-i18n="gift_title">Cadeau</h1>
-
-        <p class="lead" data-i18n="gift_lead">
-          Votre présence à nos côtés sera, à elle seule, le plus précieux des cadeaux. Si vous souhaitez nous témoigner une attention, une contribution à notre avenir commun serait profondément appréciée.
-        </p>
-        <p class="p" data-i18n="gift_note">
-          Les contributions s’effectuent exclusivement par virement bancaire, via l’IBAN indiqué ci-dessous.
-        </p>
-
         <div class="panel">
           <div class="ibanbox">
             <div class="ibanbox__label">IBAN</div>
             <div class="ibanbox__value" id="ibanValue">FR76 XXXX XXXX XXXX XXXX XXXX XXX</div>
-            <button class="btn btn--soft" id="copyIban" type="button" data-i18n="copy_iban">Copier l’IBAN</button>
+            <button class="btn btn--soft" id="copyIban" type="button" data-i18n="copy_iban">Copier</button>
             <div class="toast" id="toast" aria-live="polite"></div>
           </div>
+
+          <p class="note" data-i18n="gift_note">
+            Contributions exclusivement par virement bancaire, via l’IBAN indiqué ci-dessus.
+          </p>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <p class="footer__p" data-i18n="footer">© Alice &amp; Kevin · 2026</p>
+      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
     </footer>
   </main>
 
