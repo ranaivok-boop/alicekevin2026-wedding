@@ -1,236 +1,322 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alice & Kevin — Invitation</title>
-  <meta name="description" content="Invitation de mariage — Alice & Kevin" />
+/* =========================
+   VARIABLES & BASE
+========================= */
+:root{
+  --paper:#f6f1ea;
+  --paper-alt:#fbf7f2;
+  --ink:#2b2b2b;
+  --muted:rgba(43,43,43,.65);
+  --line:rgba(43,43,43,.12);
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  --card:rgba(255,255,255,.68);
+  --shadow:0 18px 55px rgba(0,0,0,.10);
 
-  <link rel="stylesheet" href="style.css" />
-</head>
+  --radius-lg:26px;
+  --radius-md:18px;
+}
 
-<body>
-  <a class="skip" href="#top" data-i18n="skip">Aller au contenu</a>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 700px at 15% 0%, rgba(242,194,78,.14), transparent 60%),
+    radial-gradient(900px 600px at 90% 20%, rgba(47,107,86,.12), transparent 60%),
+    linear-gradient(180deg,var(--paper-alt),var(--paper));
+}
 
-  <!-- Lang switch -->
-  <div class="lang" aria-label="Choisir la langue">
-    <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
-    <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-    <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-  </div>
+/* Skip link */
+.skip{
+  position:absolute;left:-9999px;
+}
+.skip:focus{
+  left:16px;top:16px;
+  background:#fff;padding:8px 12px;
+  border-radius:999px;
+}
 
-  <main class="page" id="top">
-    <!-- HERO (maquette) -->
-    <header class="hero" role="banner">
-      <div class="hero__inner">
-        <figure class="hero__art" aria-hidden="true">
-          <img src="assets/images/hero-villa.jpg" alt="" loading="eager" decoding="async">
-        </figure>
+/* =========================
+   LANGUAGE SWITCH
+========================= */
+.lang{
+  position:fixed;
+  top:18px;right:18px;
+  z-index:50;
+  display:flex;gap:6px;
+  padding:6px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.6);
+  backdrop-filter:blur(10px);
+}
+.lang__btn{
+  border:none;
+  background:transparent;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  cursor:pointer;
+  color:var(--muted);
+}
+.lang__btn.is-active{
+  background:#fff;
+  color:var(--ink);
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
 
-        <h1 class="hero__title">Alice &amp; Kevin</h1>
+/* =========================
+   HERO (MAQUETTE)
+========================= */
+.hero{
+  padding:96px 20px 72px;
+  text-align:center;
+}
+.hero__inner{
+  max-width:1040px;
+  margin:0 auto;
+}
+.hero__art{
+  margin:0 auto 40px;
+  max-width:900px;
+}
+.hero__img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+  background:#fff;
+}
 
-        <p class="hero__meta" data-i18n="hero_meta">Samedi 06 juin 2026 — Syracuse, Sicile — Italie</p>
-        <p class="hero__baseline" data-i18n="baseline">Ont l’honneur de vous convier à leur mariage.</p>
+.title{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(42px,6vw,82px);
+  font-weight:600;
+  margin:0 0 10px;
+}
+.subtitle{
+  font-size:14px;
+  letter-spacing:1px;
+  color:var(--muted);
+  margin:0 0 10px;
+}
+.hero__baseline{
+  font-size:13px;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:22px;
+}
+.hero__nav{
+  display:inline-flex;
+  gap:10px;
+  padding:10px 18px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.6);
+}
+.hero__link{
+  text-decoration:none;
+  font-size:13px;
+  color:var(--ink);
+}
+.hero__dot{color:var(--muted)}
 
-        <nav class="hero__nav" aria-label="Navigation principale">
-          <a class="hero__navlink" href="#wedding" data-i18n="nav_wedding">Notre mariage</a>
-          <span class="hero__dot" aria-hidden="true">•</span>
-          <a class="hero__navlink" href="#details" data-i18n="nav_details">Détails</a>
-          <span class="hero__dot" aria-hidden="true">•</span>
-          <a class="hero__navlink" href="#rsvp" data-i18n="nav_rsvp">RSVP</a>
-        </nav>
-      </div>
-    </header>
+/* =========================
+   SECTIONS
+========================= */
+.section{
+  padding:88px 20px;
+}
+.section--alt{
+  background:linear-gradient(180deg,transparent,var(--paper-alt));
+}
+.section__inner{
+  max-width:1040px;
+  margin:0 auto;
+}
+.section__title{
+  font-family:"Cormorant Garamond",serif;
+  font-size:36px;
+  margin:0 0 16px;
+}
+.section__lead{
+  max-width:680px;
+  margin:0 auto 10px;
+  color:var(--muted);
+  text-align:center;
+}
+.section__sublead{
+  text-align:center;
+  color:var(--muted);
+  margin-bottom:48px;
+}
 
-    <!-- NOTRE MARIAGE -->
-    <section class="section" id="wedding">
-      <div class="section__inner">
-        <h2 class="h2" data-i18n="wedding_title">Notre mariage</h2>
-        <p class="lead" data-i18n="wedding_lead_1">
-          Nous serons très heureux de vous accueillir en Sicile, entourés de nos proches venus du monde entier.
-        </p>
-        <p class="lead lead--soft" data-i18n="wedding_lead_2">
-          Deux jours pensés comme une parenthèse élégante, entre Ortigia et la campagne sicilienne.
-        </p>
+/* =========================
+   ICON CARDS (MAQUETTE)
+========================= */
+.icon-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.icon-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius-md);
+  padding:26px 20px;
+  text-align:center;
+  text-decoration:none;
+  color:inherit;
+  box-shadow:var(--shadow);
+}
+.icon-card__icon{
+  font-size:26px;
+  margin-bottom:10px;
+}
+.icon-card__title{
+  font-weight:500;
+  margin-bottom:6px;
+}
+.icon-card__text{
+  font-size:13px;
+  color:var(--muted);
+}
 
-        <div class="iconcards" role="list">
-          <a class="iconcard" href="#ceremony" role="listitem">
-            <div class="iconcard__icon" aria-hidden="true">⛪</div>
-            <div class="iconcard__title" data-i18n="card_ceremony">La cérémonie</div>
-            <div class="iconcard__sub" data-i18n="card_ceremony_sub">Duomo di Siracusa — Ortigia</div>
-          </a>
+/* =========================
+   DETAILS
+========================= */
+.details{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:40px;
+  align-items:center;
+}
+.details__h{
+  font-family:"Cormorant Garamond",serif;
+  font-size:22px;
+}
+.details__list{
+  padding-left:18px;
+}
+.details__list li{
+  margin-bottom:8px;
+}
+.details__note{
+  font-size:13px;
+  color:var(--muted);
+  margin-top:16px;
+}
+.details__art img{
+  width:100%;
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+}
 
-          <a class="iconcard" href="#reception" role="listitem">
-            <div class="iconcard__icon" aria-hidden="true">🥂</div>
-            <div class="iconcard__title" data-i18n="card_reception">La réception</div>
-            <div class="iconcard__sub" data-i18n="card_reception_sub">Villa Biviere Borghese — Lentini</div>
-          </a>
+/* =========================
+   GRID / CARDS
+========================= */
+.grid{
+  display:grid;
+  gap:24px;
+}
+.grid--2{
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius-md);
+  padding:26px;
+  box-shadow:var(--shadow);
+}
+.card__title{
+  margin-top:0;
+  font-family:"Cormorant Garamond",serif;
+}
+.list{
+  padding-left:18px;
+}
+.note{
+  font-size:13px;
+  color:var(--muted);
+}
 
-          <a class="iconcard" href="#travel" role="listitem">
-            <div class="iconcard__icon" aria-hidden="true">✈️</div>
-            <div class="iconcard__title" data-i18n="card_travel">Voyage & séjour</div>
-            <div class="iconcard__sub" data-i18n="card_travel_sub">Arriver, se déplacer, se loger</div>
-          </a>
+/* =========================
+   RSVP / CTA
+========================= */
+.cta-panel{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  padding:32px;
+  box-shadow:var(--shadow);
+}
+.btn{
+  padding:12px 18px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:#fff;
+  cursor:pointer;
+  text-decoration:none;
+  color:var(--ink);
+}
+.btn--dark{
+  background:var(--ink);
+  color:#fff;
+  border-color:var(--ink);
+}
 
-          <a class="iconcard" href="#gift" role="listitem">
-            <div class="iconcard__icon" aria-hidden="true">🎁</div>
-            <div class="iconcard__title" data-i18n="card_gift">Cadeau</div>
-            <div class="iconcard__sub" data-i18n="card_gift_sub">Un geste pour la suite</div>
-          </a>
-        </div>
-      </div>
-    </section>
+/* =========================
+   GIFT
+========================= */
+.gift{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+}
+.iban{
+  background:#fff;
+  border:1px dashed var(--line);
+  padding:20px;
+  border-radius:var(--radius-md);
+}
+.iban__label{
+  font-size:12px;
+  letter-spacing:1.4px;
+  color:var(--muted);
+}
+.iban__value{
+  font-family:monospace;
+  margin:8px 0 12px;
+}
+.toast{
+  font-size:12px;
+  color:var(--muted);
+}
 
-    <!-- DÉTAILS (maquette : texte à gauche + enveloppe à droite) -->
-    <section class="section section--details" id="details">
-      <div class="section__inner details">
-        <div class="details__left">
-          <h2 class="h2 h2--alt" data-i18n="details_title">Détails</h2>
-          <p class="lead" data-i18n="details_lead">Deux jours pour se retrouver, célébrer, et profiter pleinement de la Sicile.</p>
+/* =========================
+   FOOTER
+========================= */
+.footer{
+  padding:40px 20px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+}
 
-          <div class="timeline">
-            <article class="tl" id="ceremony">
-              <div class="tl__kicker" data-i18n="day1_kicker">Jour 1 — Samedi 06 juin 2026</div>
-
-              <div class="tl__item">
-                <div class="tl__time">11:30</div>
-                <div class="tl__body">
-                  <div class="tl__title" data-i18n="d1_cer_title">Cérémonie religieuse</div>
-                  <div class="tl__place" data-i18n="d1_cer_place">Duomo di Siracusa, Ortigia</div>
-                  <a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Duomo+di+Siracusa" data-i18n="map_open">Ouvrir sur Google Maps</a>
-                </div>
-              </div>
-
-              <div class="tl__item">
-                <div class="tl__time">13:00</div>
-                <div class="tl__body">
-                  <div class="tl__title" data-i18n="d1_ape_title">Aperitivo / Rinfresco</div>
-                  <div class="tl__place" data-i18n="d1_ape_place">Caffè Archimede</div>
-                  <a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Caff%C3%A8+Archimede+Siracusa" data-i18n="map_open">Ouvrir sur Google Maps</a>
-                </div>
-              </div>
-
-              <div class="tl__item">
-                <div class="tl__time">15:00</div>
-                <div class="tl__body">
-                  <div class="tl__title" data-i18n="d1_walk_title">Promenade à Ortigia</div>
-                  <div class="tl__place" data-i18n="d1_walk_place">Découvrir la ville ensemble</div>
-                </div>
-              </div>
-
-              <div class="tl__item" id="reception">
-                <div class="tl__time">17:30</div>
-                <div class="tl__body">
-                  <div class="tl__title" data-i18n="d1_rec_title">Réception</div>
-                  <div class="tl__place" data-i18n="d1_rec_place">Villa Biviere Borghese, Lentini</div>
-                  <a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Villa+Biviere+Borghese+Lentini" data-i18n="map_open">Ouvrir sur Google Maps</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="tl">
-              <div class="tl__kicker" data-i18n="day2_kicker">Jour 2 — Dimanche</div>
-              <div class="tl__item">
-                <div class="tl__time">14:00</div>
-                <div class="tl__body">
-                  <div class="tl__title" data-i18n="d2_title">Aperitivo Italiano</div>
-                  <div class="tl__place" data-i18n="d2_place">Villa Nunziatina</div>
-                  <a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Villa+Nunziatina" data-i18n="map_open">Ouvrir sur Google Maps</a>
-                </div>
-              </div>
-
-              <p class="note" data-i18n="d2_note">Horaires et détails logistiques seront précisés à l’approche du week-end.</p>
-            </article>
-          </div>
-        </div>
-
-        <aside class="details__right" aria-hidden="true">
-          <img class="details__art" src="assets/images/details-envelope.jpg" alt="" loading="lazy" decoding="async">
-        </aside>
-      </div>
-    </section>
-
-    <!-- VOYAGE & SÉJOUR -->
-    <section class="section section--alt" id="travel">
-      <div class="section__inner">
-        <h2 class="h2" data-i18n="travel_title">Voyage & séjour</h2>
-        <p class="lead" data-i18n="travel_lead">Pour vivre ce week-end sereinement, nous recommandons d’arriver la veille.</p>
-
-        <div class="grid2">
-          <article class="card">
-            <h3 class="h3" data-i18n="travel_getting_title">Arriver</h3>
-            <ul class="list">
-              <li data-i18n="travel_li_1">Aéroport conseillé : Catane (CTA)</li>
-              <li><a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Catania+Airport" data-i18n="map_open">Ouvrir sur Google Maps</a></li>
-              <li data-i18n="travel_li_2">Location de voiture recommandée dès l’arrivée (pensez à réserver)</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3 class="h3" data-i18n="travel_stay_title">Se loger</h3>
-            <ul class="list">
-              <li data-i18n="stay_li_1">Lentini conseillé pour être au plus près de la réception</li>
-              <li data-i18n="stay_li_2">Badiula : tarifs préférentiels avec le code “WeddingAK” (jusqu’au 31 mars 2026)</li>
-            </ul>
-          </article>
-        </div>
-
-        <p class="note" data-i18n="kids_note">
-          Nous aimons beaucoup vos enfants. Pour ce week-end, nous avons choisi une célébration réservée aux adultes, sans service de garde sur place.
-        </p>
-      </div>
-    </section>
-
-    <!-- RSVP -->
-    <section class="section" id="rsvp">
-      <div class="section__inner">
-        <h2 class="h2" data-i18n="rsvp_title">RSVP</h2>
-        <p class="lead" data-i18n="rsvp_lead">Merci de confirmer votre présence avant le 01/04/2026.</p>
-
-        <div class="rsvpRow">
-          <a class="btn btn--dark" target="_blank" rel="noopener" href="https://forms.gle/KiUemn5CTQhzXHHbA" data-i18n="rsvp_btn">Ouvrir le formulaire</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CADEAU (UX incitatif + copie IBAN) -->
-    <section class="section section--gift" id="gift">
-      <div class="section__inner">
-        <h2 class="h2" data-i18n="gift_title">Cadeau</h2>
-        <p class="lead" data-i18n="gift_lead">
-          Votre présence est le plus beau des cadeaux. Si vous souhaitez nous accompagner pour la suite, une contribution par virement est possible.
-        </p>
-
-        <div class="giftBox">
-          <div class="giftBox__left">
-            <h3 class="h3" data-i18n="gift_box_title">Contribution par virement</h3>
-            <p class="p" data-i18n="gift_box_p">Nous avons choisi la simplicité : un virement bancaire, en toute discrétion.</p>
-            <p class="p p--soft" data-i18n="gift_box_p2">
-              Un simple geste, même symbolique, nous aidera à construire la suite de notre aventure.
-            </p>
-          </div>
-
-          <div class="giftBox__right">
-            <div class="iban">
-              <div class="iban__label">IBAN</div>
-              <div class="iban__value" id="ibanValue">FR76 XXXX XXXX XXXX XXXX XXXX XXX</div>
-              <button class="btn" type="button" id="copyIban" data-i18n="copy_iban">Copier</button>
-            </div>
-            <div class="toast" id="toast" aria-live="polite"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <p class="footer__p" data-i18n="footer">© Alice & Kevin · 2026</p>
-    </footer>
-  </main>
-
-  <script src="app.js"></script>
-</body>
-</html>
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:900px){
+  .details{grid-template-columns:1fr}
+  .gift{grid-template-columns:1fr}
+  .cta-panel{flex-direction:column;text-align:center}
+}
