@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alice & Kevin — Notre histoire</title>
-  <meta name="description" content="Notre histoire — Alice & Kevin" />
+  <meta name="description" content="Notre histoire — quelques souvenirs en images." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,75 +14,83 @@
 </head>
 
 <body>
-  <header class="sitebar" aria-label="Navigation">
-    <button id="navToggle" class="sitebar__burger" type="button" aria-expanded="false" aria-controls="navPanel" aria-label="Menu">
-      <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
+  <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
 
-    <nav class="sitebar__nav" aria-label="Navigation principale">
-      <a class="sitebar__link is-current" href="story.html" data-i18n="nav_story">Notre histoire</a>
-      <a class="sitebar__link" href="details.html" data-i18n="nav_program">Programme</a>
-      <a class="sitebar__link" href="travel.html" data-i18n="nav_travel">Voyage &amp; séjour</a>
-      <a class="sitebar__link" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-      <a class="sitebar__link" href="gift.html" data-i18n="nav_gift">Cadeau</a>
-    </nav>
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <button class="menu-btn" type="button" id="menuBtn" aria-haspopup="dialog" aria-expanded="false" data-i18n="menu_open">Menu</button>
 
-    <div class="lang" aria-label="Choisir la langue">
-      <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
-      <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-      <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-    </div>
-  </header>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a class="navlink" href="index.html" data-i18n="nav_home">Accueil</a>
+        <a class="navlink is-current" href="story.html" aria-current="page" data-i18n="nav_story">Notre histoire</a>
+        <a class="navlink" href="details.html" data-i18n="nav_programme">Programme</a>
+        <a class="navlink" href="travel.html" data-i18n="nav_travel">Voyage &amp; séjour</a>
+        <a class="navlink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+        <a class="navlink" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+      </nav>
 
-  <div class="navpanel" id="navPanel" aria-hidden="true">
-    <div class="navpanel__backdrop"></div>
-    <div class="navpanel__sheet" role="dialog" aria-label="Menu">
-      <div class="navpanel__grid">
-        <a class="navpanel__link" href="story.html" data-i18n="nav_story">Notre histoire</a>
-        <a class="navpanel__link" href="details.html" data-i18n="nav_program">Programme</a>
-        <a class="navpanel__link" href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
-        <a class="navpanel__link" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-        <a class="navpanel__link" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+      <div class="lang" aria-label="Choisir la langue">
+        <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
-      <div class="navpanel__row">
-        <div class="lang" aria-label="Choisir la langue">
+    </div>
+
+    <div class="menu-panel" id="menuPanel" role="dialog" aria-modal="true" aria-label="Menu">
+      <div class="menu-panel__card">
+        <div class="menu-panel__top">
+          <div class="menu-panel__title" data-i18n="menu_title">Menu</div>
+          <button class="menu-close" type="button" id="menuClose" data-i18n="menu_close">Fermer</button>
+        </div>
+        <div class="menu-panel__grid">
+          <a class="menulink" href="index.html" data-i18n="nav_home">Accueil</a>
+          <a class="menulink is-current" href="story.html" data-i18n="nav_story">Notre histoire</a>
+          <a class="menulink" href="details.html" data-i18n="nav_programme">Programme</a>
+          <a class="menulink" href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
+          <a class="menulink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+          <a class="menulink" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+        </div>
+        <div class="menu-panel__langs" aria-label="Choisir la langue">
           <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
           <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
           <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
         </div>
       </div>
     </div>
-  </div>
+  </header>
 
-  <main class="page">
-    <section class="section">
-      <div class="section__inner">
-        <h1 class="h1" data-i18n="story_title">Notre histoire</h1>
-        <p class="p" data-i18n="story_lead">
-          Quelques images pour raconter, avec simplicité, notre chemin jusqu’à ce week-end en Sicile.
-        </p>
-
-        <div class="panel">
-          <div class="gallery" aria-label="Galerie photos">
-            <div class="gallery__row gallery__row--top">
-              <img class="gimg" src="assets/hero-couple.png" alt="" loading="lazy">
-              <img class="gimg" src="assets/hero-couple.png" alt="" loading="lazy">
-              <img class="gimg" src="assets/hero-couple.png" alt="" loading="lazy">
-              <img class="gimg" src="assets/hero-couple.png" alt="" loading="lazy">
-            </div>
-            <div class="gallery__row gallery__row--bottom">
-              <img class="gimg" src="assets/hero-couple.png" alt="" loading="lazy">
-              <img class="gimg" src="assets/hero-couple.png" alt="" loading="lazy">
-              <img class="gimg" src="assets/hero-couple.png" alt="" loading="lazy">
-            </div>
-          </div>
-        </div>
-
-        <footer class="footer">
-          <p class="footer__p">© Alice &amp; Kevin · 2026</p>
-        </footer>
+  <main id="content" class="page">
+    <section class="banner banner--story" aria-label="Notre histoire">
+      <div class="banner__overlay"></div>
+      <div class="banner__inner">
+        <div class="banner__kicker" data-i18n="story_kicker">Notre histoire</div>
+        <h1 class="banner__title" data-i18n="story_title">Notre histoire</h1>
+        <p class="banner__lead" data-i18n="story_lead">Quelques souvenirs, simplement.</p>
       </div>
     </section>
+
+    <section class="section">
+      <div class="section__inner">
+        <div class="panel">
+          <div class="story-grid story-grid--top">
+            <img class="story-img" src="assets/hero-couple.png" alt="Alice & Kevin — souvenir 1" loading="lazy">
+            <img class="story-img" src="assets/hero-couple.png" alt="Alice & Kevin — souvenir 2" loading="lazy">
+            <img class="story-img" src="assets/hero-couple.png" alt="Alice & Kevin — souvenir 3" loading="lazy">
+            <img class="story-img" src="assets/hero-couple.png" alt="Alice & Kevin — souvenir 4" loading="lazy">
+          </div>
+
+          <div class="story-grid story-grid--bottom">
+            <img class="story-img" src="assets/hero-couple.png" alt="Alice & Kevin — souvenir 5" loading="lazy">
+            <img class="story-img" src="assets/hero-couple.png" alt="Alice & Kevin — souvenir 6" loading="lazy">
+            <img class="story-img" src="assets/hero-couple.png" alt="Alice & Kevin — souvenir 7" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
+    </footer>
   </main>
 
   <script src="app.js"></script>
