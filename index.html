@@ -3,37 +3,43 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Alice & Kevin — Mariage en Sicile — Syracuse, Sicile — Italie" />
+  <title>Alice & Kevin — Mariage en Sicile</title>
+  <meta name="description" content="Invitation de mariage — Alice & Kevin — Syracuse, Sicile" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body data-title-key="title_index">
   <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
 
   <div class="lang" aria-label="Choisir la langue">
-    <button class="lang__btn" type="button" data-lang="fr" aria-pressed="false">FR</button>
+    <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
     <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
     <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
   </div>
 
   <main id="content" class="page">
     <header class="hero" role="banner">
-      <h1 class="sr-only" data-i18n="seo_h1">Alice &amp; Kevin — Mariage en Sicile</h1>
-
       <div class="hero__media" aria-hidden="true">
         <img class="hero__img" src="assets/hero-couple.jpg" alt="" loading="eager">
       </div>
 
       <div class="hero__text">
-        <div class="hero__title">Alice &amp; Kevin</div>
+        <h1 class="hero__title">
+          <span data-i18n="hero_names">Alice &amp; Kevin</span>
+          <span class="hero__titleSub" data-i18n="hero_h1_suffix">— Mariage en Sicile</span>
+        </h1>
 
-        <p class="hero__baseline" data-i18n="hero_baseline">
+        <p class="hero__honor" data-i18n="hero_honor">
           ont l’honneur de vous convier à la célébration de leur union
         </p>
 
-        <p class="hero__meta">
-          <span data-i18n="hero_date">Samedi 6 juin 2026</span> — <span data-i18n="hero_place">Syracuse, Sicile — Italie</span>
-        </p>
+        <p class="hero__meta" data-i18n="hero_dateplace">Samedi 6 juin 2026</p>
+        <p class="hero__meta" data-i18n="hero_city">Syracuse, Sicile — Italie</p>
 
         <nav class="hero__nav" aria-label="Navigation principale">
           <a class="navlink is-current" href="index.html" aria-current="page" data-i18n="nav_home">Notre mariage</a>
@@ -47,7 +53,7 @@
 
     <section class="section">
       <div class="section__inner section__inner--center">
-        <h2 class="script" data-i18n="home_title">Notre mariage</h2>
+        <h2 class="h2" data-i18n="home_h2">Notre mariage</h2>
 
         <p class="lead" data-i18n="home_p1">
           Nous serions profondément honorés de vous accueillir en Sicile afin de partager avec vous ces deux journées de célébration, entourés de nos familles et de nos amis venus du monde entier.
@@ -56,8 +62,8 @@
           Ce mariage en Sicile est pour nous l’occasion de réunir celles et ceux qui nous sont chers dans un cadre chargé d’histoire, de lumière et d’élégance.
         </p>
 
-        <div class="cards">
-          <a class="card" href="details.html#ceremony">
+        <div class="cards" aria-label="Accès rapide">
+          <a class="card" href="details.html">
             <div class="card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" class="icon">
                 <path d="M6 20V10a6 6 0 0 1 12 0v10" />
@@ -65,24 +71,23 @@
                 <path d="M8 20v-8m8 8v-8" />
               </svg>
             </div>
-            <div class="card__title" data-i18n="card_ceremony">Cérémonie</div>
+            <div class="card__title" data-i18n="card_ceremony">Cérémonie religieuse</div>
             <div class="card__sub" data-i18n="card_ceremony_sub">Duomo di Siracusa — Ortigia</div>
           </a>
 
-          <!-- IMPORTANT: on met le domaine en avant via la page dédiée -->
           <a class="card" href="biviere.html">
             <div class="card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" class="icon">
-                <path d="M8 3h8l-1 7a4 4 0 0 1-6 0L8 3Z" />
-                <path d="M12 10v8" />
-                <path d="M8 22h8" />
+                <path d="M3 21h18" />
+                <path d="M6 21V9l6-4 6 4v12" />
+                <path d="M9 21v-7h6v7" />
               </svg>
             </div>
-            <div class="card__title" data-i18n="card_reception">Réception</div>
+            <div class="card__title" data-i18n="card_reception">Le domaine</div>
             <div class="card__sub" data-i18n="card_reception_sub">Villa Biviere Borghese — Lentini</div>
           </a>
 
-          <a class="card" href="details.html#travel">
+          <a class="card" href="travel.html">
             <div class="card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" class="icon">
                 <path d="M2 16l20-6-20-6 6 6 6 2-6 2-6 6Z" />
@@ -92,7 +97,7 @@
             <div class="card__sub" data-i18n="card_travel_sub">Arriver, se déplacer, se loger</div>
           </a>
 
-          <a class="card" href="details.html#gift">
+          <a class="card" href="gift.html">
             <div class="card__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" class="icon">
                 <path d="M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8" />
@@ -101,15 +106,15 @@
                 <path d="M7.5 7.5c0-1.7 2.5-2.8 4.5.5 2-3.3 4.5-2.2 4.5-.5 0 2-2.4 3-4.5 3s-4.5-1-4.5-3Z" />
               </svg>
             </div>
-            <div class="card__title" data-i18n="card_gift">Cadeau</div>
-            <div class="card__sub" data-i18n="card_gift_sub">Un geste pour l’avenir</div>
+            <div class="card__title" data-i18n="card_gift">Cadeau aux mariés</div>
+            <div class="card__sub" data-i18n="card_gift_sub">Contribution par virement</div>
           </a>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
+      <p class="footer__p" data-i18n="footer">© Alice &amp; Kevin · 2026</p>
     </footer>
   </main>
 
