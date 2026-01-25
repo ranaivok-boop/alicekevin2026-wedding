@@ -8,17 +8,15 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Titre : serif élégante / Corps : sans très sobre -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./style.css" />
-  <script defer src="./app.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
   <a class="skip" href="#top" data-i18n="skip">Aller au contenu</a>
 
-  <!-- Switch langues (discret) -->
+  <!-- Switch langues -->
   <div class="lang" aria-label="Choisir la langue">
     <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
     <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
@@ -26,7 +24,7 @@
   </div>
 
   <main class="page" id="top">
-    <!-- HERO (image + typo + menu = composition maquette) -->
+    <!-- HERO -->
     <header class="hero" role="banner">
       <div class="hero__inner">
         <figure class="hero__art" aria-hidden="true">
@@ -92,7 +90,7 @@
       </div>
     </section>
 
-    <!-- DÉTAILS (composition : contenu gauche / image droite) -->
+    <!-- DÉTAILS -->
     <section class="section section--details" id="details">
       <div class="section__inner details">
         <div class="details__left">
@@ -166,85 +164,15 @@
       </div>
     </section>
 
-    <!-- VOYAGE & SÉJOUR -->
-    <section class="section" id="travel">
-      <div class="section__inner">
-        <h2 class="h2" data-i18n="travel_title">Voyage & séjour</h2>
-
-        <div class="grid2">
-          <article class="panel">
-            <h3 class="h3" data-i18n="travel_arrive_title">Arriver</h3>
-            <p class="p" data-i18n="travel_arrive_p">
-              Aéroport recommandé : Catane (CTA). Location de voiture conseillée dès l’arrivée.
-            </p>
-            <ul class="list">
-              <li data-i18n="travel_arrive_li1">Catania Airport (CTA) → Syracuse ~45–60 min</li>
-              <li data-i18n="travel_arrive_li2">Europcar, Sicily by Car, Sixt… pensez à réserver à l’avance</li>
-            </ul>
-            <a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Catania+Airport" data-i18n="map_open">Ouvrir sur Google Maps</a>
-          </article>
-
-          <article class="panel">
-            <h3 class="h3" data-i18n="travel_stay_title">Se loger</h3>
-            <p class="p" data-i18n="travel_stay_p">
-              Nous recommandons de loger du côté de Lentini pour simplifier la logistique.
-            </p>
-            <div class="badgeLine">
-              <span class="badge" data-i18n="travel_stay_badge">Tarif préférentiel</span>
-              <span class="badge badge--soft" data-i18n="travel_stay_code">Code : WeddingAK (jusqu’au 31/03/2026)</span>
-            </div>
-            <p class="p p--small" data-i18n="travel_stay_place">
-              Badiula (Lentini) — une option élégante et pratique.
-            </p>
-          </article>
-        </div>
-
-        <div class="panel panel--soft">
-          <h3 class="h3" data-i18n="kids_title">À propos des enfants</h3>
-          <p class="p" data-i18n="kids_p">
-            Pour des raisons d’organisation et de sécurité (absence de garde d’enfants, domaine non surveillé), nous ne pourrons malheureusement pas accueillir les enfants. Nous espérons que vous profiterez pleinement de cette parenthèse à nos côtés.
-          </p>
-        </div>
-      </div>
-    </section>
-
     <!-- RSVP -->
     <section class="section section--alt" id="rsvp">
       <div class="section__inner">
         <h2 class="h2" data-i18n="rsvp_title">RSVP</h2>
-        <p class="lead" data-i18n="rsvp_lead">
-          Merci de confirmer votre présence avant le 01/04/2026.
-        </p>
+        <p class="lead" data-i18n="rsvp_lead">Merci de confirmer votre présence avant le 01/04/2026.</p>
 
-        <div class="rsvpBox">
-          <div class="rsvpBox__left">
-            <h3 class="h3" data-i18n="rsvp_box_title">Confirmer sa présence</h3>
-            <p class="p" data-i18n="rsvp_box_p">
-              Le formulaire inclut également la présence au Jour 2.
-            </p>
-            <a class="btn btn--dark" target="_blank" rel="noopener" href="https://forms.gle/KiUemn5CTQhzXHHbA" data-i18n="rsvp_btn">
-              Ouvrir le formulaire
-            </a>
-          </div>
-
-          <div class="rsvpBox__right">
-            <div class="embed">
-              <iframe
-                title="RSVP"
-                src="https://docs.google.com/forms/d/e/1FAIpQLSf___________/viewform?embedded=true"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
-              <p class="embed__note" data-i18n="rsvp_embed_note">
-                Si l’intégration ne s’affiche pas, utilisez le bouton « Ouvrir le formulaire ».
-              </p>
-            </div>
-          </div>
+        <div class="rsvpRow">
+          <a class="btn btn--dark" target="_blank" rel="noopener" href="https://forms.gle/KiUemn5CTQhzXHHbA" data-i18n="rsvp_btn">Ouvrir le formulaire</a>
         </div>
-
-        <p class="note note--center" data-i18n="rsvp_embed_tip">
-          (Option) Pour intégrer correctement le Google Form : remplacez l’URL “src” de l’iframe par le lien “Envoyer → &lt;&gt; Intégrer HTML”.
-        </p>
       </div>
     </section>
 
@@ -259,12 +187,7 @@
         <div class="giftBox">
           <div class="giftBox__left">
             <h3 class="h3" data-i18n="gift_box_title">Contribution par virement</h3>
-            <p class="p" data-i18n="gift_box_p">
-              Nous avons choisi la simplicité : un virement bancaire, en toute discrétion.
-            </p>
-            <p class="p p--small" data-i18n="gift_box_hint">
-              Astuce : vous pouvez copier l’IBAN en un clic.
-            </p>
+            <p class="p" data-i18n="gift_box_p">Nous avons choisi la simplicité : un virement bancaire, en toute discrétion.</p>
           </div>
 
           <div class="giftBox__right">
@@ -274,9 +197,6 @@
               <button class="btn" type="button" id="copyIban" data-i18n="copy_iban">Copier</button>
             </div>
             <div class="toast" id="toast" aria-live="polite"></div>
-            <p class="note" data-i18n="gift_legal">
-              Merci infiniment — votre geste nous touche sincèrement.
-            </p>
           </div>
         </div>
       </div>
@@ -286,5 +206,7 @@
       <p class="footer__p" data-i18n="footer">© Alice & Kevin · 2026</p>
     </footer>
   </main>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
