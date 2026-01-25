@@ -1,263 +1,272 @@
 (() => {
   const I18N = {
     fr: {
-      skip: "Aller au contenu",
-
+      // Nav
       nav_home: "Accueil",
+      nav_story: "Notre histoire",
       nav_programme: "Programme",
       nav_travel: "Voyage & séjour",
-      nav_gift: "Cadeau",
       nav_rsvp: "RSVP",
-      nav_story: "Notre histoire",
+      nav_gift: "Cadeau",
 
-      // HOME
+      // Hero (home)
       hero_baseline: "Ont l’honneur de vous convier à la célébration de leur union",
-      hero_meta: "Samedi 6 juin 2026 — Syracuse, Sicile — Italie",
+      hero_dateplace: "Samedi 6 juin 2026 — Syracuse, Sicile — Italie",
+
+      // Home intro
       home_title: "Notre mariage",
-      home_lead:
-        "Nous serons heureux de vous retrouver en Sicile pour deux journées de célébration, entre lumière, élégance et douceur méditerranéenne.",
+      home_lead: "Deux jours pour célébrer, se retrouver et savourer la Sicile — avec élégance, douceur et lumière.",
 
-      home_card_programme: "Programme",
-      home_card_programme_sub: "Cérémonie & réception",
-      home_card_travel: "Voyage & séjour",
-      home_card_travel_sub: "Arriver, se déplacer, se loger",
-      home_card_gift: "Cadeau",
-      home_card_gift_sub: "Une attention pour la suite",
-      home_card_story: "Notre histoire",
-      home_card_story_sub: "Quelques souvenirs, simplement",
+      // Cards order (story, programme, travel, rsvp, gift)
+      card_story: "Notre histoire",
+      card_story_sub: "Quelques souvenirs, simplement",
+      card_programme: "Programme",
+      card_programme_sub: "Cérémonie & domaine",
+      card_travel: "Voyage & séjour",
+      card_travel_sub: "Arriver, se déplacer, se loger",
+      card_rsvp: "RSVP",
+      card_rsvp_sub: "Confirmer votre présence",
+      card_gift: "Cadeau",
+      card_gift_sub: "Une attention pour la suite",
 
-      // PROGRAMME (details.html)
+      // Programme page
       programme_title: "Programme",
-      programme_day1: "Samedi 6 juin 2026",
-      programme_ceremony: "Cérémonie religieuse",
-      programme_aperitivo: "Aperitivo italien",
-      programme_walk: "Promenade à Ortigia",
-      programme_walk_sub: "Découverte libre du centre historique",
-      programme_reception: "Réception",
-      programme_domain: "Le domaine",
-      programme_domain_text:
-        "Villa Biviere Borghese, à Lentini — un lieu d’exception pour célébrer ensemble, jusqu’au bout de la nuit.",
-      programme_open_maps: "Ouvrir sur Google Maps",
+      programme_lead:
+        "Un déroulé pensé pour vous laisser le temps : célébrer, flâner à Ortigia, puis rejoindre le domaine pour une soirée à la campagne.",
+      day1_title: "Samedi 6 juin 2026",
+      day2_title: "Dimanche 7 juin 2026",
+      ceremony_title: "Cérémonie religieuse",
+      aperitivo_title: "Aperitivo italien",
+      walk_title: "Promenade à Ortigia",
+      walk_place: "Découverte libre du centre historique",
+      reception_title: "Réception au domaine",
+      sunday_title: "Apéritivo Italiano",
+      sunday_note:
+        "Une atmosphère détendue, conviviale et typiquement sicilienne — à partir de 14h00 et jusqu’au soir.",
+      open_maps: "Ouvrir sur Google Maps",
 
-      programme_day2: "Dimanche 7 juin 2026",
-      programme_day2_title: "Apéritivo Italiano",
-      programme_day2_text:
-        "Nous serons ravis de prolonger les festivités dans une atmosphère détendue, conviviale et typiquement sicilienne.",
-      programme_day2_time: "À partir de 14h00 et jusqu’au soir",
+      // Domaine block
+      venue_title: "Le domaine",
+      venue_text:
+        "La réception se tiendra à la Villa Biviere Borghese, à Lentini — un cadre élégant et végétal, idéal pour vivre la soirée au rythme sicilien.",
 
-      // TRAVEL
+      // Travel page
       travel_title: "Voyage & séjour",
-      travel_intro:
-        "Nous sommes heureux de vous accueillir à Syracuse. Voici l’essentiel pour organiser votre venue en toute sérénité.",
-      travel_airport_title: "Aéroport recommandé",
-      travel_airport_text: "Aéroport de Catane (CTA).",
-      travel_car_title: "Location de voiture",
-      travel_car_text:
+      travel_lead:
+        "Nos invités viendront des quatre coins du monde — et nous serons très heureux de vous accueillir à Syracuse.",
+      airport_title: "Aéroport recommandé",
+      airport_text: "Aéroport de Catane (CTA).",
+      car_title: "Location de voiture",
+      car_text:
         "La location d’un véhicule est vivement recommandée dès votre arrivée à l’aéroport de Catane (Europcar, Sicily by Car, Sixt — réservation anticipée conseillée).",
-      travel_stay_title: "Hébergement conseillé",
-      travel_stay_text:
+      stay_title: "Hébergement conseillé",
+      stay_text:
         "Lentini — Badiula. Tarifs préférentiels avec le code “WeddingAK” (valable jusqu’au 31 mars 2026).",
+      travel_note:
+        "À Ortigia : zones à circulation limitée — privilégiez parking + marche.",
 
-      // RSVP
+      // RSVP page
       rsvp_title: "RSVP",
-      rsvp_text:
-        "Merci de confirmer votre présence via le formulaire avant le 1ᵉʳ avril 2026. Le formulaire vous permet aussi d’indiquer votre participation au dimanche.",
-      rsvp_cta: "Confirmer ma présence",
+      rsvp_lead:
+        "Merci de confirmer votre présence avant le 1ᵉʳ avril 2026. Le formulaire permet aussi d’indiquer votre participation au dimanche.",
+      rsvp_form_title: "Confirmation de présence",
       rsvp_alt:
         "Si le formulaire ne s’affiche pas sur votre appareil, vous pouvez l’ouvrir dans un nouvel onglet.",
+      rsvp_open: "Ouvrir le formulaire",
 
-      // KIDS (sur travel)
-      kids_title: "Enfants",
-      kids_text:
-        "Afin de garantir une organisation harmonieuse et permettre à chacun de profiter pleinement, nous avons choisi de célébrer notre mariage sans enfants. Le domaine ne disposant pas de service de garde, cette décision facilite aussi le travail de nos équipes. Merci sincèrement de votre compréhension.",
-
-      // GIFT
+      // Gift page
       gift_title: "Cadeau",
-      gift_text:
-        "Votre présence à nos côtés sera, à elle seule, le plus précieux des cadeaux. Si vous souhaitiez nous témoigner une attention, une contribution à notre avenir commun serait profondément appréciée.",
-      gift_text_2:
+      gift_lead:
+        "Votre présence à nos côtés sera, à elle seule, le plus précieux des cadeaux. Si vous souhaitez nous témoigner une attention, une contribution à notre avenir commun serait profondément appréciée.",
+      gift_note:
         "Les contributions s’effectuent exclusivement par virement bancaire, via l’IBAN indiqué ci-dessous.",
       copy_iban: "Copier l’IBAN",
       copied: "IBAN copié.",
       copy_fail: "Copie impossible — copiez manuellement.",
 
-      // STORY
+      // Story page
       story_title: "Notre histoire",
-      story_intro:
-        "Quelques instants qui comptent, pour raconter simplement notre chemin — en images.",
-      story_caption_1: "Un premier chapitre",
-      story_caption_2: "La douceur des jours",
-      story_caption_3: "Vers la Sicile"
+      story_lead:
+        "Quelques images pour raconter, simplement, ce qui nous a menés jusqu’ici.",
+      story_hint:
+        "Ajoutez vos photos dans la page (modifiables à tout moment).",
+
+      // Footer
+      footer: "© Alice & Kevin · 2026"
     },
 
     it: {
-      skip: "Vai al contenuto",
-
       nav_home: "Home",
+      nav_story: "La nostra storia",
       nav_programme: "Programma",
       nav_travel: "Viaggio & soggiorno",
-      nav_gift: "Regalo",
       nav_rsvp: "RSVP",
-      nav_story: "La nostra storia",
+      nav_gift: "Regalo",
 
-      hero_baseline: "hanno l’onore di invitarvi alla celebrazione della loro unione",
-      hero_meta: "Sabato 6 giugno 2026 — Siracusa, Sicilia — Italia",
+      hero_baseline: "Hanno l’onore di invitarvi alla celebrazione della loro unione",
+      hero_dateplace: "Sabato 6 giugno 2026 — Siracusa, Sicilia — Italia",
+
       home_title: "Il nostro matrimonio",
       home_lead:
-        "Saremo felici di ritrovarvi in Sicilia per due giornate di festa, tra luce, eleganza e dolcezza mediterranea.",
+        "Due giorni per celebrare, ritrovarsi e vivere la Sicilia — con eleganza, dolcezza e luce.",
 
-      home_card_programme: "Programma",
-      home_card_programme_sub: "Cerimonia & ricevimento",
-      home_card_travel: "Viaggio & soggiorno",
-      home_card_travel_sub: "Arrivo, spostamenti, alloggio",
-      home_card_gift: "Regalo",
-      home_card_gift_sub: "Un gesto per il futuro",
-      home_card_story: "La nostra storia",
-      home_card_story_sub: "Qualche ricordo, con semplicità",
+      card_story: "La nostra storia",
+      card_story_sub: "Qualche ricordo, semplicemente",
+      card_programme: "Programma",
+      card_programme_sub: "Cerimonia & location",
+      card_travel: "Viaggio & soggiorno",
+      card_travel_sub: "Arrivare, spostarsi, alloggiare",
+      card_rsvp: "RSVP",
+      card_rsvp_sub: "Confermare la presenza",
+      card_gift: "Regalo",
+      card_gift_sub: "Un gesto per il futuro",
 
       programme_title: "Programma",
-      programme_day1: "Sabato 6 giugno 2026",
-      programme_ceremony: "Cerimonia religiosa",
-      programme_aperitivo: "Aperitivo italiano",
-      programme_walk: "Passeggiata a Ortigia",
-      programme_walk_sub: "Scoperta libera del centro storico",
-      programme_reception: "Ricevimento",
-      programme_domain: "La location",
-      programme_domain_text:
-        "Villa Biviere Borghese, a Lentini — un luogo d’eccezione per festeggiare insieme fino a tarda notte.",
-      programme_open_maps: "Apri su Google Maps",
+      programme_lead:
+        "Un ritmo pensato per voi: celebrare, passeggiare a Ortigia, poi raggiungere la location per una serata in campagna.",
+      day1_title: "Sabato 6 giugno 2026",
+      day2_title: "Domenica 7 giugno 2026",
+      ceremony_title: "Cerimonia religiosa",
+      aperitivo_title: "Aperitivo italiano",
+      walk_title: "Passeggiata a Ortigia",
+      walk_place: "Scoperta libera del centro storico",
+      reception_title: "Ricevimento in location",
+      sunday_title: "Apéritivo Italiano",
+      sunday_note:
+        "Un’atmosfera rilassata e conviviale — dalle 14:00 fino a sera.",
+      open_maps: "Apri su Google Maps",
 
-      programme_day2: "Domenica 7 giugno 2026",
-      programme_day2_title: "Apéritivo Italiano",
-      programme_day2_text:
-        "Saremo felici di prolungare i festeggiamenti in un’atmosfera rilassata, conviviale e autenticamente siciliana.",
-      programme_day2_time: "Dalle ore 14:00 fino a sera",
+      venue_title: "La location",
+      venue_text:
+        "Il ricevimento si terrà a Villa Biviere Borghese, a Lentini — un contesto elegante e naturale, perfetto per una serata in stile siciliano.",
 
       travel_title: "Viaggio & soggiorno",
-      travel_intro:
-        "Siamo lieti di accogliervi a Siracusa. Ecco l’essenziale per organizzare il vostro viaggio con serenità.",
-      travel_airport_title: "Aeroporto consigliato",
-      travel_airport_text: "Aeroporto di Catania (CTA).",
-      travel_car_title: "Noleggio auto",
-      travel_car_text:
-        "Il noleggio di un’auto è fortemente consigliato all’arrivo a Catania (Europcar, Sicily by Car, Sixt — prenotazione anticipata consigliata).",
-      travel_stay_title: "Alloggio consigliato",
-      travel_stay_text:
+      travel_lead:
+        "I nostri ospiti arriveranno da tutto il mondo — e saremo felici di accogliervi a Siracusa.",
+      airport_title: "Aeroporto consigliato",
+      airport_text: "Aeroporto di Catania (CTA).",
+      car_title: "Noleggio auto",
+      car_text:
+        "Il noleggio di un’auto è fortemente consigliato fin dall’arrivo a Catania (Europcar, Sicily by Car, Sixt — prenotazione anticipata consigliata).",
+      stay_title: "Alloggio consigliato",
+      stay_text:
         "Lentini — Badiula. Tariffe preferenziali con il codice “WeddingAK” (valido fino al 31 marzo 2026).",
+      travel_note:
+        "A Ortigia: ZTL — meglio parcheggiare e camminare.",
 
       rsvp_title: "RSVP",
-      rsvp_text:
-        "Vi preghiamo di confermare la vostra presenza tramite il modulo entro il 1° aprile 2026. Il modulo consente anche di indicare la partecipazione alla domenica.",
-      rsvp_cta: "Confermare la presenza",
+      rsvp_lead:
+        "Vi preghiamo di confermare la vostra presenza entro il 1° aprile 2026. Il modulo include anche la partecipazione alla domenica.",
+      rsvp_form_title: "Conferma di partecipazione",
       rsvp_alt:
         "Se il modulo non si visualizza sul vostro dispositivo, potete aprirlo in una nuova scheda.",
-
-      kids_title: "Bambini",
-      kids_text:
-        "Per garantire un’organizzazione armoniosa e permettere a tutti di godere appieno, abbiamo scelto di celebrare il nostro matrimonio senza bambini. La location non dispone di babysitting e questa scelta facilita anche il lavoro dei nostri team. Grazie per la vostra comprensione.",
+      rsvp_open: "Apri il modulo",
 
       gift_title: "Regalo",
-      gift_text:
+      gift_lead:
         "La vostra presenza sarà per noi il dono più prezioso. Se desideraste farci un pensiero, una contribuzione al nostro futuro insieme sarà sinceramente apprezzata.",
-      gift_text_2:
+      gift_note:
         "Le contribuzioni avvengono esclusivamente tramite bonifico bancario, utilizzando l’IBAN indicato di seguito.",
-      copy_iban: "Copia IBAN",
+      copy_iban: "Copia l’IBAN",
       copied: "IBAN copiato.",
       copy_fail: "Copia non riuscita — copia manualmente.",
 
       story_title: "La nostra storia",
-      story_intro:
-        "Alcuni momenti che contano, per raccontare con semplicità il nostro percorso — in immagini.",
-      story_caption_1: "Un primo capitolo",
-      story_caption_2: "La dolcezza dei giorni",
-      story_caption_3: "Verso la Sicilia"
+      story_lead:
+        "Qualche immagine per raccontare, semplicemente, il nostro percorso.",
+      story_hint:
+        "Aggiungete le vostre foto nella pagina (modificabile in qualsiasi momento).",
+
+      footer: "© Alice & Kevin · 2026"
     },
 
     en: {
-      skip: "Skip to content",
-
       nav_home: "Home",
+      nav_story: "Our story",
       nav_programme: "Programme",
       nav_travel: "Travel & stay",
-      nav_gift: "Gift",
       nav_rsvp: "RSVP",
-      nav_story: "Our story",
+      nav_gift: "Gift",
 
       hero_baseline: "request the honour of your presence at the celebration of their union",
-      hero_meta: "Saturday, June 6th, 2026 — Syracuse, Sicily — Italy",
+      hero_dateplace: "Saturday, June 6th, 2026 — Syracuse, Sicily — Italy",
+
       home_title: "Our wedding",
       home_lead:
-        "We’ll be delighted to welcome you to Sicily for two days of celebration, filled with light, elegance and Mediterranean softness.",
+        "Two days to celebrate, reunite, and savour Sicily — with elegance, softness, and light.",
 
-      home_card_programme: "Programme",
-      home_card_programme_sub: "Ceremony & reception",
-      home_card_travel: "Travel & stay",
-      home_card_travel_sub: "Arrival, transport, accommodation",
-      home_card_gift: "Gift",
-      home_card_gift_sub: "A gesture for what’s next",
-      home_card_story: "Our story",
-      home_card_story_sub: "A few memories, simply",
+      card_story: "Our story",
+      card_story_sub: "A few memories, simply",
+      card_programme: "Programme",
+      card_programme_sub: "Ceremony & venue",
+      card_travel: "Travel & stay",
+      card_travel_sub: "Arrival, transport, accommodation",
+      card_rsvp: "RSVP",
+      card_rsvp_sub: "Confirm attendance",
+      card_gift: "Gift",
+      card_gift_sub: "A gesture for what’s next",
 
       programme_title: "Programme",
-      programme_day1: "Saturday, June 6th, 2026",
-      programme_ceremony: "Religious Ceremony",
-      programme_aperitivo: "Italian Aperitivo",
-      programme_walk: "Walk through Ortigia",
-      programme_walk_sub: "Free time to explore the historic centre",
-      programme_reception: "Reception",
-      programme_domain: "The venue",
-      programme_domain_text:
-        "Villa Biviere Borghese, Lentini — an exceptional place to celebrate together, late into the night.",
-      programme_open_maps: "Open in Google Maps",
+      programme_lead:
+        "A gentle rhythm: celebrate, wander through Ortigia, then head to the venue for an evening in the countryside.",
+      day1_title: "Saturday, June 6th, 2026",
+      day2_title: "Sunday, June 7th, 2026",
+      ceremony_title: "Religious ceremony",
+      aperitivo_title: "Italian aperitivo",
+      walk_title: "Walk through Ortigia",
+      walk_place: "Free time to explore the historic centre",
+      reception_title: "Reception at the venue",
+      sunday_title: "Italian Aperitivo",
+      sunday_note:
+        "A relaxed, convivial atmosphere — from 2:00 PM until the evening.",
+      open_maps: "Open in Google Maps",
 
-      programme_day2: "Sunday, June 7th, 2026",
-      programme_day2_title: "Italian Aperitivo",
-      programme_day2_text:
-        "We’ll be delighted to extend the celebration in a relaxed, convivial and authentically Sicilian atmosphere.",
-      programme_day2_time: "From 2:00 PM until the evening",
+      venue_title: "The venue",
+      venue_text:
+        "The reception will take place at Villa Biviere Borghese, in Lentini — an elegant, green setting, perfect for a true Sicilian evening.",
 
       travel_title: "Travel & stay",
-      travel_intro:
-        "We’re delighted to welcome you to Syracuse. Here is the essential information to plan your trip with ease.",
-      travel_airport_title: "Recommended airport",
-      travel_airport_text: "Catania Airport (CTA).",
-      travel_car_title: "Car rental",
-      travel_car_text:
+      travel_lead:
+        "Our guests will be travelling from all over the world — and we can’t wait to welcome you to Syracuse.",
+      airport_title: "Recommended airport",
+      airport_text: "Catania Airport (CTA).",
+      car_title: "Car rental",
+      car_text:
         "Renting a car is strongly recommended upon arrival in Catania (Europcar, Sicily by Car, Sixt — early booking advised).",
-      travel_stay_title: "Recommended accommodation",
-      travel_stay_text:
-        "Lentini — Badiula. Preferential rates with the code “WeddingAK” (valid until March 31st, 2026).",
+      stay_title: "Recommended accommodation",
+      stay_text:
+        "Lentini — Badiula. Preferential rates with code “WeddingAK” (valid until March 31st, 2026).",
+      travel_note:
+        "In Ortigia: limited traffic zones — park and walk.",
 
       rsvp_title: "RSVP",
-      rsvp_text:
-        "Kindly confirm your attendance using the form by April 1st, 2026. The form also allows you to indicate your attendance on Sunday.",
-      rsvp_cta: "RSVP",
+      rsvp_lead:
+        "Kindly confirm your attendance by April 1st, 2026. The form also includes attendance for Sunday.",
+      rsvp_form_title: "Attendance confirmation",
       rsvp_alt:
         "If the form doesn’t display on your device, you can open it in a new tab.",
-
-      kids_title: "Children",
-      kids_text:
-        "To ensure a smooth organisation and allow everyone to fully enjoy the celebration, we have chosen to celebrate without children. As the venue does not offer childcare services, this also helps our teams work smoothly. Thank you very much for your understanding.",
+      rsvp_open: "Open the form",
 
       gift_title: "Wedding gift",
-      gift_text:
+      gift_lead:
         "Your presence is the greatest gift we could receive. Should you wish to honour us with a contribution, a gesture towards our future together would be sincerely appreciated.",
-      gift_text_2:
+      gift_note:
         "Contributions are made exclusively via bank transfer, using the IBAN provided below.",
       copy_iban: "Copy IBAN",
       copied: "IBAN copied.",
       copy_fail: "Copy failed — please copy manually.",
 
       story_title: "Our story",
-      story_intro:
-        "A few moments that matter, to share our journey — simply, in pictures.",
-      story_caption_1: "A first chapter",
-      story_caption_2: "The sweetness of days",
-      story_caption_3: "Towards Sicily"
+      story_lead:
+        "A few images to tell, simply, the journey that brought us here.",
+      story_hint:
+        "Add your photos on this page (editable anytime).",
+
+      footer: "© Alice & Kevin · 2026"
     }
   };
 
-  const langButtons = document.querySelectorAll(".lang__btn");
+  const langButtons = document.querySelectorAll("[data-lang]");
   const getSaved = () => localStorage.getItem("ak_lang") || "fr";
 
   const applyLang = (lang) => {
@@ -278,6 +287,7 @@
     localStorage.setItem("ak_lang", lang);
   };
 
+  // Init language
   applyLang(getSaved());
   langButtons.forEach((btn) => btn.addEventListener("click", () => applyLang(btn.dataset.lang)));
 
@@ -304,43 +314,6 @@
       } catch {
         toastMsg(dict.copy_fail);
       }
-    });
-  }
-
-  // Story lightbox (simple & premium)
-  const lb = document.getElementById("lightbox");
-  if (lb) {
-    const lbImg = lb.querySelector(".lightbox__img");
-    const lbCap = lb.querySelector(".lightbox__cap");
-    const closeBtn = lb.querySelector("[data-lb-close]");
-
-    const open = (src, cap) => {
-      lb.classList.add("is-open");
-      lb.setAttribute("aria-hidden", "false");
-      lbImg.src = src;
-      lbCap.textContent = cap || "";
-      document.documentElement.classList.add("no-scroll");
-    };
-
-    const close = () => {
-      lb.classList.remove("is-open");
-      lb.setAttribute("aria-hidden", "true");
-      lbImg.src = "";
-      lbCap.textContent = "";
-      document.documentElement.classList.remove("no-scroll");
-    };
-
-    document.querySelectorAll("[data-lb-src]").forEach((card) => {
-      card.addEventListener("click", () => open(card.dataset.lbSrc, card.dataset.lbCap));
-    });
-
-    closeBtn.addEventListener("click", close);
-    lb.addEventListener("click", (e) => {
-      if (e.target === lb) close();
-    });
-
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") close();
     });
   }
 })();
