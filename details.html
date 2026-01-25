@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alice & Kevin — Détails</title>
-  <meta name="description" content="Détails — programme, accès, séjour, cadeau" />
+  <title>Alice & Kevin — Déroulé · 6–7 juin 2026</title>
+  <meta name="description" content="Programme du mariage — samedi 6 juin et dimanche 7 juin 2026" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body data-title-key="title_details">
   <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
 
   <div class="lang" aria-label="Choisir la langue">
@@ -23,10 +23,18 @@
   </div>
 
   <main id="content" class="page">
-    <header class="topbar">
-      <div class="topbar__inner">
-        <a class="topbar__brand" href="index.html">Alice &amp; Kevin</a>
-        <nav class="topbar__nav" aria-label="Navigation principale">
+    <header class="hero" role="banner">
+      <div class="hero__media" aria-hidden="true">
+        <img class="hero__img" src="assets/hero-couple.jpg" alt="" loading="eager">
+      </div>
+
+      <div class="hero__text">
+        <h1 class="h1">
+          <span data-i18n="details_h1">Déroulé</span>
+          <span class="h1__suffix" data-i18n="details_h1_suffix">· Samedi 6 juin 2026</span>
+        </h1>
+
+        <nav class="hero__nav" aria-label="Navigation principale">
           <a class="navlink" href="index.html" data-i18n="nav_home">Notre mariage</a>
           <span class="navdot">•</span>
           <a class="navlink is-current" href="details.html" aria-current="page" data-i18n="nav_details">Détails</a>
@@ -38,142 +46,97 @@
 
     <section class="section">
       <div class="section__inner">
-        <h1 class="h1" data-i18n="details_title">Détails</h1>
-        <p class="lead" data-i18n="details_lead">Deux jours pour se retrouver, célébrer, et profiter pleinement de la Sicile.</p>
-
-        <!-- JOUR 1 -->
-        <div class="panel" id="ceremony">
-          <h2 class="h2" data-i18n="day1_title">Jour 1 — Samedi 06 juin 2026</h2>
-
-          <div class="timeline">
-            <div class="titem">
-              <div class="titem__time">11:30</div>
-              <div class="titem__body">
-                <div class="titem__title" data-i18n="ceremony_title">Cérémonie religieuse</div>
-                <div class="titem__place">Duomo di Siracusa, Ortigia</div>
-                <a class="maplink" href="https://www.google.com/maps?q=Duomo%20di%20Siracusa%20Ortigia&output=embed" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
-              </div>
-            </div>
-
-            <div class="titem">
-              <div class="titem__time">13:00</div>
-              <div class="titem__body">
-                <div class="titem__title" data-i18n="aperitivo_title">Aperitivo / Rinfresco</div>
-                <div class="titem__place">Café Archimede, Ortigia</div>
-                <a class="maplink" href="https://www.google.com/maps?q=Caf%C3%A8%20Archimede%20Siracusa&output=embed" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
-              </div>
-            </div>
-
-            <div class="titem">
-              <div class="titem__time">15:00</div>
-              <div class="titem__body">
-                <div class="titem__title" data-i18n="walk_title">Promenade à Ortigia</div>
-                <div class="titem__place" data-i18n="walk_place">Découverte de la ville</div>
-              </div>
-            </div>
-
-            <div class="titem" id="reception">
-              <div class="titem__time">17:30</div>
-              <div class="titem__body">
-                <div class="titem__title" data-i18n="reception_title">Réception</div>
-                <div class="titem__place">Villa Biviere Borghese, Lentini</div>
-                <a class="maplink" href="https://www.google.com/maps?q=Villa%20Biviere%20Borghese%20Lentini&output=embed" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- JOUR 2 -->
         <div class="panel">
-          <h2 class="h2" data-i18n="day2_title">Jour 2 — Dimanche 07 juin 2026</h2>
+          <h2 class="h2" data-i18n="details_day_h2">Déroulé de la journée · Samedi 6 juin 2026</h2>
+
           <div class="timeline">
             <div class="titem">
-              <div class="titem__time">14:00</div>
+              <div class="titem__time" data-i18n="d_ceremony_time">11h30</div>
               <div class="titem__body">
-                <div class="titem__title" data-i18n="day2_event">Apéritivo Italiano</div>
-                <div class="titem__place">Villa Nunziatina</div>
-                <a class="maplink" href="https://www.google.com/maps?q=Villa%20Nunziatina%20Siracusa&output=embed" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
-                <div class="note" data-i18n="day2_note">Une journée conviviale, de l’après-midi jusqu’au soir.</div>
+                <div class="titem__title" data-i18n="d_ceremony_h3">Cérémonie religieuse</div>
+                <div class="titem__place" data-i18n="d_ceremony_place">Duomo di Siracusa — Ortigia</div>
+                <a class="maplink" href="https://www.google.com/maps?q=Duomo%20di%20Siracusa%20Ortigia" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+              </div>
+            </div>
+
+            <div class="titem">
+              <div class="titem__time" data-i18n="d_aperitivo_time">13h00</div>
+              <div class="titem__body">
+                <div class="titem__title" data-i18n="d_aperitivo_h3">Aperitivo italien</div>
+                <div class="titem__place" data-i18n="d_aperitivo_place">Caffè Archimede — Ortigia</div>
+                <a class="maplink" href="https://www.google.com/maps?q=Caff%C3%A8%20Archimede%20Siracusa" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+              </div>
+            </div>
+
+            <div class="titem">
+              <div class="titem__time" data-i18n="d_walk_time">15h00</div>
+              <div class="titem__body">
+                <div class="titem__title" data-i18n="d_walk_h3">Promenade à Ortigia</div>
+                <div class="titem__place" data-i18n="d_walk_place">Découverte libre du centre historique</div>
+              </div>
+            </div>
+
+            <div class="titem">
+              <div class="titem__time" data-i18n="d_reception_time">À partir de 17h30</div>
+              <div class="titem__body">
+                <div class="titem__title" data-i18n="d_reception_h3">Réception</div>
+                <div class="titem__place" data-i18n="d_reception_place">Villa Biviere Borghese — Lentini</div>
+                <a class="maplink" href="https://www.google.com/maps?q=Villa%20Biviere%20Borghese%20Lentini" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+                <div class="note">
+                  <a class="maplink" href="biviere.html" data-i18n="d_reception_cta">Découvrir le domaine</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- ACCÈS / STAY -->
-        <div class="panel" id="travel">
-          <h2 class="h2" data-i18n="travel_title">Voyage & séjour</h2>
+        <div class="panel">
+          <h2 class="h2" data-i18n="sun_h2">Apéritivo Italiano · Dimanche 7 juin 2026</h2>
+          <p class="p" data-i18n="sun_p">
+            Le dimanche, nous serons ravis de prolonger les festivités autour d’un Apéritivo Italiano, dans une atmosphère détendue, conviviale et typiquement sicilienne.
+          </p>
+          <div class="timeline" style="margin-top:12px">
+            <div class="titem">
+              <div class="titem__time" data-i18n="sun_time">À partir de 14h00 et jusqu’au soir</div>
+              <div class="titem__body">
+                <div class="titem__title" data-i18n="sun_place">Villa Nunziatina</div>
+                <a class="maplink" href="https://www.google.com/maps?q=Villa%20Nunziatina%20Siracusa" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="panel">
+          <h2 class="h2" data-i18n="kids_h2">Enfants</h2>
+          <p class="p" data-i18n="kids_p1">
+            Afin de garantir une organisation harmonieuse et de permettre à chacun de profiter pleinement de ces journées, nous avons choisi de célébrer notre mariage sans la présence d’enfants.
+          </p>
+          <p class="p" style="margin-top:10px" data-i18n="kids_p2">
+            Le domaine ne disposant pas de service de garde, cette décision facilitera également le travail de nos équipes (photographes, vidéastes et prestataires). Nous vous remercions sincèrement de votre compréhension.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h2 class="h2">Accès complémentaires</h2>
           <div class="grid2">
             <div class="box">
-              <h3 class="h3" data-i18n="airport_title">Arriver</h3>
-              <p class="p" data-i18n="airport_text">
-                Aéroport recommandé : Catane (CTA). Nous vous conseillons de louer une voiture dès l’arrivée.
-              </p>
-              <a class="maplink" href="https://www.google.com/maps?q=Aeroporto%20di%20Catania%20CTA&output=embed" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+              <h3 class="h3" data-i18n="nav_travel">Voyage & séjour</h3>
+              <p class="p">Aéroport, location de voiture, hébergement.</p>
+              <a class="maplink" href="travel.html">Ouvrir</a>
             </div>
-
             <div class="box">
-              <h3 class="h3" data-i18n="car_title">Se déplacer</h3>
-              <ul class="ul">
-                <li data-i18n="car_li_1">Location de voiture recommandée (Europcar, Sicily by Car, Sixt… pensez à réserver à l’avance).</li>
-                <li data-i18n="car_li_2">À Ortigia : zones à circulation limitée — privilégiez parking + marche.</li>
-              </ul>
-            </div>
-
-            <div class="box">
-              <h3 class="h3" data-i18n="stay_title">Se loger</h3>
-              <p class="p" data-i18n="stay_text">
-                Logement conseillé à Lentini : Badiula — tarifs préférentiels avec le code “WeddingAK” (jusqu’au 31 mars 2026).
-              </p>
-            </div>
-
-            <div class="box">
-              <h3 class="h3" data-i18n="world_title">Invités internationaux</h3>
-              <p class="p" data-i18n="world_text">
-                Nous aurons la joie d’accueillir des invités venant de France, d’Italie, d’Angleterre, de Hong Kong, de Dubaï, de New York, du Japon, de Singapour, de Belgique, de Madagascar et d’Inde.
-              </p>
+              <h3 class="h3" data-i18n="nav_gift">Cadeau</h3>
+              <p class="p">Contribution par virement bancaire (IBAN).</p>
+              <a class="maplink" href="gift.html">Ouvrir</a>
             </div>
           </div>
-        </div>
-
-        <!-- ENFANTS -->
-        <div class="panel">
-          <h2 class="h2" data-i18n="kids_title">À propos des enfants</h2>
-          <p class="p" data-i18n="kids_text">
-            Pour préserver le rythme de la journée, faciliter le travail de nos équipes photo/vidéo, et faute de solution de garde sur place (le domaine n’étant pas surveillé),
-            nous vous remercions de venir célébrer avec nous en adultes uniquement.
-          </p>
-        </div>
-
-        <!-- CADEAU -->
-        <div class="panel" id="gift">
-          <div class="gifthead">
-            <div>
-              <h2 class="h2" data-i18n="gift_title">Cadeau</h2>
-              <p class="p" data-i18n="gift_text">
-                Votre présence est le plus beau des cadeaux. Si vous souhaitez nous accompagner pour la suite, une contribution par virement bancaire est possible.
-              </p>
-            </div>
-            <img class="giftimg" src="assets/details-envelope.jpg" alt="" loading="lazy" aria-hidden="true">
-          </div>
-
-          <div class="ibanbox">
-            <div class="ibanbox__label">IBAN</div>
-            <div class="ibanbox__value" id="ibanValue">FR76 XXXX XXXX XXXX XXXX XXXX XXX</div>
-            <button class="btn" id="copyIban" type="button" data-i18n="copy_iban">Copier</button>
-            <div class="toast" id="toast" aria-live="polite"></div>
-          </div>
-
-          <p class="note" data-i18n="gift_note">
-            (Nous affichons ici uniquement l’essentiel, avec discrétion — merci infiniment.)
-          </p>
         </div>
 
       </div>
     </section>
 
     <footer class="footer">
-      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
+      <p class="footer__p" data-i18n="footer">© Alice &amp; Kevin · 2026</p>
     </footer>
   </main>
 
