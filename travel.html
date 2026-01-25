@@ -1,1 +1,90 @@
 
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alice & Kevin — Voyage & séjour</title>
+  <meta name="description" content="Voyage et séjour — informations pratiques pour la Sicile" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body data-title-key="title_travel">
+  <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
+
+  <div class="lang" aria-label="Choisir la langue">
+    <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
+    <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+    <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+
+  <main id="content" class="page">
+    <header class="hero" role="banner">
+      <div class="hero__media" aria-hidden="true">
+        <img class="hero__img" src="assets/hero-couple.jpg" alt="" loading="eager">
+      </div>
+
+      <div class="hero__text">
+        <h1 class="h1" data-i18n="travel_h1">Voyage & séjour en Sicile</h1>
+
+        <nav class="hero__nav" aria-label="Navigation principale">
+          <a class="navlink" href="index.html" data-i18n="nav_home">Notre mariage</a>
+          <span class="navdot">•</span>
+          <a class="navlink" href="details.html" data-i18n="nav_details">Détails</a>
+          <span class="navdot">•</span>
+          <a class="navlink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="section__inner">
+        <p class="lead" data-i18n="travel_lead">
+          Nos invités viendront des quatre coins du monde — Europe, Amériques, Asie et Moyen-Orient — et nous sommes ravis de vous accueillir à Syracuse pour ce mariage en Sicile.
+        </p>
+
+        <div class="panel">
+          <div class="grid2">
+            <div class="box">
+              <h3 class="h3" data-i18n="travel_airport_h3">Aéroport recommandé</h3>
+              <p class="p" data-i18n="travel_airport_p">Aéroport de Catane (CTA)</p>
+              <a class="maplink" href="https://www.google.com/maps?q=Aeroporto%20di%20Catania%20CTA" target="_blank" rel="noopener" data-i18n="open_maps">Ouvrir sur Google Maps</a>
+            </div>
+
+            <div class="box">
+              <h3 class="h3" data-i18n="travel_car_h3">Location de voiture</h3>
+              <p class="p" data-i18n="travel_car_p">
+                La location d’un véhicule est vivement recommandée dès votre arrivée à l’aéroport de Catane. (Europcar, Sicily by Car, Sixt — réservation anticipée conseillée)
+              </p>
+            </div>
+
+            <div class="box">
+              <h3 class="h3" data-i18n="travel_stay_h3">Hébergement conseillé</h3>
+              <p class="p" data-i18n="travel_stay_p1">Lentini — Badiula</p>
+              <p class="p" style="margin-top:8px" data-i18n="travel_stay_p2">Tarifs préférentiels avec le code “WeddingAK” (valable jusqu’au 31 mars 2026)</p>
+            </div>
+
+            <div class="box">
+              <h3 class="h3" data-i18n="nav_biviere">Le domaine</h3>
+              <p class="p">Villa Biviere Borghese — Lentini</p>
+              <a class="maplink" href="biviere.html">Ouvrir</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="footer__p" data-i18n="footer">© Alice &amp; Kevin · 2026</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
