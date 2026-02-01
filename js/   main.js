@@ -1,10 +1,30 @@
 /* =========================================================
    main.js — Menu mobile + i18n FR/IT/EN (localStorage)
+   Robust: event delegation + safe storage fallback
    ========================================================= */
 
 (function () {
   const STORAGE_KEY = "ak_lang";
   const supported = ["fr", "it", "en"];
+
+  // Safe storage (fallback if localStorage is blocked)
+  const storage = {
+    _mem: { [STORAGE_KEY]: "fr" },
+    get(key) {
+      try {
+        return localStorage.getItem(key);
+      } catch (_) {
+        return this._mem[key] || null;
+      }
+    },
+    set(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch (_) {
+        this._mem[key] = value;
+      }
+    }
+  };
 
   const dict = {
     fr: {
@@ -108,13 +128,6 @@
       "gift.holderLabel": "Titulaire",
       "gift.holder": "[à renseigner]",
       "gift.note": "Nous mettrons à jour ces informations dès que possible.",
-
-      "biviere.kicker": "Réception",
-      "biviere.title": "Villa Biviere Borghese",
-      "biviere.lead": "Lentini — à partir de 17h30 (samedi 20 juin 2026).",
-      "biviere.p1": "La réception aura lieu dans un cadre élégant, au cœur de la campagne sicilienne. Nous partagerons ensemble un dîner, puis une soirée festive.",
-      "biviere.p2": "Les informations pratiques (transferts, horaires finaux, accès) seront confirmées à l’approche de l’événement.",
-      "biviere.cta": "Revoir le programme",
 
       "footer.note": "Alice & Kevin — Syracuse, Sicile",
       "footer.legal": "© 2026 — Invitation digitale"
@@ -222,13 +235,6 @@
       "gift.holder": "[da inserire]",
       "gift.note": "Aggiorneremo queste informazioni al più presto.",
 
-      "biviere.kicker": "Ricevimento",
-      "biviere.title": "Villa Biviere Borghese",
-      "biviere.lead": "Lentini — dalle 17:30 (sabato 20 giugno 2026).",
-      "biviere.p1": "Il ricevimento si terrà in un contesto elegante, nella campagna siciliana. Condivideremo la cena e una serata di festa.",
-      "biviere.p2": "Le informazioni pratiche (trasferimenti, orari definitivi, accesso) saranno confermate più vicino alla data.",
-      "biviere.cta": "Rivedere il programma",
-
       "footer.note": "Alice & Kevin — Siracusa, Sicilia",
       "footer.legal": "© 2026 — Invito digitale"
     },
@@ -335,26 +341,23 @@
       "gift.holder": "[to be added]",
       "gift.note": "We will update this information as soon as possible.",
 
-      "biviere.kicker": "Reception",
-      "biviere.title": "Villa Biviere Borghese",
-      "biviere.lead": "Lentini — from 5:30 PM (Saturday, June 20th, 2026).",
-      "biviere.p1": "The reception will take place in an elegant setting in the Sicilian countryside. We will share dinner and a festive evening together.",
-      "biviere.p2": "Practical details (transfers, final timings, access) will be confirmed closer to the date.",
-      "biviere.cta": "View the programme",
-
       "footer.note": "Alice & Kevin — Syracuse, Sicily",
       "footer.legal": "© 2026 — Digital invitation"
     }
   };
 
+  function normalizeLang(v) {
+    const s = String(v || "").toLowerCase();
+    return supported.includes(s) ? s : "fr";
+  }
+
   function getStoredLang() {
-    const v = (localStorage.getItem(STORAGE_KEY) || "").toLowerCase();
-    return supported.includes(v) ? v : "fr";
+    return normalizeLang(storage.get(STORAGE_KEY) || "fr");
   }
 
   function setLangButtons(lang) {
     document.querySelectorAll(".lang-btn").forEach((btn) => {
-      const isActive = (btn.getAttribute("data-lang") === lang);
+      const isActive = btn.getAttribute("data-lang") === lang;
       btn.setAttribute("aria-pressed", String(isActive));
     });
     document.documentElement.lang = lang;
@@ -366,13 +369,15 @@
       const key = el.getAttribute("data-i18n");
       if (!key) return;
       const value = map[key];
-      if (typeof value === "string" && value.length) el.textContent = value;
+      if (typeof value === "string" && value.length) {
+        el.textContent = value;
+      }
     });
   }
 
   function setLanguage(lang) {
-    const safe = supported.includes(lang) ? lang : "fr";
-    localStorage.setItem(STORAGE_KEY, safe);
+    const safe = normalizeLang(lang);
+    storage.set(STORAGE_KEY, safe);
     setLangButtons(safe);
     applyI18n(safe);
   }
@@ -398,28 +403,37 @@
       expanded ? close() : open();
     });
 
-    // close menu on link click
     menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
 
-    // close on Escape
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") close();
     });
   }
 
-  // Init
-  document.addEventListener("DOMContentLoaded", () => {
-    initMobileMenu();
+  function initLanguageDelegation() {
+    // One reliable handler for ALL language buttons (header + mobile + future)
+    document.addEventListener("click", (e) => {
+      const btn = e.target && e.target.closest ? e.target.closest(".lang-btn") : null;
+      if (!btn) return;
 
-    // Bind language buttons
-    document.querySelectorAll(".lang-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const lang = btn.getAttribute("data-lang");
-        if (lang) setLanguage(lang);
-      });
+      // Avoid any accidental form submit / focus quirks
+      e.preventDefault();
+
+      const lang = btn.getAttribute("data-lang");
+      if (lang) setLanguage(lang);
     });
+  }
 
-    // Apply saved language
+  // Init (safe for defer + normal load)
+  function init() {
+    initMobileMenu();
+    initLanguageDelegation();
     setLanguage(getStoredLang());
-  });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
 })();
