@@ -8,6 +8,9 @@
   <meta name="theme-color" content="#F6E58D" />
 
   <link rel="icon" href="assets/images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 
@@ -31,11 +34,11 @@
       </nav>
 
       <div class="lang-switch" aria-label="Choix de langue">
-        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
-        <span class="lang-sep" aria-hidden="true">•</span>
-        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-        <span class="lang-sep" aria-hidden="true">•</span>
-        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        <div class="lang-group">
+          <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
       </div>
 
       <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -52,9 +55,11 @@
       <a class="mobile-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
 
       <div class="mobile-lang">
-        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
-        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        <div class="lang-group">
+          <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
       </div>
     </div>
   </header>
@@ -72,60 +77,97 @@
 
     <section class="section">
       <div class="container reading">
-        <article class="prose">
-          <p data-i18n="story.p0">
-            Il arrive parfois que la vie choisisse des lieux ordinaires pour y glisser l’extraordinaire.
-            Pour nous, tout a commencé dans un ascenseur — et s’est poursuivi comme un chemin patiemment construit, étage après étage.
-          </p>
 
-          <h2 data-i18n="story.h1">Une rencontre inattendue</h2>
-          <p data-i18n="story.p1">
-            Février 2019, Singapour. Un ascenseur à l’ESSEC Business School. Rien de spectaculaire, sinon cette intuition silencieuse que quelque chose,
-            ce jour-là, venait de commencer. Une question anodine, un sourire doux et espiègle. Pour Alice, une anecdote. Pour Kevin, une évidence.
+        <!-- Lead block (fusionné + valorisé) -->
+        <div class="story-lead">
+          <p data-i18n="story.leadBlock">
+            Il arrive parfois que la vie choisisse des lieux ordinaires pour y glisser l’extraordinaire. Pour nous, tout a commencé dans un ascenseur — et s’est poursuivi comme un chemin patiemment construit, étage après étage.
           </p>
+        </div>
 
-          <h2 data-i18n="story.h2">Le temps du silence et des signes</h2>
-          <p data-i18n="story.p2">
-            Les mois suivants, ils se croisèrent souvent. Ils se reconnaissaient. Un regard, parfois un salut discret.
-            Comme si le silence faisait encore partie du chemin, comme si l’histoire avait besoin de patience pour s’écrire.
-          </p>
+        <!-- 7 story steps with photo slot each -->
+        <div class="story-steps">
 
-          <h2 data-i18n="story.h3">Le premier choix</h2>
-          <p data-i18n="story.p3">
-            Le 26 avril 2019, lors d’un apéritif à Singapour, le hasard décida de s’effacer. Ils prirent enfin le temps de se parler, longuement.
-            Plus tard, la musique, la danse, et cette sensation simple et rare : celle d’une rencontre qui compte.
-          </p>
+          <article class="story-step">
+            <div>
+              <h2 data-i18n="story.h1">Une rencontre inattendue</h2>
+              <p data-i18n="story.p1">...</p>
+            </div>
+            <div class="story-media" aria-label="Photo 1">
+              <!-- Option 1: put your real photo -->
+              <!-- <img src="assets/images/story-01.jpg" alt="Photo — Une rencontre inattendue"> -->
+              <div class="ph" data-i18n="story.photoHint">Ajouter une photo</div>
+            </div>
+          </article>
 
-          <h2 data-i18n="story.h4">La distance comme révélateur</h2>
-          <p data-i18n="story.p4">
-            Lorsque la distance s’installa, une évidence apparut : l’absence révèle parfois l’essentiel.
-            Les messages devinrent des appels, les appels des FaceTime. Malgré les fuseaux horaires, une complicité sincère se tissa.
-          </p>
+          <article class="story-step">
+            <div>
+              <h2 data-i18n="story.h2">Le temps du silence et des signes</h2>
+              <p data-i18n="story.p2">...</p>
+            </div>
+            <div class="story-media" aria-label="Photo 2">
+              <!-- <img src="assets/images/story-02.jpg" alt="Photo — Le temps du silence et des signes"> -->
+              <div class="ph" data-i18n="story.photoHint">Ajouter une photo</div>
+            </div>
+          </article>
 
-          <h2 data-i18n="story.h5">Le courage d’y croire</h2>
-          <p data-i18n="story.p5">
-            Kevin fit un choix clair : revenir. Refuser la facilité, choisir la fidélité à ce qu’il ressentait.
-            Peu à peu, la confiance s’installa, et avec elle le bonheur.
-          </p>
+          <article class="story-step">
+            <div>
+              <h2 data-i18n="story.h3">Le premier choix</h2>
+              <p data-i18n="story.p3">...</p>
+            </div>
+            <div class="story-media" aria-label="Photo 3">
+              <!-- <img src="assets/images/story-03.jpg" alt="Photo — Le premier choix"> -->
+              <div class="ph" data-i18n="story.photoHint">Ajouter une photo</div>
+            </div>
+          </article>
 
-          <h2 data-i18n="story.h6">Aimer, c’est aussi rencontrer une famille</h2>
-          <p data-i18n="story.p6">
-            Aimer, c’est parfois apprendre à aimer une famille entière. Avec le temps, la patience et le dialogue, les incompréhensions s’apaisèrent,
-            et les liens se créèrent.
-          </p>
+          <article class="story-step">
+            <div>
+              <h2 data-i18n="story.h4">La distance comme révélateur</h2>
+              <p data-i18n="story.p4">...</p>
+            </div>
+            <div class="story-media" aria-label="Photo 4">
+              <!-- <img src="assets/images/story-04.jpg" alt="Photo — La distance comme révélateur"> -->
+              <div class="ph" data-i18n="story.photoHint">Ajouter une photo</div>
+            </div>
+          </article>
 
-          <blockquote data-i18n="story.q1">« Kevin est un bon garçon. »</blockquote>
+          <article class="story-step">
+            <div>
+              <h2 data-i18n="story.h5">Le courage d’y croire</h2>
+              <p data-i18n="story.p5">...</p>
+            </div>
+            <div class="story-media" aria-label="Photo 5">
+              <!-- <img src="assets/images/story-05.jpg" alt="Photo — Le courage d’y croire"> -->
+              <div class="ph" data-i18n="story.photoHint">Ajouter une photo</div>
+            </div>
+          </article>
 
-          <h2 data-i18n="story.h7">Construire, ensemble</h2>
-          <p data-i18n="story.p7">
-            Les années ont passé. Les familles se sont rapprochées. Les liens se sont renforcés.
-            Leur histoire n’a jamais été une promesse facile, mais un chemin — parfois exigeant, toujours sincère.
-          </p>
+          <article class="story-step">
+            <div>
+              <h2 data-i18n="story.h6">Aimer, c’est aussi rencontrer une famille</h2>
+              <p data-i18n="story.p6">...</p>
+            </div>
+            <div class="story-media" aria-label="Photo 6">
+              <!-- <img src="assets/images/story-06.jpg" alt="Photo — Rencontrer une famille"> -->
+              <div class="ph" data-i18n="story.photoHint">Ajouter une photo</div>
+            </div>
+          </article>
 
-          <p class="prose-end" data-i18n="story.p8">
-            Et en ce 20 juin 2026, Alice et Kevin scelleront cet amour patiemment construit, entourés de ceux qui ont compté à chaque étape de leur histoire.
-          </p>
-        </article>
+          <article class="story-step">
+            <div>
+              <h2 data-i18n="story.h7">Construire, ensemble</h2>
+              <p data-i18n="story.p7">...</p>
+              <p style="margin-top:10px" data-i18n="story.p8">...</p>
+            </div>
+            <div class="story-media" aria-label="Photo 7">
+              <!-- <img src="assets/images/story-07.jpg" alt="Photo — Construire, ensemble"> -->
+              <div class="ph" data-i18n="story.photoHint">Ajouter une photo</div>
+            </div>
+          </article>
+
+        </div>
 
         <div class="center-cta">
           <a class="btn btn-primary btn-large" href="rsvp.html" data-i18n="story.cta">Confirmer ma présence</a>
