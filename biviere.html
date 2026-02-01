@@ -3,99 +3,96 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alice & Kevin — Villa Biviere Borghese</title>
-  <meta name="description" content="Le domaine — Villa Biviere Borghese, Lentini." />
+  <title>Villa Biviere Borghese — Alice & Kevin</title>
+  <meta name="description" content="Réception — Villa Biviere Borghese (Lentini)." />
+  <meta name="theme-color" content="#F6E58D" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
-  <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Aller au contenu principal</a>
 
   <header class="site-header" role="banner">
-    <div class="site-header__inner">
-      <button class="menu-btn" type="button" id="menuBtn" aria-haspopup="dialog" aria-expanded="false" data-i18n="menu_open">Menu</button>
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Accueil">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Alice &amp; Kevin</span>
+      </a>
 
-      <nav class="site-nav" aria-label="Navigation principale">
-        <a class="navlink" href="index.html" data-i18n="nav_home">Accueil</a>
-        <a class="navlink" href="story.html" data-i18n="nav_story">Notre histoire</a>
-        <a class="navlink" href="details.html" data-i18n="nav_programme">Programme</a>
-        <a class="navlink" href="travel.html" data-i18n="nav_travel">Voyage &amp; séjour</a>
-        <a class="navlink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-        <a class="navlink" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav-link" href="index.html" data-i18n="nav.home">Accueil</a>
+        <a class="nav-link" href="story.html" data-i18n="nav.story">Notre histoire</a>
+        <a class="nav-link nav-active" href="details.html" data-i18n="nav.details">Détails</a>
+        <a class="nav-link" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
+        <a class="nav-link nav-cta" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
+        <a class="nav-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
       </nav>
 
-      <div class="lang" aria-label="Choisir la langue">
-        <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
-        <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      <div class="lang-switch" aria-label="Choix de langue">
+        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <span class="lang-sep" aria-hidden="true">•</span>
+        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+        <span class="lang-sep" aria-hidden="true">•</span>
+        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
+
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
 
-    <div class="menu-panel" id="menuPanel" role="dialog" aria-modal="true" aria-label="Menu">
-      <div class="menu-panel__card">
-        <div class="menu-panel__top">
-          <div class="menu-panel__title" data-i18n="menu_title">Menu</div>
-          <button class="menu-close" type="button" id="menuClose" data-i18n="menu_close">Fermer</button>
-        </div>
-        <div class="menu-panel__grid">
-          <a class="menulink" href="index.html" data-i18n="nav_home">Accueil</a>
-          <a class="menulink" href="story.html" data-i18n="nav_story">Notre histoire</a>
-          <a class="menulink" href="details.html" data-i18n="nav_programme">Programme</a>
-          <a class="menulink" href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
-          <a class="menulink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-          <a class="menulink" href="gift.html" data-i18n="nav_gift">Cadeau</a>
-        </div>
-        <div class="menu-panel__langs" aria-label="Choisir la langue">
-          <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
-          <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-          <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-        </div>
+    <div id="mobileMenu" class="mobile-menu" hidden>
+      <a class="mobile-link" href="index.html" data-i18n="nav.home">Accueil</a>
+      <a class="mobile-link" href="story.html" data-i18n="nav.story">Notre histoire</a>
+      <a class="mobile-link mobile-active" href="details.html" data-i18n="nav.details">Détails</a>
+      <a class="mobile-link" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
+      <a class="mobile-link" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
+      <a class="mobile-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
+
+      <div class="mobile-lang">
+        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
     </div>
   </header>
 
-  <main id="content" class="page">
-    <section class="banner banner--biviere" aria-label="Villa Biviere Borghese">
-      <div class="banner__overlay"></div>
-      <div class="banner__inner">
-        <div class="banner__kicker" data-i18n="biviere_kicker">Le domaine</div>
-        <h1 class="banner__title">Villa Biviere Borghese</h1>
-        <p class="banner__lead" data-i18n="biviere_lead">
-          Un cadre de campagne sicilienne, élégant et lumineux, à quelques minutes de Syracuse.
-        </p>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-kicker" data-i18n="biviere.kicker">Réception</p>
+        <h1 class="page-title" data-i18n="biviere.title">Villa Biviere Borghese</h1>
+        <p class="page-lead" data-i18n="biviere.lead">Lentini — à partir de 17h30 (samedi 20 juin 2026).</p>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section__inner">
-        <div class="panel">
-          <p class="p" data-i18n="biviere_text">
-            La réception se tiendra à Lentini, dans un domaine d’exception. Vous y retrouverez l’essentiel : accueil, célébration, dîner et soirée, dans une atmosphère chaleureuse et raffinée.
+    <section class="section section-soft">
+      <div class="container">
+        <article class="card">
+          <p class="card-text" data-i18n="biviere.p1">
+            La réception aura lieu dans un cadre élégant, au cœur de la campagne sicilienne. Nous partagerons ensemble un dîner, puis une soirée festive.
+          </p>
+          <p class="card-text" data-i18n="biviere.p2">
+            Les informations pratiques (transferts, horaires finaux, accès) seront confirmées à l’approche de l’événement.
           </p>
 
-          <div class="map-embed-wrap">
-            <iframe class="map-embed"
-              src="https://www.google.com/maps?q=Villa%20Biviere%20Borghese%20Lentini&output=embed"
-              loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Villa Biviere Borghese"></iframe>
+          <div class="center-cta">
+            <a class="btn btn-ghost" href="details.html#programme" data-i18n="biviere.cta">Revoir le programme</a>
           </div>
-
-          <div class="titem__actions">
-            <a class="btn btn--soft" href="details.html" data-i18n="back_to_programme">Retour au programme</a>
-          </div>
-        </div>
+        </article>
       </div>
     </section>
-
-    <footer class="footer">
-      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
-    </footer>
   </main>
 
-  <script src="app.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-line" data-i18n="footer.note">Alice &amp; Kevin — Syracuse, Sicile</p>
+      <p class="footer-small" data-i18n="footer.legal">© 2026 — Invitation digitale</p>
+    </div>
+  </footer>
+
+  <script src="./js/main.js" defer></script>
 </body>
 </html>
