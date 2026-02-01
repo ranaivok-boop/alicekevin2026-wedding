@@ -8,6 +8,9 @@
   <meta name="theme-color" content="#F6E58D" />
 
   <link rel="icon" href="assets/images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 
@@ -31,11 +34,11 @@
       </nav>
 
       <div class="lang-switch" aria-label="Choix de langue">
-        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
-        <span class="lang-sep" aria-hidden="true">•</span>
-        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-        <span class="lang-sep" aria-hidden="true">•</span>
-        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        <div class="lang-group">
+          <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
       </div>
 
       <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -52,9 +55,11 @@
       <a class="mobile-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
 
       <div class="mobile-lang">
-        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
-        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        <div class="lang-group">
+          <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
       </div>
     </div>
   </header>
@@ -74,6 +79,16 @@
           <article class="card">
             <h2 class="card-title" data-i18n="travel.arrive.title">Arriver en Sicile</h2>
             <p class="card-text" data-i18n="travel.arrive.text">Aéroport recommandé : Catane (CTA)</p>
+            <p class="hint">
+              <a class="btn btn-ghost" target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/search/?api=1&query=Catania%20Airport%20CTA">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11Z"></path>
+                  <path d="M12 10.5h.01"></path>
+                </svg>
+                Google Maps
+              </a>
+            </p>
           </article>
 
           <article class="card">
@@ -87,6 +102,16 @@
             <h2 class="card-title" data-i18n="travel.stay.title">Où loger</h2>
             <p class="card-text" data-i18n="travel.stay.text">
               Lentini — Badiula. Tarifs préférentiels avec le code WeddingAK (valable jusqu’au 31 mars 2026).
+            </p>
+            <p class="hint">
+              <a class="btn btn-ghost" target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/search/?api=1&query=Badiula%20Lentini">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 10.5 12 3l9 7.5"></path>
+                  <path d="M5 10.5V21h14V10.5"></path>
+                </svg>
+                Google Maps
+              </a>
             </p>
           </article>
 
