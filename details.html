@@ -4,17 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Détails — Alice & Kevin</title>
-  <meta name="description" content="Détails du mariage d’Alice & Kevin : cérémonie, réception, programme et dress code." />
+  <meta name="description" content="Détails : programme, cérémonie, réception, dress code." />
+  <meta name="theme-color" content="#F6E58D" />
+
   <link rel="icon" href="assets/images/favicon.png" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
   <a class="skip-link" href="#main" data-i18n="a11y.skip">Aller au contenu principal</a>
 
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Accueil Alice et Kevin">
+      <a class="brand" href="index.html" aria-label="Accueil">
         <span class="brand-mark" aria-hidden="true"></span>
         <span class="brand-name">Alice &amp; Kevin</span>
       </a>
@@ -30,18 +32,18 @@
 
       <div class="lang-switch" aria-label="Choix de langue">
         <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
-        <span class="lang-sep" aria-hidden="true">/</span>
+        <span class="lang-sep" aria-hidden="true">•</span>
         <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-        <span class="lang-sep" aria-hidden="true">/</span>
+        <span class="lang-sep" aria-hidden="true">•</span>
         <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
 
-      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false">
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
 
-    <div class="mobile-menu" hidden>
+    <div id="mobileMenu" class="mobile-menu" hidden>
       <a class="mobile-link" href="index.html" data-i18n="nav.home">Accueil</a>
       <a class="mobile-link" href="story.html" data-i18n="nav.story">Notre histoire</a>
       <a class="mobile-link mobile-active" href="details.html" data-i18n="nav.details">Détails</a>
@@ -58,92 +60,65 @@
   </header>
 
   <main id="main">
-    <section class="page-hero" aria-label="Détails">
-      <div class="container page-hero-inner">
-        <p class="page-kicker" data-i18n="details.kicker">Alice &amp; Kevin</p>
-        <h1 class="page-title" data-i18n="details.title">Détails</h1>
-        <p class="page-lead" data-i18n="details.lead">Cérémonie, réception, programme et informations pratiques.</p>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="container split">
-        <div>
-          <div class="details-dates">
-            <div class="mini-block">
-              <p class="mini-top" data-i18n="home.date">Samedi 20 juin 2026</p>
-              <p class="mini-bottom" data-i18n="home.place">Syracuse, Sicile — Italie</p>
-            </div>
-          </div>
-
-          <div class="detail-cards">
-            <div class="detail-card" id="ceremony">
-              <h2 data-i18n="details.ceremony.title">Cérémonie</h2>
-              <p data-i18n="details.ceremony.body">Cérémonie religieuse — Duomo di Siracusa (Ortigia) — 11h30</p>
-            </div>
-
-            <div class="detail-card" id="reception">
-              <h2 data-i18n="details.reception.title">Réception</h2>
-              <p data-i18n="details.reception.body">Villa Biviere Borghese (Lentini) — à partir de 17h30</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="envelope" aria-hidden="true">
-          <div class="envelope-card">
-            <p class="envelope-title" data-i18n="details.envelopeTitle">Une parenthèse en Sicile</p>
-            <p class="envelope-text" data-i18n="details.envelopeText">
-              Une invitation à célébrer, à prendre le temps, et à profiter de la douceur d’Ortigia.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROGRAMME + DRESS CODE (requested) -->
-    <section class="section" id="programme">
+    <section class="page-hero">
       <div class="container">
-        <h2 class="section-title" data-i18n="programme.title">Programme du mariage</h2>
-
-        <div class="grid grid-2">
-          <article class="day-card">
-            <header class="day-header">
-              <span class="day-badge" data-i18n="programme.day1.title">Samedi 20 juin 2026</span>
-            </header>
-            <ul class="timeline">
-              <li><span class="t-time" data-i18n="programme.day1.time1">11h30</span><span class="t-sep" aria-hidden="true">—</span><span class="t-what" data-i18n="programme.day1.item1">Cérémonie religieuse — Duomo di Siracusa (Ortigia)</span></li>
-              <li><span class="t-time" data-i18n="programme.day1.time2">13h00</span><span class="t-sep" aria-hidden="true">—</span><span class="t-what" data-i18n="programme.day1.item2">Aperitivo — Caffè Archimede (Ortigia)</span></li>
-              <li><span class="t-time" data-i18n="programme.day1.time3">15h00</span><span class="t-sep" aria-hidden="true">—</span><span class="t-what" data-i18n="programme.day1.item3">Promenade à Ortigia — Découverte libre</span></li>
-              <li><span class="t-time" data-i18n="programme.day1.time4">17h30</span><span class="t-sep" aria-hidden="true">—</span><span class="t-what" data-i18n="programme.day1.item4">Réception — Villa Biviere Borghese (Lentini) — à partir de</span></li>
-            </ul>
-          </article>
-
-          <article class="day-card">
-            <header class="day-header">
-              <span class="day-badge" data-i18n="programme.day2.title">Dimanche 21 juin 2026</span>
-            </header>
-            <ul class="timeline">
-              <li><span class="t-time" data-i18n="programme.day2.time1">14h00</span><span class="t-sep" aria-hidden="true">—</span><span class="t-what" data-i18n="programme.day2.item1">Apéritivo Italiano — Villa Nunziatina — à partir de 14h00</span></li>
-            </ul>
-          </article>
-        </div>
-
-        <p class="note" data-i18n="programme.note">
-          Les horaires sont donnés à titre indicatif afin de vous permettre d’organiser votre journée en toute sérénité.
-        </p>
-
-        <div class="dresscode">
-          <h3 class="dresscode-title" data-i18n="dresscode.title">Dress code</h3>
-          <p class="dresscode-text" data-i18n="dresscode.body">
-            Une tenue élégante et estivale, en harmonie avec les lieux et la saison. L’essentiel est que vous vous sentiez à l’aise pour profiter pleinement de ces journées.
-          </p>
-        </div>
+        <p class="page-kicker">Alice &amp; Kevin</p>
+        <h1 class="page-title" data-i18n="details.title">Détails</h1>
+        <p class="page-lead" data-i18n="details.lead">Programme du week-end et informations essentielles.</p>
       </div>
     </section>
 
-    <section class="section section-soft">
-      <div class="container center">
-        <a class="btn btn-primary btn-large" href="rsvp.html" data-i18n="details.ctaRsvp">Confirmer ma présence</a>
+    <section class="section">
+      <div class="container">
+        <div class="cards-grid" id="programme">
+          <article class="card">
+            <h2 class="card-title" data-i18n="programme.title">Programme du mariage</h2>
+
+            <div class="timeline">
+              <div class="time-block">
+                <div class="time-day" data-i18n="programme.day1">Samedi 20 juin 2026</div>
+                <ul class="time-list">
+                  <li data-i18n="programme.d1.l1">Cérémonie religieuse — Duomo di Siracusa (Ortigia) — 11h30</li>
+                  <li data-i18n="programme.d1.l2">Aperitivo — Caffè Archimede (Ortigia) — 13h00</li>
+                  <li data-i18n="programme.d1.l3">Promenade à Ortigia — Découverte libre — 15h00</li>
+                  <li data-i18n="programme.d1.l4">Réception — Villa Biviere Borghese (Lentini) — à partir de 17h30</li>
+                </ul>
+              </div>
+
+              <div class="time-block">
+                <div class="time-day" data-i18n="programme.day2">Dimanche 21 juin 2026</div>
+                <ul class="time-list">
+                  <li data-i18n="programme.d2.l1">Apéritivo Italiano — Villa Nunziatina — à partir de 14h00, jusqu’au soir</li>
+                </ul>
+              </div>
+            </div>
+
+            <p class="hint" data-i18n="programme.hint">
+              Les horaires sont donnés à titre indicatif afin de vous permettre d’organiser votre journée en toute sérénité.
+            </p>
+          </article>
+
+          <article class="card card-accent">
+            <h2 class="card-title" data-i18n="dress.title">Dress code</h2>
+            <p class="card-text" data-i18n="dress.text">
+              Thème : butter yellow. Une élégance estivale, légère et soignée — merci de privilégier des tons doux, lumineux et harmonieux.
+            </p>
+
+            <div class="badge-row" aria-label="Suggestions">
+              <span class="badge" data-i18n="dress.b1">Élégant & estival</span>
+              <span class="badge" data-i18n="dress.b2">Tons clairs</span>
+              <span class="badge" data-i18n="dress.b3">Confortable</span>
+            </div>
+
+            <p class="small-note" data-i18n="dress.note">
+              Nous affinerons si besoin — l’essentiel est une harmonie douce, en accord avec la Sicile en juin.
+            </p>
+          </article>
+        </div>
+
+        <div class="center-cta">
+          <a class="btn btn-primary btn-large" href="rsvp.html" data-i18n="details.cta">Confirmer ma présence</a>
+        </div>
       </div>
     </section>
   </main>
@@ -155,6 +130,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js" defer></script>
+  <script src="./js/main.js" defer></script>
 </body>
 </html>
