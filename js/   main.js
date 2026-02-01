@@ -1,30 +1,11 @@
 /* =========================================================
-   main.js — Menu mobile + i18n FR/IT/EN (localStorage)
-   Robust: event delegation + safe storage fallback
+   main.js — Mobile menu + i18n FR/IT/EN + Copy buttons
+   Robust (no silent failure) + localStorage safe fallback
    ========================================================= */
 
 (function () {
   const STORAGE_KEY = "ak_lang";
   const supported = ["fr", "it", "en"];
-
-  // Safe storage (fallback if localStorage is blocked)
-  const storage = {
-    _mem: { [STORAGE_KEY]: "fr" },
-    get(key) {
-      try {
-        return localStorage.getItem(key);
-      } catch (_) {
-        return this._mem[key] || null;
-      }
-    },
-    set(key, value) {
-      try {
-        localStorage.setItem(key, value);
-      } catch (_) {
-        this._mem[key] = value;
-      }
-    }
-  };
 
   const dict = {
     fr: {
@@ -59,7 +40,7 @@
 
       "story.title": "Notre histoire",
       "story.lead": "Il arrive parfois que la vie choisisse des lieux ordinaires pour y glisser l’extraordinaire.",
-      "story.p0": "Il arrive parfois que la vie choisisse des lieux ordinaires pour y glisser l’extraordinaire. Pour nous, tout a commencé dans un ascenseur — et s’est poursuivi comme un chemin patiemment construit, étage après étage.",
+      "story.leadBlock": "Il arrive parfois que la vie choisisse des lieux ordinaires pour y glisser l’extraordinaire. Pour nous, tout a commencé dans un ascenseur — et s’est poursuivi comme un chemin patiemment construit, étage après étage.",
       "story.h1": "Une rencontre inattendue",
       "story.p1": "Février 2019, Singapour. Un ascenseur à l’ESSEC Business School. Rien de spectaculaire, sinon cette intuition silencieuse que quelque chose, ce jour-là, venait de commencer. Une question anodine, un sourire doux et espiègle. Pour Alice, une anecdote. Pour Kevin, une évidence.",
       "story.h2": "Le temps du silence et des signes",
@@ -72,11 +53,11 @@
       "story.p5": "Kevin fit un choix clair : revenir. Refuser la facilité, choisir la fidélité à ce qu’il ressentait. Peu à peu, la confiance s’installa, et avec elle le bonheur.",
       "story.h6": "Aimer, c’est aussi rencontrer une famille",
       "story.p6": "Aimer, c’est parfois apprendre à aimer une famille entière. Avec le temps, la patience et le dialogue, les incompréhensions s’apaisèrent, et les liens se créèrent.",
-      "story.q1": "« Kevin est un bon garçon. »",
       "story.h7": "Construire, ensemble",
       "story.p7": "Les années ont passé. Les familles se sont rapprochées. Les liens se sont renforcés. Leur histoire n’a jamais été une promesse facile, mais un chemin — parfois exigeant, toujours sincère.",
       "story.p8": "Et en ce 20 juin 2026, Alice et Kevin scelleront cet amour patiemment construit, entourés de ceux qui ont compté à chaque étape de leur histoire.",
       "story.cta": "Confirmer ma présence",
+      "story.photoHint": "Ajouter une photo",
 
       "details.title": "Détails",
       "details.lead": "Programme du week-end et informations essentielles.",
@@ -84,19 +65,31 @@
 
       "programme.title": "Programme du mariage",
       "programme.day1": "Samedi 20 juin 2026",
-      "programme.d1.l1": "Cérémonie religieuse — Duomo di Siracusa (Ortigia) — 11h30",
-      "programme.d1.l2": "Aperitivo — Caffè Archimede (Ortigia) — 13h00",
-      "programme.d1.l3": "Promenade à Ortigia — Découverte libre — 15h00",
-      "programme.d1.l4": "Réception — Villa Biviere Borghese (Lentini) — à partir de 17h30",
       "programme.day2": "Dimanche 21 juin 2026",
-      "programme.d2.l1": "Apéritivo Italiano — Villa Nunziatina — à partir de 14h00, jusqu’au soir",
+      "programme.e1.title": "Cérémonie religieuse",
+      "programme.e1.meta": "Duomo di Siracusa (Ortigia) — 11h30",
+      "programme.e2.title": "Aperitivo",
+      "programme.e2.meta": "Caffè Archimede (Ortigia) — 13h00",
+      "programme.e3.title": "Promenade à Ortigia",
+      "programme.e3.meta": "Découverte libre — 15h00",
+      "programme.e4.title": "Réception",
+      "programme.e4.meta": "Villa Biviere Borghese (Lentini) — à partir de 17h30",
+      "programme.e5.title": "Apéritivo Italiano",
+      "programme.e5.meta": "Villa Nunziatina — à partir de 14h00, jusqu’au soir",
+      "programme.mapCta": "Voir sur Google Maps",
+      "programme.embedLabel": "Plan",
       "programme.hint": "Les horaires sont donnés à titre indicatif afin de vous permettre d’organiser votre journée en toute sérénité.",
 
       "dress.title": "Dress code",
       "dress.text": "Thème : butter yellow. Une élégance estivale, légère et soignée — merci de privilégier des tons doux, lumineux et harmonieux.",
-      "dress.b1": "Élégant & estival",
-      "dress.b2": "Tons clairs",
-      "dress.b3": "Confortable",
+      "dress.paletteTitle": "Palette conseillée",
+      "dress.sw1": "Butter yellow",
+      "dress.sw2": "Ivoire",
+      "dress.sw3": "Sable",
+      "dress.sw4": "Sauge",
+      "dress.sw5": "Bleu marine",
+      "dress.g1": "Privilégiez des matières légères et une élégance estivale.",
+      "dress.g2": "Évitez les couleurs très saturées ou trop sombres (hors touches navy).",
       "dress.note": "Nous affinerons si besoin — l’essentiel est une harmonie douce, en accord avec la Sicile en juin.",
 
       "travel.kicker": "Voyage & séjour — Syracuse, Sicile",
@@ -128,6 +121,8 @@
       "gift.holderLabel": "Titulaire",
       "gift.holder": "[à renseigner]",
       "gift.note": "Nous mettrons à jour ces informations dès que possible.",
+      "gift.copy": "Copier",
+      "gift.copied": "Copié",
 
       "footer.note": "Alice & Kevin — Syracuse, Sicile",
       "footer.legal": "© 2026 — Invitation digitale"
@@ -165,24 +160,24 @@
 
       "story.title": "La nostra storia",
       "story.lead": "A volte la vita sceglie luoghi ordinari per dare inizio a qualcosa di straordinario.",
-      "story.p0": "A volte la vita sceglie luoghi ordinari per dare inizio a qualcosa di straordinario. Per noi, tutto è cominciato in un ascensore — e da lì, passo dopo passo, con calma e intenzione.",
+      "story.leadBlock": "A volte la vita sceglie luoghi ordinari per dare inizio a qualcosa di straordinario. Per noi, tutto è cominciato in un ascensore — e poi, passo dopo passo, con calma e intenzione.",
       "story.h1": "Un incontro inatteso",
-      "story.p1": "Febbraio 2019, Singapore. Un incontro semplice, uno sguardo, un sorriso. Per Alice, un episodio curioso. Per Kevin, una certezza silenziosa.",
+      "story.p1": "Febbraio 2019, Singapore. Un ascensore all’ESSEC Business School. Nulla di spettacolare, se non la sensazione silenziosa che, quel giorno, qualcosa stesse iniziando. Una domanda semplice, un sorriso dolce e vivace. Per Alice, un episodio. Per Kevin, una certezza.",
       "story.h2": "Il tempo, i segni",
-      "story.p2": "Nei mesi successivi si incrociarono spesso. Un saluto discreto, un’intesa che cresceva senza fretta.",
+      "story.p2": "Nei mesi successivi si incrociarono spesso. Si riconoscevano. Uno sguardo, a volte un saluto discreto. Come se il silenzio facesse ancora parte del percorso, come se la storia avesse bisogno di pazienza per scriversi.",
       "story.h3": "La prima scelta",
-      "story.p3": "Il 26 aprile 2019, durante un aperitivo a Singapore, si presero finalmente il tempo di parlarsi davvero. Poi la musica, la danza, e la sensazione rara di un incontro che conta.",
+      "story.p3": "Il 26 aprile 2019, durante un aperitivo a Singapore, il caso decise di farsi da parte. Si presero finalmente il tempo di parlare, davvero. Poi la musica, la danza, e quella sensazione rara: questo incontro conta.",
       "story.h4": "La distanza che rivela",
-      "story.p4": "Con la distanza arrivò una nuova evidenza: a volte l’assenza chiarisce l’essenziale. I messaggi diventarono chiamate, le chiamate FaceTime: la complicità si fece reale.",
+      "story.p4": "Quando arrivò la distanza, arrivò anche la chiarezza: a volte l’assenza mostra l’essenziale. I messaggi diventarono chiamate, le chiamate FaceTime. Nonostante i fusi orari, la complicità crebbe.",
       "story.h5": "Il coraggio di crederci",
-      "story.p5": "Kevin scelse di tornare. Scegliere ciò che sentiva, con chiarezza. La fiducia crebbe, e con lei la felicità.",
+      "story.p5": "Kevin fece una scelta chiara: tornare. Rifiutare la facilità, scegliere ciò che sentiva. Poco a poco, la fiducia si consolidò, e con lei la felicità.",
       "story.h6": "Incontrare una famiglia",
-      "story.p6": "Amare significa anche incontrare una famiglia intera. Con pazienza e dialogo, le incomprensioni si sciolsero e i legami nacquero.",
-      "story.q1": "« Kevin è un bravo ragazzo. »",
+      "story.p6": "Amare significa anche incontrare una famiglia intera. Con il tempo, la pazienza e il dialogo, le incomprensioni si sciolsero e i legami nacquero.",
       "story.h7": "Costruire insieme",
-      "story.p7": "Gli anni sono passati, le famiglie si sono avvicinate. Non una promessa facile, ma un cammino sincero.",
-      "story.p8": "E il 20 giugno 2026, Alice e Kevin uniranno le loro vite nel matrimonio, circondati da chi ha accompagnato ogni passo del loro percorso.",
+      "story.p7": "Gli anni sono passati. Le famiglie si sono avvicinate. I legami si sono rafforzati. Non una promessa facile, ma un cammino — a volte impegnativo, sempre sincero.",
+      "story.p8": "E il 20 giugno 2026, Alice e Kevin uniranno le loro vite nel matrimonio, circondati da chi ha contato in ogni tappa del loro percorso.",
       "story.cta": "Confermare la presenza",
+      "story.photoHint": "Aggiungere una foto",
 
       "details.title": "Dettagli",
       "details.lead": "Programma del weekend e informazioni essenziali.",
@@ -190,19 +185,31 @@
 
       "programme.title": "Programma",
       "programme.day1": "Sabato 20 giugno 2026",
-      "programme.d1.l1": "Cerimonia religiosa — Duomo di Siracusa (Ortigia) — ore 11:30",
-      "programme.d1.l2": "Aperitivo — Caffè Archimede (Ortigia) — ore 13:00",
-      "programme.d1.l3": "Passeggiata a Ortigia — tempo libero — ore 15:00",
-      "programme.d1.l4": "Ricevimento — Villa Biviere Borghese (Lentini) — dalle ore 17:30",
       "programme.day2": "Domenica 21 giugno 2026",
-      "programme.d2.l1": "Aperitivo Italiano — Villa Nunziatina — dalle ore 14:00, fino a sera",
+      "programme.e1.title": "Cerimonia religiosa",
+      "programme.e1.meta": "Duomo di Siracusa (Ortigia) — ore 11:30",
+      "programme.e2.title": "Aperitivo",
+      "programme.e2.meta": "Caffè Archimede (Ortigia) — ore 13:00",
+      "programme.e3.title": "Passeggiata a Ortigia",
+      "programme.e3.meta": "tempo libero — ore 15:00",
+      "programme.e4.title": "Ricevimento",
+      "programme.e4.meta": "Villa Biviere Borghese (Lentini) — dalle ore 17:30",
+      "programme.e5.title": "Aperitivo Italiano",
+      "programme.e5.meta": "Villa Nunziatina — dalle ore 14:00, fino a sera",
+      "programme.mapCta": "Aprire su Google Maps",
+      "programme.embedLabel": "Mappa",
       "programme.hint": "Gli orari sono indicativi per permettervi di organizzare la giornata con serenità.",
 
       "dress.title": "Dress code",
       "dress.text": "Tema: butter yellow. Eleganza estiva, leggera e curata — vi chiediamo di privilegiare tonalità chiare, morbide e luminose.",
-      "dress.b1": "Elegante & estivo",
-      "dress.b2": "Toni chiari",
-      "dress.b3": "Comodo",
+      "dress.paletteTitle": "Palette consigliata",
+      "dress.sw1": "Butter yellow",
+      "dress.sw2": "Avorio",
+      "dress.sw3": "Sabbia",
+      "dress.sw4": "Salvia",
+      "dress.sw5": "Blu navy",
+      "dress.g1": "Preferite tessuti leggeri e un’eleganza estiva.",
+      "dress.g2": "Evitate colori troppo saturi o molto scuri (tranne tocchi navy).",
       "dress.note": "Definiremo i dettagli se necessario — l’importante è un’armonia delicata, in sintonia con la Sicilia a giugno.",
 
       "travel.kicker": "Viaggio & soggiorno — Siracusa, Sicilia",
@@ -234,6 +241,8 @@
       "gift.holderLabel": "Intestatario",
       "gift.holder": "[da inserire]",
       "gift.note": "Aggiorneremo queste informazioni al più presto.",
+      "gift.copy": "Copia",
+      "gift.copied": "Copiato",
 
       "footer.note": "Alice & Kevin — Siracusa, Sicilia",
       "footer.legal": "© 2026 — Invito digitale"
@@ -271,24 +280,24 @@
 
       "story.title": "Our story",
       "story.lead": "Sometimes life chooses the most ordinary places to begin something extraordinary.",
-      "story.p0": "Sometimes life chooses the most ordinary places to begin something extraordinary. For us, it all started in an elevator — and then, patiently, step by step, it became a journey built with intention.",
+      "story.leadBlock": "Sometimes life chooses the most ordinary places to begin something extraordinary. For us, it all started in an elevator — and then, patiently, step by step, it became a journey built with intention.",
       "story.h1": "An unexpected encounter",
-      "story.p1": "February 2019, Singapore. A simple encounter, a smile, a quiet certainty. For Alice, a light anecdote. For Kevin, something unmistakable.",
+      "story.p1": "February 2019, Singapore. An elevator at ESSEC Business School. Nothing spectacular—except that quiet intuition that something, that day, had begun. A simple question, a soft and playful smile. For Alice, an anecdote. For Kevin, something unmistakable.",
       "story.h2": "Time and signs",
-      "story.p2": "In the months that followed, they crossed paths often — a look, a discreet hello — as if the story needed time to write itself.",
+      "story.p2": "In the months that followed, they crossed paths often. They recognised each other. A glance, sometimes a discreet hello— as if the story needed time to write itself.",
       "story.h3": "The first choice",
-      "story.p3": "On April 26th, 2019, during an aperitivo in Singapore, they finally took the time to talk—properly. Then music, dancing, and that rare feeling: this meeting matters.",
+      "story.p3": "On April 26th, 2019, during an aperitivo in Singapore, coincidence stepped aside. They finally took the time to talk—properly. Then music, dancing, and that rare feeling: this meeting matters.",
       "story.h4": "Distance, revealed",
       "story.p4": "When distance arrived, so did clarity. Messages became calls, calls became FaceTime—despite time zones, closeness grew real.",
       "story.h5": "The courage to believe",
-      "story.p5": "Kevin made a clear choice: to come back. To choose what felt true. Trust settled in—and so did happiness.",
+      "story.p5": "Kevin made a clear choice: to come back. To refuse the easy path, and choose what felt true. Trust settled in—and so did happiness.",
       "story.h6": "Meeting a whole family",
       "story.p6": "Love is also learning to love a family. With patience and dialogue, misunderstandings softened and bonds formed.",
-      "story.q1": "“Kevin is a good man.”",
       "story.h7": "Building, together",
-      "story.p7": "Years passed, families grew closer, bonds strengthened. Not an easy promise—rather a sincere path.",
+      "story.p7": "Years passed. Families grew closer. Bonds strengthened. Not an easy promise—rather a sincere path.",
       "story.p8": "On June 20th, 2026, Alice and Kevin will unite in marriage, surrounded by those who have mattered at every step of their journey.",
       "story.cta": "Confirm attendance",
+      "story.photoHint": "Add a photo",
 
       "details.title": "Details",
       "details.lead": "Weekend programme and essential information.",
@@ -296,19 +305,31 @@
 
       "programme.title": "Programme",
       "programme.day1": "Saturday, June 20th, 2026",
-      "programme.d1.l1": "Religious Ceremony — Duomo di Siracusa (Ortigia) — 11:30 AM",
-      "programme.d1.l2": "Aperitivo — Caffè Archimede (Ortigia) — 1:00 PM",
-      "programme.d1.l3": "Walk through Ortigia — free time — 3:00 PM",
-      "programme.d1.l4": "Reception — Villa Biviere Borghese (Lentini) — from 5:30 PM",
       "programme.day2": "Sunday, June 21st, 2026",
-      "programme.d2.l1": "Italian Aperitivo — Villa Nunziatina — from 2:00 PM, until evening",
+      "programme.e1.title": "Religious ceremony",
+      "programme.e1.meta": "Duomo di Siracusa (Ortigia) — 11:30 AM",
+      "programme.e2.title": "Aperitivo",
+      "programme.e2.meta": "Caffè Archimede (Ortigia) — 1:00 PM",
+      "programme.e3.title": "Walk through Ortigia",
+      "programme.e3.meta": "free time — 3:00 PM",
+      "programme.e4.title": "Reception",
+      "programme.e4.meta": "Villa Biviere Borghese (Lentini) — from 5:30 PM",
+      "programme.e5.title": "Italian aperitivo",
+      "programme.e5.meta": "Villa Nunziatina — from 2:00 PM, until evening",
+      "programme.mapCta": "Open in Google Maps",
+      "programme.embedLabel": "Map",
       "programme.hint": "Times are indicative, to help you plan your day comfortably.",
 
       "dress.title": "Dress code",
       "dress.text": "Theme: butter yellow. Light, refined summer elegance — we kindly suggest soft, bright, harmonious tones.",
-      "dress.b1": "Elegant & summer",
-      "dress.b2": "Light tones",
-      "dress.b3": "Comfortable",
+      "dress.paletteTitle": "Suggested palette",
+      "dress.sw1": "Butter yellow",
+      "dress.sw2": "Ivory",
+      "dress.sw3": "Sand",
+      "dress.sw4": "Sage",
+      "dress.sw5": "Navy",
+      "dress.g1": "Choose light fabrics and refined summer elegance.",
+      "dress.g2": "Avoid overly saturated or very dark colours (except navy accents).",
       "dress.note": "We’ll refine details if needed — the key is a gentle harmony, suited to Sicily in June.",
 
       "travel.kicker": "Travel & stay — Syracuse, Sicily",
@@ -340,24 +361,29 @@
       "gift.holderLabel": "Account holder",
       "gift.holder": "[to be added]",
       "gift.note": "We will update this information as soon as possible.",
+      "gift.copy": "Copy",
+      "gift.copied": "Copied",
 
       "footer.note": "Alice & Kevin — Syracuse, Sicily",
       "footer.legal": "© 2026 — Digital invitation"
     }
   };
 
-  function normalizeLang(v) {
-    const s = String(v || "").toLowerCase();
-    return supported.includes(s) ? s : "fr";
+  function safeGetStorage(key) {
+    try { return localStorage.getItem(key); } catch (_) { return null; }
+  }
+  function safeSetStorage(key, value) {
+    try { localStorage.setItem(key, value); } catch (_) { /* ignore */ }
   }
 
   function getStoredLang() {
-    return normalizeLang(storage.get(STORAGE_KEY) || "fr");
+    const v = String(safeGetStorage(STORAGE_KEY) || "").toLowerCase();
+    return supported.includes(v) ? v : "fr";
   }
 
   function setLangButtons(lang) {
     document.querySelectorAll(".lang-btn").forEach((btn) => {
-      const isActive = btn.getAttribute("data-lang") === lang;
+      const isActive = (btn.getAttribute("data-lang") === lang);
       btn.setAttribute("aria-pressed", String(isActive));
     });
     document.documentElement.lang = lang;
@@ -369,20 +395,19 @@
       const key = el.getAttribute("data-i18n");
       if (!key) return;
       const value = map[key];
-      if (typeof value === "string" && value.length) {
-        el.textContent = value;
-      }
+      if (typeof value !== "string") return;
+      // Preserve line breaks for specific blocks if needed
+      el.textContent = value;
     });
   }
 
   function setLanguage(lang) {
-    const safe = normalizeLang(lang);
-    storage.set(STORAGE_KEY, safe);
+    const safe = supported.includes(lang) ? lang : "fr";
+    safeSetStorage(STORAGE_KEY, safe);
     setLangButtons(safe);
     applyI18n(safe);
   }
 
-  // Mobile menu
   function initMobileMenu() {
     const btn = document.querySelector(".menu-btn");
     const menu = document.getElementById("mobileMenu");
@@ -392,7 +417,6 @@
       btn.setAttribute("aria-expanded", "false");
       menu.hidden = true;
     };
-
     const open = () => {
       btn.setAttribute("aria-expanded", "true");
       menu.hidden = false;
@@ -404,36 +428,59 @@
     });
 
     menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
-
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") close();
     });
   }
 
-  function initLanguageDelegation() {
-    // One reliable handler for ALL language buttons (header + mobile + future)
-    document.addEventListener("click", (e) => {
-      const btn = e.target && e.target.closest ? e.target.closest(".lang-btn") : null;
-      if (!btn) return;
+  function initCopyButtons() {
+    document.querySelectorAll("[data-copy-target]").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const sel = btn.getAttribute("data-copy-target");
+        if (!sel) return;
+        const el = document.querySelector(sel);
+        if (!el) return;
 
-      // Avoid any accidental form submit / focus quirks
-      e.preventDefault();
+        const original = btn.getAttribute("data-copy-label") || btn.textContent || "";
+        const copied = btn.getAttribute("data-copied-label") || original;
 
-      const lang = btn.getAttribute("data-lang");
-      if (lang) setLanguage(lang);
+        const text = (el.textContent || "").trim();
+        if (!text || text.includes("[") ) return; // avoid copying placeholders
+
+        try {
+          await navigator.clipboard.writeText(text);
+          btn.textContent = copied;
+          setTimeout(() => { btn.textContent = original; }, 1300);
+        } catch (_) {
+          // Fallback (very old browsers)
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand("copy"); } catch (e) {}
+          document.body.removeChild(ta);
+          btn.textContent = copied;
+          setTimeout(() => { btn.textContent = original; }, 1300);
+        }
+      });
     });
   }
 
-  // Init (safe for defer + normal load)
-  function init() {
-    initMobileMenu();
-    initLanguageDelegation();
-    setLanguage(getStoredLang());
+  function bindLanguageButtons() {
+    document.querySelectorAll(".lang-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        if (lang) setLanguage(lang);
+      });
+    });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
+  document.addEventListener("DOMContentLoaded", () => {
+    initMobileMenu();
+    bindLanguageButtons();
+    setLanguage(getStoredLang());
+    initCopyButtons();
+  });
 })();
