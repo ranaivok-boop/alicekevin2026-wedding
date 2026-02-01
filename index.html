@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Alice & Kevin — Mariage en Sicile</title>
-  <meta name="description" content="Invitation au mariage d’Alice & Kevin — 20 juin 2026 à Syracuse, Sicile. Programme, voyage & séjour, RSVP et informations pratiques." />
+  <meta name="description" content="Invitation au mariage d’Alice & Kevin — 20 juin 2026 à Syracuse, Sicile. Programme, voyage & séjour, RSVP, cadeau." />
 
   <meta property="og:title" content="Alice & Kevin — Mariage en Sicile" />
   <meta property="og:description" content="20 juin 2026 — Syracuse, Sicile — Italie. Programme, voyage & séjour, RSVP." />
@@ -19,17 +18,20 @@
 <body>
   <a class="skip-link" href="#main" data-i18n="a11y.skip">Aller au contenu principal</a>
 
-  <header class="site-header" id="top">
+  <header class="site-header">
     <div class="container header-inner">
-      <div class="brand" aria-label="Alice et Kevin">
+      <a class="brand" href="index.html" aria-label="Accueil Alice et Kevin">
         <span class="brand-mark" aria-hidden="true"></span>
         <span class="brand-name">Alice &amp; Kevin</span>
-      </div>
+      </a>
 
       <nav class="nav" aria-label="Navigation principale">
-        <a class="nav-link" href="#our-wedding" data-i18n="nav.ourWedding">Notre mariage</a>
-        <a class="nav-link" href="#details" data-i18n="nav.details">Détails</a>
-        <a class="nav-link nav-cta" href="#rsvp" data-i18n="nav.rsvp">RSVP</a>
+        <a class="nav-link nav-active" href="index.html" data-i18n="nav.home">Accueil</a>
+        <a class="nav-link" href="story.html" data-i18n="nav.story">Notre histoire</a>
+        <a class="nav-link" href="details.html" data-i18n="nav.details">Détails</a>
+        <a class="nav-link" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
+        <a class="nav-link nav-cta" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
+        <a class="nav-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
       </nav>
 
       <div class="lang-switch" aria-label="Choix de langue">
@@ -46,9 +48,13 @@
     </div>
 
     <div class="mobile-menu" hidden>
-      <a class="mobile-link" href="#our-wedding" data-i18n="nav.ourWedding">Notre mariage</a>
-      <a class="mobile-link" href="#details" data-i18n="nav.details">Détails</a>
-      <a class="mobile-link" href="#rsvp" data-i18n="nav.rsvp">RSVP</a>
+      <a class="mobile-link mobile-active" href="index.html" data-i18n="nav.home">Accueil</a>
+      <a class="mobile-link" href="story.html" data-i18n="nav.story">Notre histoire</a>
+      <a class="mobile-link" href="details.html" data-i18n="nav.details">Détails</a>
+      <a class="mobile-link" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
+      <a class="mobile-link" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
+      <a class="mobile-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
+
       <div class="mobile-lang">
         <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
         <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
@@ -62,27 +68,27 @@
     <section class="hero" aria-label="Invitation">
       <div class="container hero-inner">
         <div class="hero-card">
-          <p class="hero-kicker" data-i18n="hero.kicker">Alice &amp; Kevin — Mariage en Sicile</p>
+          <p class="hero-kicker" data-i18n="home.kicker">Alice &amp; Kevin — Mariage en Sicile</p>
           <h1 class="hero-title">Alice &amp; Kevin</h1>
 
-          <p class="hero-invite" data-i18n="hero.invite">
+          <p class="hero-invite" data-i18n="home.invite">
             ont l’honneur de vous convier à la célébration de leur union
           </p>
 
           <p class="hero-dateplace">
-            <span class="hero-date" data-i18n="hero.date">Samedi 20 juin 2026</span>
+            <span class="hero-date" data-i18n="home.date">Samedi 20 juin 2026</span>
             <span class="hero-dot" aria-hidden="true">•</span>
-            <span class="hero-place" data-i18n="hero.place">Syracuse, Sicile — Italie</span>
+            <span class="hero-place" data-i18n="home.place">Syracuse, Sicile — Italie</span>
           </p>
 
-          <p class="hero-intro" data-i18n="hero.intro">
+          <p class="hero-intro" data-i18n="home.intro">
             Nous serions profondément heureux de vous accueillir en Sicile pour célébrer ensemble ce moment si précieux.
             Deux journées, une même intention : partager, entourés de nos proches, une parenthèse de beauté, de douceur et d’élégance.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#rsvp" data-i18n="hero.ctaRsvp">Confirmer ma présence</a>
-            <a class="btn btn-ghost" href="#programme" data-i18n="hero.ctaProgramme">Voir le programme</a>
+            <a class="btn btn-primary" href="rsvp.html" data-i18n="home.ctaRsvp">Confirmer ma présence</a>
+            <a class="btn btn-ghost" href="details.html" data-i18n="home.ctaDetails">Voir les détails</a>
           </div>
         </div>
       </div>
@@ -91,24 +97,24 @@
       <div class="hero-overlay" aria-hidden="true"></div>
     </section>
 
-    <!-- OUR WEDDING (cards like maquette) -->
-    <section class="section" id="our-wedding">
+    <!-- QUICK LINKS -->
+    <section class="section">
       <div class="container">
-        <h2 class="section-title" data-i18n="ourWedding.title">Notre mariage</h2>
-        <p class="section-subtitle" data-i18n="ourWedding.subtitle">
-          Deux journées en Sicile, pour célébrer ensemble, entourés de nos proches.
+        <h2 class="section-title" data-i18n="home.quickTitle">Informations essentielles</h2>
+        <p class="section-subtitle" data-i18n="home.quickSubtitle">
+          Programme, voyage & séjour, RSVP et cadeau — tout au même endroit.
         </p>
 
         <div class="grid grid-4">
-          <a class="info-card" href="#details">
+          <a class="info-card" href="details.html">
             <div class="info-icon" aria-hidden="true">⛪</div>
             <div class="info-text">
-              <h3 data-i18n="cards.ceremony.title">La cérémonie</h3>
-              <p data-i18n="cards.ceremony.desc">Duomo di Siracusa — 11h30</p>
+              <h3 data-i18n="cards.details.title">Détails</h3>
+              <p data-i18n="cards.details.desc">Cérémonie & réception</p>
             </div>
           </a>
 
-          <a class="info-card" href="#programme">
+          <a class="info-card" href="details.html#programme">
             <div class="info-icon" aria-hidden="true">🥂</div>
             <div class="info-text">
               <h3 data-i18n="cards.programme.title">Programme</h3>
@@ -116,7 +122,7 @@
             </div>
           </a>
 
-          <a class="info-card" href="#travel">
+          <a class="info-card" href="travel.html">
             <div class="info-icon" aria-hidden="true">✈️</div>
             <div class="info-text">
               <h3 data-i18n="cards.travel.title">Voyage & séjour</h3>
@@ -124,7 +130,7 @@
             </div>
           </a>
 
-          <a class="info-card" href="#gift">
+          <a class="info-card" href="gift.html">
             <div class="info-icon" aria-hidden="true">🎁</div>
             <div class="info-text">
               <h3 data-i18n="cards.gift.title">Cadeau</h3>
@@ -132,219 +138,15 @@
             </div>
           </a>
         </div>
-      </div>
-    </section>
 
-    <!-- DETAILS (dates in 3 languages like maquette) -->
-    <section class="section section-soft" id="details">
-      <div class="container split">
-        <div>
-          <h2 class="section-title" data-i18n="details.title">Détails</h2>
-
-          <div class="details-dates">
-            <div class="mini-block">
-              <p class="mini-top" data-i18n="details.fr.dateTop">20 juin 2026</p>
-              <p class="mini-bottom" data-i18n="details.fr.placeBottom">Siracusa, Sicile — Italie</p>
-            </div>
-
-            <div class="mini-block">
-              <p class="mini-top" data-i18n="details.it.dateTop">20 giugno 2026</p>
-              <p class="mini-bottom" data-i18n="details.it.placeBottom">Siracusa, Sicilia — Italia</p>
-            </div>
-
-            <div class="mini-block">
-              <p class="mini-top" data-i18n="details.en.dateTop">June 20, 2026</p>
-              <p class="mini-bottom" data-i18n="details.en.placeBottom">Syracuse, Sicily — Italy</p>
-            </div>
-          </div>
-
-          <div class="detail-cards">
-            <div class="detail-card" id="ceremony">
-              <h3 data-i18n="details.ceremony.title">Cérémonie</h3>
-              <p data-i18n="details.ceremony.body">Cérémonie religieuse — Duomo di Siracusa (Ortigia) — 11h30</p>
-            </div>
-            <div class="detail-card" id="reception">
-              <h3 data-i18n="details.reception.title">Réception</h3>
-              <p data-i18n="details.reception.body">Villa Biviere Borghese (Lentini) — à partir de 17h30</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="envelope" aria-hidden="true">
-          <div class="envelope-card">
-            <p class="envelope-title" data-i18n="details.envelopeTitle">Une parenthèse en Sicile</p>
-            <p class="envelope-text" data-i18n="details.envelopeText">
-              Une invitation à célébrer, à prendre le temps, et à profiter de la douceur d’Ortigia.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- STORY -->
-    <section class="section" id="story">
-      <div class="container reading">
-        <h2 class="section-title" data-i18n="story.title">Notre histoire</h2>
-        <p class="section-subtitle" data-i18n="story.intro">
-          Il arrive parfois que la vie choisisse des lieux ordinaires pour y glisser l’extraordinaire.
-        </p>
-
-        <div class="story" data-collapsible="true" aria-label="Notre histoire">
-          <!-- FR (long, structured) -->
-          <div class="story-block" data-lang-only="fr">
-            <h3 class="story-h3" data-i18n="story.fr.h1">Une rencontre inattendue</h3>
-            <p data-i18n="story.fr.p1">Février 2019, Singapour. Un ascenseur à l’ESSEC Business School. Rien de spectaculaire, sinon cette intuition silencieuse que quelque chose, ce jour-là, venait de commencer. Une question anodine, un sourire doux et espiègle. Pour Alice, une anecdote. Pour Kevin, une évidence.</p>
-
-            <h3 class="story-h3" data-i18n="story.fr.h2">Le temps du silence et des signes</h3>
-            <p data-i18n="story.fr.p2">Les mois suivants, ils se croisèrent souvent. Ils se reconnaissaient. Un regard, parfois un salut discret. Comme si le silence faisait encore partie du chemin, comme si l’histoire avait besoin de patience pour s’écrire.</p>
-
-            <h3 class="story-h3" data-i18n="story.fr.h3">Le premier choix</h3>
-            <p data-i18n="story.fr.p3">Le 26 avril 2019, lors d’un apéritif à Singapour, le hasard décida de s’effacer. Ils prirent enfin le temps de se parler, longuement. Plus tard, la musique, la danse, et cette sensation simple et rare : celle d’une rencontre qui compte.</p>
-
-            <h3 class="story-h3" data-i18n="story.fr.h4">La distance comme révélateur</h3>
-            <p data-i18n="story.fr.p4">Lorsque la distance s’installa, une évidence apparut : l’absence révèle parfois l’essentiel. Les messages devinrent des appels, les appels des FaceTime. Malgré les fuseaux horaires, une complicité sincère se tissa.</p>
-
-            <h3 class="story-h3" data-i18n="story.fr.h5">Le courage d’y croire</h3>
-            <p data-i18n="story.fr.p5">Kevin fit un choix clair : revenir. Refuser la facilité, choisir la fidélité à ce qu’il ressentait. Peu à peu, la confiance s’installa, et avec elle le bonheur.</p>
-
-            <h3 class="story-h3" data-i18n="story.fr.h6">Aimer, c’est aussi rencontrer une famille</h3>
-            <p data-i18n="story.fr.p6">Aimer, c’est parfois apprendre à aimer une famille entière. Avec le temps, la patience et le dialogue, les incompréhensions s’apaisèrent, et les liens se créèrent.</p>
-
-            <p class="story-quote" data-i18n="story.fr.q1">« Kevin est un bon garçon. »</p>
-
-            <h3 class="story-h3" data-i18n="story.fr.h7">Construire, ensemble</h3>
-            <p data-i18n="story.fr.p7">Les années ont passé. Les familles se sont rapprochées. Les liens se sont renforcés. Leur histoire n’a jamais été une promesse facile, mais un chemin — parfois exigeant, toujours sincère.</p>
-
-            <p class="story-end" data-i18n="story.fr.p8">Et en ce 20 juin 2026, Alice et Kevin scelleront cet amour patiemment construit, entourés de ceux qui ont compté à chaque étape de leur histoire.</p>
-          </div>
-
-          <!-- IT (condensed) -->
-          <div class="story-block" data-lang-only="it">
-            <p data-i18n="story.it.p1">A raccontarlo sembra incredibile: a volte la vita sceglie luoghi ordinari per dare inizio a qualcosa di straordinario. Per noi, tutto è cominciato in un ascensore.</p>
-            <p data-i18n="story.it.p2">Febbraio 2019, Singapore. Un incontro semplice, uno sguardo, un sorriso. Per Alice, un episodio curioso. Per Kevin, una certezza silenziosa.</p>
-            <p data-i18n="story.it.p3">Il tempo, la distanza, le scelte coraggiose e la pazienza hanno fatto il resto. E il 20 giugno 2026, Alice e Kevin uniranno le loro vite nel matrimonio, circondati da coloro che hanno accompagnato ogni passo del loro cammino.</p>
-          </div>
-
-          <!-- EN (condensed) -->
-          <div class="story-block" data-lang-only="en">
-            <p data-i18n="story.en.p1">Sometimes life chooses the most ordinary places to begin something extraordinary. For us, it all started in an elevator.</p>
-            <p data-i18n="story.en.p2">February 2019, Singapore. A simple encounter, a smile, a quiet certainty. Time, distance, patience and sincere choices gradually shaped what followed.</p>
-            <p data-i18n="story.en.p3">On June 20th, 2026, Alice and Kevin will unite in marriage, surrounded by those who have mattered at every step of their journey.</p>
-          </div>
-        </div>
-
-        <button class="readmore" type="button" data-action="toggle-story" data-i18n="story.readMore">Lire la suite</button>
-      </div>
-    </section>
-
-    <!-- PROGRAMME + DRESS CODE -->
-    <section class="section section-soft" id="programme">
-      <div class="container">
-        <h2 class="section-title" data-i18n="programme.title">Programme du mariage</h2>
-
-        <div class="grid grid-2">
-          <article class="day-card">
-            <header class="day-header">
-              <span class="day-badge" data-i18n="programme.day1.title">Samedi 20 juin 2026</span>
-            </header>
-            <ul class="timeline">
-              <li><span class="t-time" data-i18n="programme.day1.time1">11h30</span><span class="t-sep" aria-hidden="true">—</span><span class="t-what" data-i18n="programme.day1.item1">Cérémonie religieuse — Duomo di Siracusa (Ortigia)</span></li>
-              <li><span class="t-time" data-i18n="programme.day1.time2">13h00</span><span class="t-sep" aria-hidden="true">—</span><span class="t-what" data-i18n="programme.day1.item2">Aperitivo — Caffè Archimede (Ortigia)</span></li>
-              <li><span class="t-time" data-i18n="programme.day1.time3">15h00</span><span class="t-sep" aria-hidden="true">—</span><span class="t-what" data-i18n="programme.day1.item3">Promenade à Ortigia — Découverte libre</span></li>
-              <li><span class="t-time" data-i18n="programme.day1.time4">17h30</span><span class="t-sep" aria-hidden="true">—</span><span class="t-what" data-i18n="programme.day1.item4">Réception — Villa Biviere Borghese (Lentini) — à partir de</span></li>
-            </ul>
-          </article>
-
-          <article class="day-card">
-            <header class="day-header">
-              <span class="day-badge" data-i18n="programme.day2.title">Dimanche 21 juin 2026</span>
-            </header>
-            <ul class="timeline">
-              <li><span class="t-time" data-i18n="programme.day2.time1">14h00</span><span class="t-sep" aria-hidden="true">—</span><span class="t-what" data-i18n="programme.day2.item1">Apéritivo Italiano — Villa Nunziatina — à partir de, jusqu’au soir</span></li>
-            </ul>
-          </article>
-        </div>
-
-        <p class="note" data-i18n="programme.note">
-          Les horaires sont donnés à titre indicatif afin de vous permettre d’organiser votre journée en toute sérénité.
-        </p>
-
-        <div class="dresscode">
-          <h3 class="dresscode-title" data-i18n="dresscode.title">Dress code</h3>
-          <p class="dresscode-text" data-i18n="dresscode.body">
-            Une tenue élégante et estivale, en harmonie avec les lieux et la saison. L’essentiel est que vous vous sentiez à l’aise pour profiter pleinement de ces journées.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRAVEL -->
-    <section class="section" id="travel">
-      <div class="container">
-        <h2 class="section-title" data-i18n="travel.title">Voyage & séjour — Syracuse, Sicile</h2>
-        <p class="section-subtitle" data-i18n="travel.intro">Afin de faciliter votre venue, vous trouverez ici les informations essentielles.</p>
-
-        <div class="grid grid-2">
-          <div class="tile">
-            <h3 data-i18n="travel.arrival.title">Arriver en Sicile</h3>
-            <p data-i18n="travel.arrival.body">Aéroport recommandé : Catane (CTA)</p>
-          </div>
-
-          <div class="tile">
-            <h3 data-i18n="travel.move.title">Se déplacer</h3>
-            <p data-i18n="travel.move.body">La location d’un véhicule est recommandée dès votre arrivée à Catane (Europcar, Sicily by Car, Sixt — réservation anticipée conseillée).</p>
-          </div>
-
-          <div class="tile">
-            <h3 data-i18n="travel.stay.title">Où loger</h3>
-            <p data-i18n="travel.stay.body">Lentini — Badiula. Tarifs préférentiels avec le code <span class="tag">WeddingAK</span> (valable jusqu’au 31 mars 2026).</p>
-          </div>
-
-          <div class="tile">
-            <h3 data-i18n="travel.todo.title">À faire en Sicile</h3>
-            <p data-i18n="travel.todo.body">Si votre planning le permet : une promenade au coucher du soleil à Ortigia, un dîner au bord de l’eau, et le plaisir simple de prendre le temps.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RSVP -->
-    <section class="section section-soft" id="rsvp">
-      <div class="container rsvp">
-        <h2 class="section-title" data-i18n="rsvp.title">Confirmation de présence</h2>
-        <p class="rsvp-text" data-i18n="rsvp.deadline">
-          Nous vous remercions de bien vouloir confirmer votre présence avant le 1ᵉʳ avril 2026, afin de nous aider à organiser ces journées dans les meilleures conditions.
-        </p>
-
-        <ul class="rsvp-bullets" aria-label="Jours concernés">
-          <li data-i18n="rsvp.bullet1">— le samedi 20 juin 2026</li>
-          <li data-i18n="rsvp.bullet2">— le dimanche 21 juin 2026</li>
-        </ul>
-
-        <a class="btn btn-primary btn-large" href="https://forms.gle/KiUemn5CTQhzXHHbA" target="_blank" rel="noopener" data-i18n="rsvp.button">
-          Ouvrir le formulaire RSVP
-        </a>
-
-        <p class="micro" data-i18n="rsvp.micro">Merci — cela ne prend qu’une minute.</p>
-      </div>
-    </section>
-
-    <!-- GIFT -->
-    <section class="section" id="gift">
-      <div class="container reading">
-        <h2 class="section-title" data-i18n="gift.title">Cadeau aux mariés</h2>
-        <p data-i18n="gift.p1">Votre présence à nos côtés sera, à elle seule, le plus précieux des cadeaux.</p>
-        <p data-i18n="gift.p2">Si vous souhaitez nous témoigner une attention, une contribution à notre avenir commun serait profondément appréciée.</p>
-
-        <div class="bank">
-          <h3 class="bank-title" data-i18n="gift.bankTitle">Virement bancaire</h3>
-          <p class="bank-note" data-i18n="gift.bankNotice">Par souci de simplicité, les contributions s’effectuent exclusivement par virement bancaire. Les informations seront partagées prochainement.</p>
+        <div class="center-cta">
+          <a class="btn btn-primary btn-large" href="rsvp.html" data-i18n="home.ctaRsvp2">Ouvrir le RSVP</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer" id="footer">
+  <footer class="site-footer">
     <div class="container footer-inner">
       <p class="footer-line" data-i18n="footer.note">Alice &amp; Kevin — Syracuse, Sicile</p>
       <p class="footer-small" data-i18n="footer.legal">© 2026 — Invitation digitale</p>
