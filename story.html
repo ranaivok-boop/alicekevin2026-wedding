@@ -5,16 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Notre histoire — Alice & Kevin</title>
   <meta name="description" content="Notre histoire — Alice & Kevin. Mariage en Sicile, 20 juin 2026." />
+  <meta name="theme-color" content="#F6E58D" />
+
   <link rel="icon" href="assets/images/favicon.png" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
   <a class="skip-link" href="#main" data-i18n="a11y.skip">Aller au contenu principal</a>
 
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Accueil Alice et Kevin">
+      <a class="brand" href="index.html" aria-label="Accueil">
         <span class="brand-mark" aria-hidden="true"></span>
         <span class="brand-name">Alice &amp; Kevin</span>
       </a>
@@ -30,18 +32,18 @@
 
       <div class="lang-switch" aria-label="Choix de langue">
         <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
-        <span class="lang-sep" aria-hidden="true">/</span>
+        <span class="lang-sep" aria-hidden="true">•</span>
         <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-        <span class="lang-sep" aria-hidden="true">/</span>
+        <span class="lang-sep" aria-hidden="true">•</span>
         <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
 
-      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false">
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
 
-    <div class="mobile-menu" hidden>
+    <div id="mobileMenu" class="mobile-menu" hidden>
       <a class="mobile-link" href="index.html" data-i18n="nav.home">Accueil</a>
       <a class="mobile-link mobile-active" href="story.html" data-i18n="nav.story">Notre histoire</a>
       <a class="mobile-link" href="details.html" data-i18n="nav.details">Détails</a>
@@ -58,11 +60,11 @@
   </header>
 
   <main id="main">
-    <section class="page-hero" aria-label="Notre histoire">
-      <div class="container page-hero-inner">
-        <p class="page-kicker" data-i18n="story.kicker">Alice &amp; Kevin</p>
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-kicker">Alice &amp; Kevin</p>
         <h1 class="page-title" data-i18n="story.title">Notre histoire</h1>
-        <p class="page-lead" data-i18n="story.intro">
+        <p class="page-lead" data-i18n="story.lead">
           Il arrive parfois que la vie choisisse des lieux ordinaires pour y glisser l’extraordinaire.
         </p>
       </div>
@@ -70,57 +72,64 @@
 
     <section class="section">
       <div class="container reading">
-        <div class="story" data-collapsible="true" aria-label="Texte Notre histoire">
-          <!-- FR (long) -->
-          <div class="story-block" data-lang-only="fr">
-            <h2 class="story-h3" data-i18n="story.fr.h1">Une rencontre inattendue</h2>
-            <p data-i18n="story.fr.p1">Février 2019, Singapour. Un ascenseur à l’ESSEC Business School. Rien de spectaculaire, sinon cette intuition silencieuse que quelque chose, ce jour-là, venait de commencer. Une question anodine, un sourire doux et espiègle. Pour Alice, une anecdote. Pour Kevin, une évidence.</p>
+        <article class="prose">
+          <p data-i18n="story.p0">
+            Il arrive parfois que la vie choisisse des lieux ordinaires pour y glisser l’extraordinaire.
+            Pour nous, tout a commencé dans un ascenseur — et s’est poursuivi comme un chemin patiemment construit, étage après étage.
+          </p>
 
-            <h2 class="story-h3" data-i18n="story.fr.h2">Le temps du silence et des signes</h2>
-            <p data-i18n="story.fr.p2">Les mois suivants, ils se croisèrent souvent. Ils se reconnaissaient. Un regard, parfois un salut discret. Comme si le silence faisait encore partie du chemin, comme si l’histoire avait besoin de patience pour s’écrire.</p>
+          <h2 data-i18n="story.h1">Une rencontre inattendue</h2>
+          <p data-i18n="story.p1">
+            Février 2019, Singapour. Un ascenseur à l’ESSEC Business School. Rien de spectaculaire, sinon cette intuition silencieuse que quelque chose,
+            ce jour-là, venait de commencer. Une question anodine, un sourire doux et espiègle. Pour Alice, une anecdote. Pour Kevin, une évidence.
+          </p>
 
-            <h2 class="story-h3" data-i18n="story.fr.h3">Le premier choix</h2>
-            <p data-i18n="story.fr.p3">Le 26 avril 2019, lors d’un apéritif à Singapour, le hasard décida de s’effacer. Ils prirent enfin le temps de se parler, longuement. Plus tard, la musique, la danse, et cette sensation simple et rare : celle d’une rencontre qui compte.</p>
+          <h2 data-i18n="story.h2">Le temps du silence et des signes</h2>
+          <p data-i18n="story.p2">
+            Les mois suivants, ils se croisèrent souvent. Ils se reconnaissaient. Un regard, parfois un salut discret.
+            Comme si le silence faisait encore partie du chemin, comme si l’histoire avait besoin de patience pour s’écrire.
+          </p>
 
-            <h2 class="story-h3" data-i18n="story.fr.h4">La distance comme révélateur</h2>
-            <p data-i18n="story.fr.p4">Lorsque la distance s’installa, une évidence apparut : l’absence révèle parfois l’essentiel. Les messages devinrent des appels, les appels des FaceTime. Malgré les fuseaux horaires, une complicité sincère se tissa.</p>
+          <h2 data-i18n="story.h3">Le premier choix</h2>
+          <p data-i18n="story.p3">
+            Le 26 avril 2019, lors d’un apéritif à Singapour, le hasard décida de s’effacer. Ils prirent enfin le temps de se parler, longuement.
+            Plus tard, la musique, la danse, et cette sensation simple et rare : celle d’une rencontre qui compte.
+          </p>
 
-            <h2 class="story-h3" data-i18n="story.fr.h5">Le courage d’y croire</h2>
-            <p data-i18n="story.fr.p5">Kevin fit un choix clair : revenir. Refuser la facilité, choisir la fidélité à ce qu’il ressentait. Peu à peu, la confiance s’installa, et avec elle le bonheur.</p>
+          <h2 data-i18n="story.h4">La distance comme révélateur</h2>
+          <p data-i18n="story.p4">
+            Lorsque la distance s’installa, une évidence apparut : l’absence révèle parfois l’essentiel.
+            Les messages devinrent des appels, les appels des FaceTime. Malgré les fuseaux horaires, une complicité sincère se tissa.
+          </p>
 
-            <h2 class="story-h3" data-i18n="story.fr.h6">Aimer, c’est aussi rencontrer une famille</h2>
-            <p data-i18n="story.fr.p6">Aimer, c’est parfois apprendre à aimer une famille entière. Avec le temps, la patience et le dialogue, les incompréhensions s’apaisèrent, et les liens se créèrent.</p>
+          <h2 data-i18n="story.h5">Le courage d’y croire</h2>
+          <p data-i18n="story.p5">
+            Kevin fit un choix clair : revenir. Refuser la facilité, choisir la fidélité à ce qu’il ressentait.
+            Peu à peu, la confiance s’installa, et avec elle le bonheur.
+          </p>
 
-            <p class="story-quote" data-i18n="story.fr.q1">« Kevin est un bon garçon. »</p>
+          <h2 data-i18n="story.h6">Aimer, c’est aussi rencontrer une famille</h2>
+          <p data-i18n="story.p6">
+            Aimer, c’est parfois apprendre à aimer une famille entière. Avec le temps, la patience et le dialogue, les incompréhensions s’apaisèrent,
+            et les liens se créèrent.
+          </p>
 
-            <h2 class="story-h3" data-i18n="story.fr.h7">Construire, ensemble</h2>
-            <p data-i18n="story.fr.p7">Les années ont passé. Les familles se sont rapprochées. Les liens se sont renforcés. Leur histoire n’a jamais été une promesse facile, mais un chemin — parfois exigeant, toujours sincère.</p>
+          <blockquote data-i18n="story.q1">« Kevin est un bon garçon. »</blockquote>
 
-            <p class="story-end" data-i18n="story.fr.p8">Et en ce 20 juin 2026, Alice et Kevin scelleront cet amour patiemment construit, entourés de ceux qui ont compté à chaque étape de leur histoire.</p>
-          </div>
+          <h2 data-i18n="story.h7">Construire, ensemble</h2>
+          <p data-i18n="story.p7">
+            Les années ont passé. Les familles se sont rapprochées. Les liens se sont renforcés.
+            Leur histoire n’a jamais été une promesse facile, mais un chemin — parfois exigeant, toujours sincère.
+          </p>
 
-          <!-- IT (condensed) -->
-          <div class="story-block" data-lang-only="it">
-            <p data-i18n="story.it.p1">A volte la vita sceglie luoghi ordinari per dare inizio a qualcosa di straordinario. Per noi, tutto è cominciato in un ascensore.</p>
-            <p data-i18n="story.it.p2">Febbraio 2019, Singapore. Un incontro semplice, uno sguardo, un sorriso. Per Alice, un episodio curioso. Per Kevin, una certezza silenziosa.</p>
-            <p data-i18n="story.it.p3">Il tempo, la distanza, le scelte coraggiose e la pazienza hanno fatto il resto. E il 20 giugno 2026, Alice e Kevin uniranno le loro vite nel matrimonio, circondati da coloro che hanno accompagnato ogni passo del loro cammino.</p>
-          </div>
+          <p class="prose-end" data-i18n="story.p8">
+            Et en ce 20 juin 2026, Alice et Kevin scelleront cet amour patiemment construit, entourés de ceux qui ont compté à chaque étape de leur histoire.
+          </p>
+        </article>
 
-          <!-- EN (condensed) -->
-          <div class="story-block" data-lang-only="en">
-            <p data-i18n="story.en.p1">Sometimes life chooses the most ordinary places to begin something extraordinary. For us, it all started in an elevator.</p>
-            <p data-i18n="story.en.p2">February 2019, Singapore. A simple encounter, a smile, a quiet certainty. Time, distance, patience and sincere choices gradually shaped what followed.</p>
-            <p data-i18n="story.en.p3">On June 20th, 2026, Alice and Kevin will unite in marriage, surrounded by those who have mattered at every step of their journey.</p>
-          </div>
+        <div class="center-cta">
+          <a class="btn btn-primary btn-large" href="rsvp.html" data-i18n="story.cta">Confirmer ma présence</a>
         </div>
-
-        <button class="readmore" type="button" data-action="toggle-story" data-i18n="story.readMore">Lire la suite</button>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="container center">
-        <a class="btn btn-primary btn-large" href="rsvp.html" data-i18n="story.ctaRsvp">Confirmer ma présence</a>
       </div>
     </section>
   </main>
@@ -132,6 +141,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js" defer></script>
+  <script src="./js/main.js" defer></script>
 </body>
 </html>
