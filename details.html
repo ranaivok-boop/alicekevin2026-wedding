@@ -3,248 +3,158 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alice & Kevin — Programme</title>
-  <meta name="description" content="Programme du mariage — cérémonie, aperitivo, réception — et apéritivo du dimanche." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
+  <title>Détails — Alice & Kevin</title>
+  <meta name="description" content="Détails du mariage d’Alice & Kevin : cérémonie, réception, programme et dress code." />
+  <link rel="icon" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Aller au contenu principal</a>
 
-  <header class="site-header" role="banner">
-    <div class="site-header__inner">
-      <button class="menu-btn" type="button" id="menuBtn" aria-haspopup="dialog" aria-expanded="false" data-i18n="menu_open">Menu</button>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Accueil Alice et Kevin">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Alice &amp; Kevin</span>
+      </a>
 
-      <nav class="site-nav" aria-label="Navigation principale">
-        <a class="navlink" href="index.html" data-i18n="nav_home">Accueil</a>
-        <a class="navlink" href="story.html" data-i18n="nav_story">Notre histoire</a>
-        <a class="navlink is-current" href="details.html" aria-current="page" data-i18n="nav_programme">Programme</a>
-        <a class="navlink" href="travel.html" data-i18n="nav_travel">Voyage &amp; séjour</a>
-        <a class="navlink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-        <a class="navlink" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav-link" href="index.html" data-i18n="nav.home">Accueil</a>
+        <a class="nav-link" href="story.html" data-i18n="nav.story">Notre histoire</a>
+        <a class="nav-link nav-active" href="details.html" data-i18n="nav.details">Détails</a>
+        <a class="nav-link" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
+        <a class="nav-link nav-cta" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
+        <a class="nav-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
       </nav>
 
-      <div class="lang" aria-label="Choisir la langue">
-        <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
-        <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      <div class="lang-switch" aria-label="Choix de langue">
+        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <span class="lang-sep" aria-hidden="true">/</span>
+        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+        <span class="lang-sep" aria-hidden="true">/</span>
+        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
+
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
 
-    <div class="menu-panel" id="menuPanel" role="dialog" aria-modal="true" aria-label="Menu">
-      <div class="menu-panel__card">
-        <div class="menu-panel__top">
-          <div class="menu-panel__title" data-i18n="menu_title">Menu</div>
-          <button class="menu-close" type="button" id="menuClose" data-i18n="menu_close">Fermer</button>
-        </div>
-        <div class="menu-panel__grid">
-          <a class="menulink" href="index.html" data-i18n="nav_home">Accueil</a>
-          <a class="menulink" href="story.html" data-i18n="nav_story">Notre histoire</a>
-          <a class="menulink is-current" href="details.html" data-i18n="nav_programme">Programme</a>
-          <a class="menulink" href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
-          <a class="menulink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-          <a class="menulink" href="gift.html" data-i18n="nav_gift">Cadeau</a>
-        </div>
-        <div class="menu-panel__langs" aria-label="Choisir la langue">
-          <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
-          <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-          <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-        </div>
+    <div class="mobile-menu" hidden>
+      <a class="mobile-link" href="index.html" data-i18n="nav.home">Accueil</a>
+      <a class="mobile-link" href="story.html" data-i18n="nav.story">Notre histoire</a>
+      <a class="mobile-link mobile-active" href="details.html" data-i18n="nav.details">Détails</a>
+      <a class="mobile-link" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
+      <a class="mobile-link" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
+      <a class="mobile-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
+
+      <div class="mobile-lang">
+        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
     </div>
   </header>
 
-  <main id="content" class="page">
-    <!-- Hero banner -->
-    <section class="banner banner--programme" aria-label="Programme">
-      <div class="banner__overlay"></div>
-      <div class="banner__inner">
-        <div class="banner__kicker" data-i18n="banner_programme_kicker">Samedi 6 juin &amp; Dimanche 7 juin 2026</div>
-        <h1 class="banner__title" data-i18n="programme_title">Programme</h1>
-        <p class="banner__lead" data-i18n="programme_lead">
-          Le déroulé des célébrations, pour vivre chaque moment avec simplicité.
-        </p>
+  <main id="main">
+    <section class="page-hero" aria-label="Détails">
+      <div class="container page-hero-inner">
+        <p class="page-kicker" data-i18n="details.kicker">Alice &amp; Kevin</p>
+        <h1 class="page-title" data-i18n="details.title">Détails</h1>
+        <p class="page-lead" data-i18n="details.lead">Cérémonie, réception, programme et informations pratiques.</p>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section__inner">
-        <!-- Jour 1 -->
-        <div class="panel">
-          <div class="panel__head">
-            <svg class="section-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 3v3m10-3v3M4 9h16M6 6h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/>
-            </svg>
-            <h2 class="h2" data-i18n="day1_title">Samedi 6 juin 2026</h2>
+    <section class="section section-soft">
+      <div class="container split">
+        <div>
+          <div class="details-dates">
+            <div class="mini-block">
+              <p class="mini-top" data-i18n="home.date">Samedi 20 juin 2026</p>
+              <p class="mini-bottom" data-i18n="home.place">Syracuse, Sicile — Italie</p>
+            </div>
           </div>
 
-          <div class="timeline">
-            <!-- Cérémonie -->
-            <div class="titem">
-              <div class="titem__time" data-i18n="t1_time">11h30</div>
-              <div class="titem__body">
-                <div class="titem__row">
-                  <svg class="ticon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M6 20V10a6 6 0 0 1 12 0v10" />
-                    <path d="M4 20h16" />
-                    <path d="M8 20v-8m8 8v-8" />
-                  </svg>
-                  <div>
-                    <div class="titem__title" data-i18n="ceremony_title">Cérémonie religieuse</div>
-                    <div class="titem__place" data-i18n="ceremony_place">Duomo di Siracusa — Ortigia</div>
-                  </div>
-                </div>
-
-                <div class="map-embed-wrap">
-                  <iframe class="map-embed"
-                    src="https://www.google.com/maps?q=Duomo%20di%20Siracusa%20Ortigia&output=embed"
-                    loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Duomo di Siracusa"></iframe>
-                </div>
-              </div>
+          <div class="detail-cards">
+            <div class="detail-card" id="ceremony">
+              <h2 data-i18n="details.ceremony.title">Cérémonie</h2>
+              <p data-i18n="details.ceremony.body">Cérémonie religieuse — Duomo di Siracusa (Ortigia) — 11h30</p>
             </div>
 
-            <!-- Aperitivo -->
-            <div class="titem">
-              <div class="titem__time">13h00</div>
-              <div class="titem__body">
-                <div class="titem__row">
-                  <svg class="ticon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M8 3h8l-1 7a4 4 0 0 1-6 0L8 3Z" />
-                    <path d="M12 10v8" />
-                    <path d="M8 22h8" />
-                  </svg>
-                  <div>
-                    <div class="titem__title" data-i18n="aperitivo_title">Aperitivo italien</div>
-                    <div class="titem__place" data-i18n="aperitivo_place">Caffè Archimede — Ortigia</div>
-                  </div>
-                </div>
-
-                <div class="map-embed-wrap">
-                  <iframe class="map-embed"
-                    src="https://www.google.com/maps?q=Caff%C3%A8%20Archimede%20Siracusa&output=embed"
-                    loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Caffè Archimede"></iframe>
-                </div>
-              </div>
-            </div>
-
-            <!-- Promenade -->
-            <div class="titem">
-              <div class="titem__time">15h00</div>
-              <div class="titem__body">
-                <div class="titem__row">
-                  <svg class="ticon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 21s7-4 7-10a7 7 0 1 0-14 0c0 6 7 10 7 10Z"/>
-                    <path d="M12 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-                  </svg>
-                  <div>
-                    <div class="titem__title" data-i18n="walk_title">Promenade à Ortigia</div>
-                    <div class="titem__place" data-i18n="walk_place">Découverte libre du centre historique</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Réception -->
-            <div class="titem">
-              <div class="titem__time" data-i18n="t4_time">À partir de 17h30</div>
-              <div class="titem__body">
-                <div class="titem__row">
-                  <svg class="ticon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4 20V9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v11" />
-                    <path d="M3 20h18" />
-                    <path d="M8 7V5a4 4 0 0 1 8 0v2" />
-                    <path d="M9 13h6" />
-                  </svg>
-                  <div>
-                    <div class="titem__title" data-i18n="reception_title">Réception</div>
-                    <div class="titem__place" data-i18n="reception_place">Villa Biviere Borghese — Lentini</div>
-                  </div>
-                </div>
-
-                <div class="titem__actions">
-                  <a class="btn btn--soft" href="biviere.html" data-i18n="discover_domain">Découvrir le domaine</a>
-                </div>
-
-                <div class="map-embed-wrap">
-                  <iframe class="map-embed"
-                    src="https://www.google.com/maps?q=Villa%20Biviere%20Borghese%20Lentini&output=embed"
-                    loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Villa Biviere Borghese"></iframe>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Jour 2 -->
-        <div class="panel">
-          <div class="panel__head">
-            <svg class="section-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 17c3 0 6-2 9-2s6 2 9 2" />
-              <path d="M5 10c3 0 5-2 7-2s4 2 7 2" />
-              <path d="M4 21h16" />
-            </svg>
-            <h2 class="h2" data-i18n="day2_title">Dimanche 7 juin 2026</h2>
-          </div>
-
-          <div class="timeline">
-            <div class="titem">
-              <div class="titem__time" data-i18n="day2_time">À partir de 14h00</div>
-              <div class="titem__body">
-                <div class="titem__row">
-                  <svg class="ticon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M8 3h8l-1 7a4 4 0 0 1-6 0L8 3Z" />
-                    <path d="M12 10v8" />
-                    <path d="M8 22h8" />
-                  </svg>
-                  <div>
-                    <div class="titem__title" data-i18n="day2_event">Apéritivo Italiano</div>
-                    <div class="titem__place">Villa Nunziatina</div>
-                  </div>
-                </div>
-
-                <p class="note" data-i18n="day2_note">
-                  Une atmosphère détendue, conviviale et typiquement sicilienne, jusqu’au soir.
-                </p>
-
-                <div class="map-embed-wrap">
-                  <iframe class="map-embed"
-                    src="https://www.google.com/maps?q=Villa%20Nunziatina%20Siracusa&output=embed"
-                    loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Villa Nunziatina"></iframe>
-                </div>
-              </div>
+            <div class="detail-card" id="reception">
+              <h2 data-i18n="details.reception.title">Réception</h2>
+              <p data-i18n="details.reception.body">Villa Biviere Borghese (Lentini) — à partir de 17h30</p>
             </div>
           </div>
         </div>
 
-        <!-- Enfants (depuis le SEO copy) -->
-        <div class="panel">
-          <div class="panel__head">
-            <svg class="section-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z"/>
-              <path d="M4 21a8 8 0 0 1 16 0" />
-              <path d="M7 14l-3 3m16-3l-3 3" />
-            </svg>
-            <h2 class="h2" data-i18n="kids_title">Enfants</h2>
+        <div class="envelope" aria-hidden="true">
+          <div class="envelope-card">
+            <p class="envelope-title" data-i18n="details.envelopeTitle">Une parenthèse en Sicile</p>
+            <p class="envelope-text" data-i18n="details.envelopeText">
+              Une invitation à célébrer, à prendre le temps, et à profiter de la douceur d’Ortigia.
+            </p>
           </div>
-          <p class="p" data-i18n="kids_text">
-            Afin de garantir une organisation harmonieuse et de permettre à chacun de profiter pleinement, nous avons choisi de célébrer notre mariage sans la présence d’enfants.
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMME + DRESS CODE (requested) -->
+    <section class="section" id="programme">
+      <div class="container">
+        <h2 class="section-title" data-i18n="programme.title">Programme du mariage</h2>
+
+        <div class="grid grid-2">
+          <article class="day-card">
+            <header class="day-header">
+              <span class="day-badge" data-i18n="programme.day1.title">Samedi 20 juin 2026</span>
+            </header>
+            <ul class="timeline">
+              <li><span class="t-time" data-i18n="programme.day1.time1">11h30</span><span class="t-sep" aria-hidden="true">—</span><span class="t-what" data-i18n="programme.day1.item1">Cérémonie religieuse — Duomo di Siracusa (Ortigia)</span></li>
+              <li><span class="t-time" data-i18n="programme.day1.time2">13h00</span><span class="t-sep" aria-hidden="true">—</span><span class="t-what" data-i18n="programme.day1.item2">Aperitivo — Caffè Archimede (Ortigia)</span></li>
+              <li><span class="t-time" data-i18n="programme.day1.time3">15h00</span><span class="t-sep" aria-hidden="true">—</span><span class="t-what" data-i18n="programme.day1.item3">Promenade à Ortigia — Découverte libre</span></li>
+              <li><span class="t-time" data-i18n="programme.day1.time4">17h30</span><span class="t-sep" aria-hidden="true">—</span><span class="t-what" data-i18n="programme.day1.item4">Réception — Villa Biviere Borghese (Lentini) — à partir de</span></li>
+            </ul>
+          </article>
+
+          <article class="day-card">
+            <header class="day-header">
+              <span class="day-badge" data-i18n="programme.day2.title">Dimanche 21 juin 2026</span>
+            </header>
+            <ul class="timeline">
+              <li><span class="t-time" data-i18n="programme.day2.time1">14h00</span><span class="t-sep" aria-hidden="true">—</span><span class="t-what" data-i18n="programme.day2.item1">Apéritivo Italiano — Villa Nunziatina — à partir de 14h00</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="note" data-i18n="programme.note">
+          Les horaires sont donnés à titre indicatif afin de vous permettre d’organiser votre journée en toute sérénité.
+        </p>
+
+        <div class="dresscode">
+          <h3 class="dresscode-title" data-i18n="dresscode.title">Dress code</h3>
+          <p class="dresscode-text" data-i18n="dresscode.body">
+            Une tenue élégante et estivale, en harmonie avec les lieux et la saison. L’essentiel est que vous vous sentiez à l’aise pour profiter pleinement de ces journées.
           </p>
         </div>
-
       </div>
     </section>
 
-    <footer class="footer">
-      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
-    </footer>
+    <section class="section section-soft">
+      <div class="container center">
+        <a class="btn btn-primary btn-large" href="rsvp.html" data-i18n="details.ctaRsvp">Confirmer ma présence</a>
+      </div>
+    </section>
   </main>
 
-  <script src="app.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-line" data-i18n="footer.note">Alice &amp; Kevin — Syracuse, Sicile</p>
+      <p class="footer-small" data-i18n="footer.legal">© 2026 — Invitation digitale</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
