@@ -8,6 +8,9 @@
   <meta name="theme-color" content="#F6E58D" />
 
   <link rel="icon" href="assets/images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 
@@ -31,11 +34,11 @@
       </nav>
 
       <div class="lang-switch" aria-label="Choix de langue">
-        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
-        <span class="lang-sep" aria-hidden="true">•</span>
-        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-        <span class="lang-sep" aria-hidden="true">•</span>
-        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        <div class="lang-group">
+          <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
       </div>
 
       <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -52,9 +55,11 @@
       <a class="mobile-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
 
       <div class="mobile-lang">
-        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
-        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        <div class="lang-group">
+          <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
       </div>
     </div>
   </header>
@@ -71,25 +76,153 @@
     <section class="section">
       <div class="container">
         <div class="cards-grid" id="programme">
+          <!-- Programme -->
           <article class="card">
             <h2 class="card-title" data-i18n="programme.title">Programme du mariage</h2>
 
-            <div class="timeline">
-              <div class="time-block">
-                <div class="time-day" data-i18n="programme.day1">Samedi 20 juin 2026</div>
-                <ul class="time-list">
-                  <li data-i18n="programme.d1.l1">Cérémonie religieuse — Duomo di Siracusa (Ortigia) — 11h30</li>
-                  <li data-i18n="programme.d1.l2">Aperitivo — Caffè Archimede (Ortigia) — 13h00</li>
-                  <li data-i18n="programme.d1.l3">Promenade à Ortigia — Découverte libre — 15h00</li>
-                  <li data-i18n="programme.d1.l4">Réception — Villa Biviere Borghese (Lentini) — à partir de 17h30</li>
-                </ul>
+            <div class="programme">
+              <div class="day-block">
+                <p class="day-title" data-i18n="programme.day1">Samedi 20 juin 2026</p>
+
+                <div class="timeline">
+                  <!-- Event 1 -->
+                  <div class="event">
+                    <div class="event-icon" aria-hidden="true">
+                      <!-- church -->
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3v6"></path>
+                        <path d="M9 6h6"></path>
+                        <path d="M5 10l7-5 7 5"></path>
+                        <path d="M6 10v11h12V10"></path>
+                        <path d="M10 21v-6h4v6"></path>
+                      </svg>
+                    </div>
+                    <div class="event-body">
+                      <p class="event-title" data-i18n="programme.e1.title">Cérémonie religieuse</p>
+                      <p class="event-meta" data-i18n="programme.e1.meta">Duomo di Siracusa (Ortigia) — 11h30</p>
+                      <div class="event-actions">
+                        <a class="btn btn-ghost" target="_blank" rel="noopener"
+                           href="https://www.google.com/maps/search/?api=1&query=Duomo%20di%20Siracusa"
+                           data-i18n="programme.mapCta">Voir sur Google Maps</a>
+                      </div>
+                      <div class="map-embed" aria-label="Map — Duomo di Siracusa">
+                        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                          src="https://www.google.com/maps?q=Duomo%20di%20Siracusa&output=embed"
+                          title="Duomo di Siracusa"></iframe>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Event 2 -->
+                  <div class="event">
+                    <div class="event-icon" aria-hidden="true">
+                      <!-- coffee -->
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 8h12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8Z"></path>
+                        <path d="M16 10h2a2 2 0 0 1 0 4h-2"></path>
+                        <path d="M6 4h8"></path>
+                      </svg>
+                    </div>
+                    <div class="event-body">
+                      <p class="event-title" data-i18n="programme.e2.title">Aperitivo</p>
+                      <p class="event-meta" data-i18n="programme.e2.meta">Caffè Archimede (Ortigia) — 13h00</p>
+                      <div class="event-actions">
+                        <a class="btn btn-ghost" target="_blank" rel="noopener"
+                           href="https://www.google.com/maps/search/?api=1&query=Caff%C3%A8%20Archimede%20Ortigia"
+                           data-i18n="programme.mapCta">Voir sur Google Maps</a>
+                      </div>
+                      <div class="map-embed" aria-label="Map — Caffè Archimede">
+                        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                          src="https://www.google.com/maps?q=Caff%C3%A8%20Archimede%20Ortigia&output=embed"
+                          title="Caffè Archimede"></iframe>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Event 3 -->
+                  <div class="event">
+                    <div class="event-icon" aria-hidden="true">
+                      <!-- walking -->
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M13 5a2 2 0 1 0-2 0"></path>
+                        <path d="M10 22l2-6 2 2 2 4"></path>
+                        <path d="M12 10l-2 3 3 2"></path>
+                        <path d="M12 10l3-2 2 2"></path>
+                      </svg>
+                    </div>
+                    <div class="event-body">
+                      <p class="event-title" data-i18n="programme.e3.title">Promenade à Ortigia</p>
+                      <p class="event-meta" data-i18n="programme.e3.meta">Découverte libre — 15h00</p>
+                      <div class="event-actions">
+                        <a class="btn btn-ghost" target="_blank" rel="noopener"
+                           href="https://www.google.com/maps/search/?api=1&query=Ortigia%20Siracusa"
+                           data-i18n="programme.mapCta">Voir sur Google Maps</a>
+                      </div>
+                      <div class="map-embed" aria-label="Map — Ortigia">
+                        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                          src="https://www.google.com/maps?q=Ortigia%20Siracusa&output=embed"
+                          title="Ortigia"></iframe>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Event 4 -->
+                  <div class="event">
+                    <div class="event-icon" aria-hidden="true">
+                      <!-- party / spark -->
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2l1.2 4 4 1.2-4 1.2-1.2 4-1.2-4-4-1.2 4-1.2L12 2Z"></path>
+                        <path d="M5 14l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3Z"></path>
+                        <path d="M18 14l.8 2.6 2.6.8-2.6.8L18 21l-.8-2.6-2.6-.8 2.6-.8L18 14Z"></path>
+                      </svg>
+                    </div>
+                    <div class="event-body">
+                      <p class="event-title" data-i18n="programme.e4.title">Réception</p>
+                      <p class="event-meta" data-i18n="programme.e4.meta">Villa Biviere Borghese (Lentini) — à partir de 17h30</p>
+                      <div class="event-actions">
+                        <a class="btn btn-ghost" target="_blank" rel="noopener"
+                           href="https://www.google.com/maps/search/?api=1&query=Villa%20Biviere%20Borghese%20Lentini"
+                           data-i18n="programme.mapCta">Voir sur Google Maps</a>
+                      </div>
+                      <div class="map-embed" aria-label="Map — Villa Biviere Borghese">
+                        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                          src="https://www.google.com/maps?q=Villa%20Biviere%20Borghese%20Lentini&output=embed"
+                          title="Villa Biviere Borghese"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div class="time-block">
-                <div class="time-day" data-i18n="programme.day2">Dimanche 21 juin 2026</div>
-                <ul class="time-list">
-                  <li data-i18n="programme.d2.l1">Apéritivo Italiano — Villa Nunziatina — à partir de 14h00, jusqu’au soir</li>
-                </ul>
+              <div class="day-block">
+                <p class="day-title" data-i18n="programme.day2">Dimanche 21 juin 2026</p>
+
+                <div class="timeline">
+                  <div class="event">
+                    <div class="event-icon" aria-hidden="true">
+                      <!-- aperitivo glass -->
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 3h10l-1 7a4 4 0 0 1-8 0L7 3Z"></path>
+                        <path d="M12 10v11"></path>
+                        <path d="M8 21h8"></path>
+                      </svg>
+                    </div>
+                    <div class="event-body">
+                      <p class="event-title" data-i18n="programme.e5.title">Apéritivo Italiano</p>
+                      <p class="event-meta" data-i18n="programme.e5.meta">Villa Nunziatina — à partir de 14h00, jusqu’au soir</p>
+                      <div class="event-actions">
+                        <a class="btn btn-ghost" target="_blank" rel="noopener"
+                           href="https://www.google.com/maps/search/?api=1&query=Villa%20Nunziatina"
+                           data-i18n="programme.mapCta">Voir sur Google Maps</a>
+                      </div>
+                      <div class="map-embed" aria-label="Map — Villa Nunziatina">
+                        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                          src="https://www.google.com/maps?q=Villa%20Nunziatina&output=embed"
+                          title="Villa Nunziatina"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -98,21 +231,59 @@
             </p>
           </article>
 
+          <!-- Dress code -->
           <article class="card card-accent">
             <h2 class="card-title" data-i18n="dress.title">Dress code</h2>
             <p class="card-text" data-i18n="dress.text">
               Thème : butter yellow. Une élégance estivale, légère et soignée — merci de privilégier des tons doux, lumineux et harmonieux.
             </p>
 
-            <div class="badge-row" aria-label="Suggestions">
-              <span class="badge" data-i18n="dress.b1">Élégant & estival</span>
-              <span class="badge" data-i18n="dress.b2">Tons clairs</span>
-              <span class="badge" data-i18n="dress.b3">Confortable</span>
-            </div>
+            <div class="palette" aria-label="Palette">
+              <p class="hint" style="margin:0" data-i18n="dress.paletteTitle">Palette conseillée</p>
 
-            <p class="small-note" data-i18n="dress.note">
-              Nous affinerons si besoin — l’essentiel est une harmonie douce, en accord avec la Sicile en juin.
-            </p>
+              <div class="swatches" aria-label="Couleurs">
+                <div class="swatch">
+                  <div class="swatch-color" style="background:#F6E58D"></div>
+                  <div class="swatch-label" data-i18n="dress.sw1">Butter yellow</div>
+                </div>
+                <div class="swatch">
+                  <div class="swatch-color" style="background:#F5F0E8"></div>
+                  <div class="swatch-label" data-i18n="dress.sw2">Ivoire</div>
+                </div>
+                <div class="swatch">
+                  <div class="swatch-color" style="background:#E8D7C2"></div>
+                  <div class="swatch-label" data-i18n="dress.sw3">Sable</div>
+                </div>
+                <div class="swatch">
+                  <div class="swatch-color" style="background:#B9C7B2"></div>
+                  <div class="swatch-label" data-i18n="dress.sw4">Sauge</div>
+                </div>
+                <div class="swatch">
+                  <div class="swatch-color" style="background:#1E2A44"></div>
+                  <div class="swatch-label" data-i18n="dress.sw5">Bleu marine</div>
+                </div>
+              </div>
+
+              <div class="dress-guides" aria-label="Guidelines">
+                <div class="guide">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <p data-i18n="dress.g1">Privilégiez des matières légères et une élégance estivale.</p>
+                </div>
+                <div class="guide">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18"></path>
+                    <path d="M6 6l12 12"></path>
+                  </svg>
+                  <p data-i18n="dress.g2">Évitez les couleurs très saturées ou trop sombres (hors touches navy).</p>
+                </div>
+              </div>
+
+              <p class="hint" data-i18n="dress.note">
+                Nous affinerons si besoin — l’essentiel est une harmonie douce, en accord avec la Sicile en juin.
+              </p>
+            </div>
           </article>
         </div>
 
