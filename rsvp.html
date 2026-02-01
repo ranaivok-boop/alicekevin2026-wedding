@@ -8,6 +8,9 @@
   <meta name="theme-color" content="#F6E58D" />
 
   <link rel="icon" href="assets/images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 
@@ -31,11 +34,11 @@
       </nav>
 
       <div class="lang-switch" aria-label="Choix de langue">
-        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
-        <span class="lang-sep" aria-hidden="true">•</span>
-        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-        <span class="lang-sep" aria-hidden="true">•</span>
-        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        <div class="lang-group">
+          <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
       </div>
 
       <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -52,9 +55,11 @@
       <a class="mobile-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
 
       <div class="mobile-lang">
-        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
-        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        <div class="lang-group">
+          <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+          <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
       </div>
     </div>
   </header>
@@ -73,7 +78,16 @@
     <section class="section section-soft">
       <div class="container">
         <article class="card rsvp-card">
-          <h2 class="card-title" data-i18n="rsvp.h2">RSVP</h2>
+          <div class="rsvp-head">
+            <div class="rsvp-badge" aria-hidden="true">
+              <!-- elegant check icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+            </div>
+            <h2 class="card-title" style="margin:0" data-i18n="rsvp.h2">RSVP</h2>
+          </div>
+
           <p class="card-text" data-i18n="rsvp.text">
             Le formulaire vous permettra d’indiquer votre présence : le samedi 20 juin 2026 et le dimanche 21 juin 2026.
           </p>
