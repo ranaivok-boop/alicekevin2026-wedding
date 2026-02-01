@@ -3,153 +3,109 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alice & Kevin — Voyage & séjour</title>
-  <meta name="description" content="Informations pratiques — aéroport, location de voiture, hébergement, séjour en Sicile." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css" />
+  <title>Voyage & séjour — Alice & Kevin</title>
+  <meta name="description" content="Voyage & séjour pour le mariage d’Alice & Kevin : aéroport, déplacements, logement, conseils." />
+  <link rel="icon" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <a class="skip" href="#content" data-i18n="skip">Aller au contenu</a>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Aller au contenu principal</a>
 
-  <header class="site-header" role="banner">
-    <div class="site-header__inner">
-      <button class="menu-btn" type="button" id="menuBtn" aria-haspopup="dialog" aria-expanded="false" data-i18n="menu_open">Menu</button>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Accueil Alice et Kevin">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Alice &amp; Kevin</span>
+      </a>
 
-      <nav class="site-nav" aria-label="Navigation principale">
-        <a class="navlink" href="index.html" data-i18n="nav_home">Accueil</a>
-        <a class="navlink" href="story.html" data-i18n="nav_story">Notre histoire</a>
-        <a class="navlink" href="details.html" data-i18n="nav_programme">Programme</a>
-        <a class="navlink is-current" href="travel.html" aria-current="page" data-i18n="nav_travel">Voyage &amp; séjour</a>
-        <a class="navlink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-        <a class="navlink" href="gift.html" data-i18n="nav_gift">Cadeau</a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav-link" href="index.html" data-i18n="nav.home">Accueil</a>
+        <a class="nav-link" href="story.html" data-i18n="nav.story">Notre histoire</a>
+        <a class="nav-link" href="details.html" data-i18n="nav.details">Détails</a>
+        <a class="nav-link nav-active" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
+        <a class="nav-link nav-cta" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
+        <a class="nav-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
       </nav>
 
-      <div class="lang" aria-label="Choisir la langue">
-        <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
-        <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-        <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      <div class="lang-switch" aria-label="Choix de langue">
+        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <span class="lang-sep" aria-hidden="true">/</span>
+        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+        <span class="lang-sep" aria-hidden="true">/</span>
+        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
+
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
 
-    <div class="menu-panel" id="menuPanel" role="dialog" aria-modal="true" aria-label="Menu">
-      <div class="menu-panel__card">
-        <div class="menu-panel__top">
-          <div class="menu-panel__title" data-i18n="menu_title">Menu</div>
-          <button class="menu-close" type="button" id="menuClose" data-i18n="menu_close">Fermer</button>
-        </div>
-        <div class="menu-panel__grid">
-          <a class="menulink" href="index.html" data-i18n="nav_home">Accueil</a>
-          <a class="menulink" href="story.html" data-i18n="nav_story">Notre histoire</a>
-          <a class="menulink" href="details.html" data-i18n="nav_programme">Programme</a>
-          <a class="menulink is-current" href="travel.html" data-i18n="nav_travel">Voyage & séjour</a>
-          <a class="menulink" href="rsvp.html" data-i18n="nav_rsvp">RSVP</a>
-          <a class="menulink" href="gift.html" data-i18n="nav_gift">Cadeau</a>
-        </div>
-        <div class="menu-panel__langs" aria-label="Choisir la langue">
-          <button class="lang__btn is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
-          <button class="lang__btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-          <button class="lang__btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-        </div>
+    <div class="mobile-menu" hidden>
+      <a class="mobile-link" href="index.html" data-i18n="nav.home">Accueil</a>
+      <a class="mobile-link" href="story.html" data-i18n="nav.story">Notre histoire</a>
+      <a class="mobile-link" href="details.html" data-i18n="nav.details">Détails</a>
+      <a class="mobile-link mobile-active" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
+      <a class="mobile-link" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
+      <a class="mobile-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
+
+      <div class="mobile-lang">
+        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
     </div>
   </header>
 
-  <main id="content" class="page">
-    <section class="banner banner--travel" aria-label="Voyage & séjour">
-      <div class="banner__overlay"></div>
-      <div class="banner__inner">
-        <div class="banner__kicker" data-i18n="travel_kicker">Informations pratiques</div>
-        <h1 class="banner__title" data-i18n="travel_title">Voyage &amp; séjour</h1>
-        <p class="banner__lead" data-i18n="travel_lead">
-          Tout ce qu’il faut pour arriver, circuler et profiter sereinement de la Sicile.
-        </p>
+  <main id="main">
+    <section class="page-hero" aria-label="Voyage et séjour">
+      <div class="container page-hero-inner">
+        <p class="page-kicker" data-i18n="travel.kicker">Alice &amp; Kevin</p>
+        <h1 class="page-title" data-i18n="travel.title">Voyage & séjour — Syracuse, Sicile</h1>
+        <p class="page-lead" data-i18n="travel.intro">Afin de faciliter votre venue, vous trouverez ici les informations essentielles.</p>
       </div>
     </section>
 
     <section class="section">
-      <div class="section__inner">
+      <div class="container">
+        <div class="grid grid-2">
+          <div class="tile">
+            <h2 data-i18n="travel.arrival.title">Arriver en Sicile</h2>
+            <p data-i18n="travel.arrival.body">Aéroport recommandé : Catane (CTA)</p>
+          </div>
 
-        <div class="panel">
-          <div class="grid2 grid2--icons">
-            <div class="ibox">
-              <div class="ibox__head">
-                <svg class="ibox__icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M2 12h20" />
-                  <path d="M7 12l4-4 10-3-3 10-4 4" />
-                  <path d="M7 12l-1 6 6-1" />
-                </svg>
-                <h2 class="h3" data-i18n="airport_title">Aéroport recommandé</h2>
-              </div>
-              <p class="p" data-i18n="airport_text">Aéroport de Catane (CTA).</p>
-              <div class="map-embed-wrap">
-                <iframe class="map-embed"
-                  src="https://www.google.com/maps?q=Aeroporto%20di%20Catania%20CTA&output=embed"
-                  loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Aéroport de Catane"></iframe>
-              </div>
-            </div>
+          <div class="tile">
+            <h2 data-i18n="travel.move.title">Se déplacer</h2>
+            <p data-i18n="travel.move.body">La location d’un véhicule est recommandée dès votre arrivée à Catane (Europcar, Sicily by Car, Sixt — réservation anticipée conseillée)</p>
+          </div>
 
-            <div class="ibox">
-              <div class="ibox__head">
-                <svg class="ibox__icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 16l1-5 8-3 6 3 1 5" />
-                  <path d="M7 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" />
-                  <path d="M17 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" />
-                  <path d="M6 11h12" />
-                </svg>
-                <h2 class="h3" data-i18n="car_title">Location de voiture</h2>
-              </div>
-              <p class="p" data-i18n="car_text">
-                La location d’un véhicule est vivement recommandée dès votre arrivée. Réservation anticipée conseillée.
-              </p>
-              <ul class="ul">
-                <li data-i18n="car_li_1">Europcar, Sicily by Car, Sixt…</li>
-                <li data-i18n="car_li_2">À Ortigia : ZTL — privilégiez parking + marche.</li>
-              </ul>
-            </div>
+          <div class="tile">
+            <h2 data-i18n="travel.stay.title">Où loger</h2>
+            <p data-i18n="travel.stay.body">Lentini — Badiula. Tarifs préférentiels avec le code <span class="tag">WeddingAK</span> (valable jusqu’au 31 mars 2026)</p>
+          </div>
 
-            <div class="ibox">
-              <div class="ibox__head">
-                <svg class="ibox__icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 10l8-6 8 6v10H4V10Z" />
-                  <path d="M9 20v-7h6v7" />
-                </svg>
-                <h2 class="h3" data-i18n="stay_title">Hébergement conseillé</h2>
-              </div>
-              <p class="p" data-i18n="stay_text">
-                Lentini — Badiula. Tarifs préférentiels avec le code “WeddingAK” (jusqu’au 31 mars 2026).
-              </p>
-            </div>
-
-            <div class="ibox">
-              <div class="ibox__head">
-                <svg class="ibox__icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z" />
-                  <path d="M2 12h20" />
-                  <path d="M12 2a15 15 0 0 1 0 20" />
-                  <path d="M12 2a15 15 0 0 0 0 20" />
-                </svg>
-                <h2 class="h3" data-i18n="world_title">Invités internationaux</h2>
-              </div>
-              <p class="p" data-i18n="world_text">
-                Nous aurons la joie d’accueillir des invités venant des quatre coins du monde.
-              </p>
-            </div>
+          <div class="tile">
+            <h2 data-i18n="travel.todo.title">À faire en Sicile</h2>
+            <p data-i18n="travel.todo.body">Si votre planning le permet : une promenade au coucher du soleil à Ortigia, un dîner au bord de l’eau, et le plaisir simple de prendre le temps.</p>
           </div>
         </div>
-
       </div>
     </section>
 
-    <footer class="footer">
-      <p class="footer__p">© Alice &amp; Kevin · 2026</p>
-    </footer>
+    <section class="section section-soft">
+      <div class="container center">
+        <a class="btn btn-primary btn-large" href="rsvp.html" data-i18n="travel.ctaRsvp">Confirmer ma présence</a>
+      </div>
+    </section>
   </main>
 
-  <script src="app.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-line" data-i18n="footer.note">Alice &amp; Kevin — Syracuse, Sicile</p>
+      <p class="footer-small" data-i18n="footer.legal">© 2026 — Invitation digitale</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
