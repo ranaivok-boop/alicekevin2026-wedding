@@ -8,10 +8,11 @@
   <meta name="theme-color" content="#F6E58D" />
 
   <link rel="icon" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="./css/style.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -27,18 +28,18 @@
       <nav class="nav" aria-label="Navigation principale">
         <a class="nav-link" href="index.html" data-i18n="nav.home">Accueil</a>
         <a class="nav-link nav-active" href="story.html" data-i18n="nav.story">Notre histoire</a>
-        <a class="nav-link" href="details.html" data-i18n="nav.details">Détails</a>
+        <a class="nav-link" href="details.html" data-i18n="nav.details">Programme</a>
         <a class="nav-link" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
-        <a class="nav-link nav-cta" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
         <a class="nav-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
+        <a class="nav-link nav-cta" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
       </nav>
 
       <div class="lang-switch" aria-label="Choix de langue">
-        <div class="lang-group">
-          <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
-          <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-        </div>
+        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <span class="lang-sep" aria-hidden="true">•</span>
+        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+        <span class="lang-sep" aria-hidden="true">•</span>
+        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
 
       <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -47,130 +48,136 @@
     </div>
 
     <div id="mobileMenu" class="mobile-menu" hidden>
-      <a class="mobile-link" href="index.html" data-i18n="nav.home">Accueil</a>
-      <a class="mobile-link mobile-active" href="story.html" data-i18n="nav.story">Notre histoire</a>
-      <a class="mobile-link" href="details.html" data-i18n="nav.details">Détails</a>
-      <a class="mobile-link" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
-      <a class="mobile-link" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
-      <a class="mobile-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
+      <div class="mobile-menu-inner">
+        <a class="mobile-link" href="index.html" data-i18n="nav.home">Accueil</a>
+        <a class="mobile-link mobile-active" href="story.html" data-i18n="nav.story">Notre histoire</a>
+        <a class="mobile-link" href="details.html" data-i18n="nav.details">Programme</a>
+        <a class="mobile-link" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
+        <a class="mobile-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
+        <a class="mobile-link mobile-link-cta" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
 
-      <div class="mobile-lang">
-        <div class="lang-group">
+        <div class="mobile-lang" aria-label="Choix de langue (mobile)">
           <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
           <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
           <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
         </div>
       </div>
+      <div class="mobile-menu-backdrop" data-close="mobileMenu" aria-hidden="true"></div>
     </div>
   </header>
 
   <main id="main">
-    <section class="page-hero">
+    <section class="page-hero page-hero--tight">
       <div class="container">
         <p class="page-kicker">Alice &amp; Kevin</p>
         <h1 class="page-title" data-i18n="story.title">Notre histoire</h1>
-        <p class="page-lead" data-i18n="story.lead">
+        <p class="page-lead page-lead--featured" data-i18n="story.leadFeatured">
           Il arrive parfois que la vie choisisse des lieux ordinaires pour y glisser l’extraordinaire.
+          Pour nous, tout a commencé dans un ascenseur — et s’est poursuivi comme un chemin patiemment construit, étage après étage.
         </p>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container reading">
+    <section class="section section-soft">
+      <div class="container">
+        <div class="story-carousel" aria-label="Chapitre par chapitre">
+          <button class="carousel-btn" type="button" data-carousel="prev" aria-label="Précédent">
+            <span aria-hidden="true">‹</span>
+          </button>
 
-        <!-- Lead block (fusionné + valorisé) -->
-        <div class="story-lead">
-          <p data-i18n="story.leadBlock">
-            Il arrive parfois que la vie choisisse des lieux ordinaires pour y glisser l’extraordinaire. Pour nous, tout a commencé dans un ascenseur — et s’est poursuivi comme un chemin patiemment construit, étage après étage.
-          </p>
+          <div class="carousel-viewport" role="region" aria-live="polite">
+            <div class="carousel-track">
+              <article class="story-slide is-active" data-slide="0">
+                <div class="story-media" aria-hidden="true">
+                  <img src="assets/images/hero-couple.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="story-text">
+                  <h2 class="h2" data-i18n="story.h1">Une rencontre inattendue</h2>
+                  <p class="p" data-i18n="story.p1">Février 2019, Singapour...</p>
+                </div>
+              </article>
+
+              <article class="story-slide" data-slide="1">
+                <div class="story-media" aria-hidden="true">
+                  <img src="assets/images/hero-couple.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="story-text">
+                  <h2 class="h2" data-i18n="story.h2">Le temps du silence et des signes</h2>
+                  <p class="p" data-i18n="story.p2">Les mois suivants...</p>
+                </div>
+              </article>
+
+              <article class="story-slide" data-slide="2">
+                <div class="story-media" aria-hidden="true">
+                  <img src="assets/images/hero-couple.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="story-text">
+                  <h2 class="h2" data-i18n="story.h3">Le premier choix</h2>
+                  <p class="p" data-i18n="story.p3">Le 26 avril 2019...</p>
+                </div>
+              </article>
+
+              <article class="story-slide" data-slide="3">
+                <div class="story-media" aria-hidden="true">
+                  <img src="assets/images/hero-couple.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="story-text">
+                  <h2 class="h2" data-i18n="story.h4">La distance comme révélateur</h2>
+                  <p class="p" data-i18n="story.p4">Lorsque la distance...</p>
+                </div>
+              </article>
+
+              <article class="story-slide" data-slide="4">
+                <div class="story-media" aria-hidden="true">
+                  <img src="assets/images/hero-couple.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="story-text">
+                  <h2 class="h2" data-i18n="story.h5">Le courage d’y croire</h2>
+                  <p class="p" data-i18n="story.p5">Kevin fit un choix...</p>
+                </div>
+              </article>
+
+              <article class="story-slide" data-slide="5">
+                <div class="story-media" aria-hidden="true">
+                  <img src="assets/images/hero-couple.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="story-text">
+                  <h2 class="h2" data-i18n="story.h6">Aimer, c’est aussi rencontrer une famille</h2>
+                  <p class="p" data-i18n="story.p6">Aimer, c’est parfois...</p>
+                </div>
+              </article>
+
+              <article class="story-slide" data-slide="6">
+                <div class="story-media" aria-hidden="true">
+                  <img src="assets/images/hero-couple.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="story-text">
+                  <h2 class="h2" data-i18n="story.h7">Construire, ensemble</h2>
+                  <p class="p" data-i18n="story.p7">Les années ont passé...</p>
+                  <p class="p p-soft" data-i18n="story.p8">Et en ce 20 juin 2026...</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <button class="carousel-btn" type="button" data-carousel="next" aria-label="Suivant">
+            <span aria-hidden="true">›</span>
+          </button>
+
+          <div class="carousel-dots" role="tablist" aria-label="Aller au chapitre">
+            <button type="button" class="dot-btn is-active" data-dot="0" aria-label="Chapitre 1" aria-selected="true"></button>
+            <button type="button" class="dot-btn" data-dot="1" aria-label="Chapitre 2" aria-selected="false"></button>
+            <button type="button" class="dot-btn" data-dot="2" aria-label="Chapitre 3" aria-selected="false"></button>
+            <button type="button" class="dot-btn" data-dot="3" aria-label="Chapitre 4" aria-selected="false"></button>
+            <button type="button" class="dot-btn" data-dot="4" aria-label="Chapitre 5" aria-selected="false"></button>
+            <button type="button" class="dot-btn" data-dot="5" aria-label="Chapitre 6" aria-selected="false"></button>
+            <button type="button" class="dot-btn" data-dot="6" aria-label="Chapitre 7" aria-selected="false"></button>
+          </div>
         </div>
 
-        <!-- 7 story steps with photo slot each -->
-        <div class="story-steps">
-
-          <article class="story-step">
-            <div>
-              <h2 data-i18n="story.h1">Une rencontre inattendue</h2>
-              <p data-i18n="story.p1">...</p>
-            </div>
-            <div class="story-media" aria-label="Photo 1">
-              <!-- Option 1: put your real photo -->
-              <!-- <img src="assets/images/story-01.jpg" alt="Photo — Une rencontre inattendue"> -->
-              <div class="ph" data-i18n="story.photoHint">Ajouter une photo</div>
-            </div>
-          </article>
-
-          <article class="story-step">
-            <div>
-              <h2 data-i18n="story.h2">Le temps du silence et des signes</h2>
-              <p data-i18n="story.p2">...</p>
-            </div>
-            <div class="story-media" aria-label="Photo 2">
-              <!-- <img src="assets/images/story-02.jpg" alt="Photo — Le temps du silence et des signes"> -->
-              <div class="ph" data-i18n="story.photoHint">Ajouter une photo</div>
-            </div>
-          </article>
-
-          <article class="story-step">
-            <div>
-              <h2 data-i18n="story.h3">Le premier choix</h2>
-              <p data-i18n="story.p3">...</p>
-            </div>
-            <div class="story-media" aria-label="Photo 3">
-              <!-- <img src="assets/images/story-03.jpg" alt="Photo — Le premier choix"> -->
-              <div class="ph" data-i18n="story.photoHint">Ajouter une photo</div>
-            </div>
-          </article>
-
-          <article class="story-step">
-            <div>
-              <h2 data-i18n="story.h4">La distance comme révélateur</h2>
-              <p data-i18n="story.p4">...</p>
-            </div>
-            <div class="story-media" aria-label="Photo 4">
-              <!-- <img src="assets/images/story-04.jpg" alt="Photo — La distance comme révélateur"> -->
-              <div class="ph" data-i18n="story.photoHint">Ajouter une photo</div>
-            </div>
-          </article>
-
-          <article class="story-step">
-            <div>
-              <h2 data-i18n="story.h5">Le courage d’y croire</h2>
-              <p data-i18n="story.p5">...</p>
-            </div>
-            <div class="story-media" aria-label="Photo 5">
-              <!-- <img src="assets/images/story-05.jpg" alt="Photo — Le courage d’y croire"> -->
-              <div class="ph" data-i18n="story.photoHint">Ajouter une photo</div>
-            </div>
-          </article>
-
-          <article class="story-step">
-            <div>
-              <h2 data-i18n="story.h6">Aimer, c’est aussi rencontrer une famille</h2>
-              <p data-i18n="story.p6">...</p>
-            </div>
-            <div class="story-media" aria-label="Photo 6">
-              <!-- <img src="assets/images/story-06.jpg" alt="Photo — Rencontrer une famille"> -->
-              <div class="ph" data-i18n="story.photoHint">Ajouter une photo</div>
-            </div>
-          </article>
-
-          <article class="story-step">
-            <div>
-              <h2 data-i18n="story.h7">Construire, ensemble</h2>
-              <p data-i18n="story.p7">...</p>
-              <p style="margin-top:10px" data-i18n="story.p8">...</p>
-            </div>
-            <div class="story-media" aria-label="Photo 7">
-              <!-- <img src="assets/images/story-07.jpg" alt="Photo — Construire, ensemble"> -->
-              <div class="ph" data-i18n="story.photoHint">Ajouter une photo</div>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="center-cta">
-          <a class="btn btn-primary btn-large" href="rsvp.html" data-i18n="story.cta">Confirmer ma présence</a>
+        <div class="center-cta cta-row">
+          <a class="btn btn-ghost" href="details.html" data-i18n="story.ctaProgramme">Voir le programme</a>
+          <a class="btn btn-primary" href="gift.html" data-i18n="story.ctaGift">Faire un cadeau aux mariés</a>
         </div>
       </div>
     </section>
