@@ -4,21 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cadeau — Alice & Kevin</title>
-  <meta name="description" content="Cadeau : contribuer à notre avenir commun, si vous le souhaitez." />
+  <meta name="description" content="Cadeau : une contribution à notre avenir commun, si vous le souhaitez." />
   <meta name="theme-color" content="#F6E58D" />
-
   <link rel="icon" href="assets/images/favicon.png" />
   <link rel="stylesheet" href="./css/style.css" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body class="page-gift">
+<body>
   <a class="skip-link" href="#main" data-i18n="a11y.skip">Aller au contenu principal</a>
 
-  <header class="site-header site-header--overlay" role="banner">
+  <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Accueil">
         <span class="brand-mark" aria-hidden="true"></span>
@@ -30,8 +25,8 @@
         <a class="nav-link" href="story.html" data-i18n="nav.story">Notre histoire</a>
         <a class="nav-link" href="details.html" data-i18n="nav.details">Programme</a>
         <a class="nav-link" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
-        <a class="nav-link nav-active" href="gift.html" data-i18n="nav.gift">Cadeau</a>
         <a class="nav-link nav-cta" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
+        <a class="nav-link nav-active" href="gift.html" data-i18n="nav.gift">Cadeau</a>
       </nav>
 
       <div class="lang-switch" aria-label="Choix de langue">
@@ -48,101 +43,58 @@
     </div>
 
     <div id="mobileMenu" class="mobile-menu" hidden>
-      <div class="mobile-menu-inner">
-        <a class="mobile-link" href="index.html" data-i18n="nav.home">Accueil</a>
-        <a class="mobile-link" href="story.html" data-i18n="nav.story">Notre histoire</a>
-        <a class="mobile-link" href="details.html" data-i18n="nav.details">Programme</a>
-        <a class="mobile-link" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
-        <a class="mobile-link mobile-active" href="gift.html" data-i18n="nav.gift">Cadeau</a>
-        <a class="mobile-link mobile-link-cta" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
+      <a class="mobile-link" href="index.html" data-i18n="nav.home">Accueil</a>
+      <a class="mobile-link" href="story.html" data-i18n="nav.story">Notre histoire</a>
+      <a class="mobile-link" href="details.html" data-i18n="nav.details">Programme</a>
+      <a class="mobile-link" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
+      <a class="mobile-link" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
+      <a class="mobile-link mobile-active" href="gift.html" data-i18n="nav.gift">Cadeau</a>
 
-        <div class="mobile-lang" aria-label="Choix de langue (mobile)">
-          <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
-          <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-        </div>
+      <div class="mobile-lang">
+        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
-      <div class="mobile-menu-backdrop" data-close="mobileMenu" aria-hidden="true"></div>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero hero--full hero--gift" aria-label="Cadeau">
-      <div class="hero-media" aria-hidden="true"></div>
-      <div class="hero-scrim" aria-hidden="true"></div>
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-kicker">Alice &amp; Kevin</p>
+        <h1 class="page-title" data-i18n="gift.title">Cadeau</h1>
+        <p class="page-lead" data-i18n="gift.lead"></p>
+      </div>
+    </section>
 
-      <div class="container hero-inner hero-inner--noScroll">
-        <div class="gift-layout">
-          <div class="gift-copy">
-            <p class="hero-kicker" data-i18n="gift.kicker">Cadeau</p>
-            <h1 class="hero-title hero-title--sm" data-i18n="gift.title">Cadeau aux mariés</h1>
-            <p class="hero-intro hero-intro--strong" data-i18n="gift.lead">
-              Votre présence à nos côtés sera, à elle seule, le plus précieux des cadeaux.
-            </p>
+    <section class="section section-soft">
+      <div class="container">
+        <article class="surface" style="padding:18px 16px;">
+          <p class="bento-text" data-i18n="gift.p1"></p>
+          <p class="bento-text" data-i18n="gift.p2"></p>
 
-            <p class="hero-intro" data-i18n="gift.p1">
-              Si vous souhaitez nous témoigner une attention, une contribution à notre avenir commun serait profondément appréciée.
-            </p>
-
-            <div class="tiers" role="group" aria-label="Montants suggérés">
-              <button class="tier-btn is-active" type="button" data-tier="200">200 €</button>
-              <button class="tier-btn" type="button" data-tier="300">300 €</button>
-              <button class="tier-btn" type="button" data-tier="500">500 €</button>
-              <button class="tier-btn" type="button" data-tier="other" data-i18n="gift.other">Autre montant</button>
+          <div class="iban-box" role="group" aria-label="Coordonnées bancaires">
+            <div class="iban-row">
+              <span class="iban-label">IBAN</span>
+              <span class="iban-value" data-i18n="gift.iban">[à renseigner]</span>
             </div>
-
-            <p class="micro" data-i18n="gift.tierHint">
-              Ces montants sont des suggestions — choisissez librement ce qui vous ressemble.
-            </p>
+            <div class="iban-row">
+              <span class="iban-label">BIC</span>
+              <span class="iban-value" data-i18n="gift.bic">[à renseigner]</span>
+            </div>
+            <div class="iban-row">
+              <span class="iban-label" data-i18n="gift.holderLabel">Titulaire</span>
+              <span class="iban-value" data-i18n="gift.holder">[à renseigner]</span>
+            </div>
           </div>
 
-          <aside class="gift-panel" aria-label="Coordonnées bancaires">
-            <div class="gift-panel-head">
-              <div class="gift-ico" aria-hidden="true">
-                <svg class="svg-ico" viewBox="0 0 24 24">
-                  <path d="M3 7h18v10H3z"/>
-                  <path d="M3 10h18"/>
-                  <path d="M6 14h6"/>
-                </svg>
-              </div>
-              <div>
-                <h2 class="h2 h2-tight" data-i18n="gift.bankTitle">Virement bancaire</h2>
-                <p class="p p-soft" data-i18n="gift.p2">
-                  Par souci de simplicité, les contributions s’effectuent exclusivement par virement bancaire.
-                </p>
-              </div>
-            </div>
-
-            <div class="iban-box" role="group">
-              <div class="iban-row">
-                <span class="iban-label">IBAN</span>
-                <span class="iban-value" data-clip="iban" data-i18n="gift.iban">[à renseigner]</span>
-                <button class="copy-btn" type="button" data-copy="iban" data-i18n="gift.copy">Copier</button>
-              </div>
-              <div class="iban-row">
-                <span class="iban-label">BIC</span>
-                <span class="iban-value" data-clip="bic" data-i18n="gift.bic">[à renseigner]</span>
-                <button class="copy-btn" type="button" data-copy="bic" data-i18n="gift.copy">Copier</button>
-              </div>
-              <div class="iban-row">
-                <span class="iban-label" data-i18n="gift.holderLabel">Titulaire</span>
-                <span class="iban-value" data-clip="holder" data-i18n="gift.holder">[à renseigner]</span>
-                <button class="copy-btn" type="button" data-copy="holder" data-i18n="gift.copy">Copier</button>
-              </div>
-            </div>
-
-            <p class="micro" data-i18n="gift.note">
-              Nous mettrons à jour ces informations dès que possible.
-            </p>
-
-            <div class="gift-toast" aria-live="polite" aria-atomic="true"></div>
-          </aside>
-        </div>
+          <p class="small-note" data-i18n="gift.note"></p>
+        </article>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer site-footer--overlay">
+  <footer class="site-footer">
     <div class="container footer-inner">
       <p class="footer-line" data-i18n="footer.note">Alice &amp; Kevin — Syracuse, Sicile</p>
       <p class="footer-small" data-i18n="footer.legal">© 2026 — Invitation digitale</p>
