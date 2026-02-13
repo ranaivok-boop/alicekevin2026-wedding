@@ -4,15 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Voyage & séjour — Alice & Kevin</title>
-  <meta name="description" content="Voyage & séjour : arriver en Sicile, transports, où loger, conseils pratiques." />
+  <meta name="description" content="Voyage & séjour : arriver en Sicile, se déplacer, où loger, inspirations." />
   <meta name="theme-color" content="#F6E58D" />
-
   <link rel="icon" href="assets/images/favicon.png" />
   <link rel="stylesheet" href="./css/style.css" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -30,8 +25,8 @@
         <a class="nav-link" href="story.html" data-i18n="nav.story">Notre histoire</a>
         <a class="nav-link" href="details.html" data-i18n="nav.details">Programme</a>
         <a class="nav-link nav-active" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
-        <a class="nav-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
         <a class="nav-link nav-cta" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
+        <a class="nav-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
       </nav>
 
       <div class="lang-switch" aria-label="Choix de langue">
@@ -48,21 +43,18 @@
     </div>
 
     <div id="mobileMenu" class="mobile-menu" hidden>
-      <div class="mobile-menu-inner">
-        <a class="mobile-link" href="index.html" data-i18n="nav.home">Accueil</a>
-        <a class="mobile-link" href="story.html" data-i18n="nav.story">Notre histoire</a>
-        <a class="mobile-link" href="details.html" data-i18n="nav.details">Programme</a>
-        <a class="mobile-link mobile-active" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
-        <a class="mobile-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
-        <a class="mobile-link mobile-link-cta" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
+      <a class="mobile-link" href="index.html" data-i18n="nav.home">Accueil</a>
+      <a class="mobile-link" href="story.html" data-i18n="nav.story">Notre histoire</a>
+      <a class="mobile-link" href="details.html" data-i18n="nav.details">Programme</a>
+      <a class="mobile-link mobile-active" href="travel.html" data-i18n="nav.travel">Voyage & séjour</a>
+      <a class="mobile-link" href="rsvp.html" data-i18n="nav.rsvp">RSVP</a>
+      <a class="mobile-link" href="gift.html" data-i18n="nav.gift">Cadeau</a>
 
-        <div class="mobile-lang" aria-label="Choix de langue (mobile)">
-          <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
-          <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
-          <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
-        </div>
+      <div class="mobile-lang">
+        <button class="lang-btn" type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button class="lang-btn" type="button" data-lang="it" aria-pressed="false">IT</button>
+        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
-      <div class="mobile-menu-backdrop" data-close="mobileMenu" aria-hidden="true"></div>
     </div>
   </header>
 
@@ -71,65 +63,76 @@
       <div class="container">
         <p class="page-kicker" data-i18n="travel.kicker">Voyage & séjour — Syracuse, Sicile</p>
         <h1 class="page-title" data-i18n="travel.title">Voyage & séjour</h1>
-        <p class="page-lead" data-i18n="travel.lead">
-          Afin de faciliter votre venue, voici les informations clés — simples, claires, et utiles.
-        </p>
+        <p class="page-lead" data-i18n="travel.lead">Les informations essentielles, organisées pour vous simplifier la vie.</p>
       </div>
     </section>
 
     <section class="section section-soft">
       <div class="container">
-        <div class="equal-grid">
-          <article class="tile">
-            <div class="tile-ico" aria-hidden="true">
-              <svg class="svg-ico" viewBox="0 0 24 24"><path d="M3 11h18"/><path d="M5 7h14"/><path d="M7 15h10"/><path d="M9 19h6"/></svg>
+        <div class="bento">
+          <article class="surface bento-card" data-span="2">
+            <div class="bento-head">
+              <div class="bento-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M3 12h18" stroke="rgba(31,35,40,.82)" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M9 12l-2-7c-.2-.6.2-1.3.9-1.4l2-.3c.6-.1 1.2.3 1.3.9l1 7.8" stroke="rgba(31,35,40,.82)" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="M15 12l2-4.5c.3-.6 0-1.3-.6-1.5l-2-.7c-.6-.2-1.3.1-1.5.7L12 12" stroke="rgba(31,35,40,.72)" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h2 class="bento-title" data-i18n="travel.arrive.title">Arriver en Sicile</h2>
             </div>
-            <h2 class="h2" data-i18n="travel.arrive.title">Arriver en Sicile</h2>
-            <p class="p" data-i18n="travel.arrive.text">
-              Aéroport recommandé : Catane (CTA). C’est l’option la plus simple et la plus directe pour rejoindre Syracuse.
-            </p>
-            <p class="p p-soft" data-i18n="travel.arrive.tip">
-              Conseil : réserver tôt permet souvent de trouver de meilleurs horaires et tarifs.
-            </p>
+            <p class="bento-text" data-i18n="travel.arrive.text"></p>
           </article>
 
-          <article class="tile">
-            <div class="tile-ico" aria-hidden="true">
-              <svg class="svg-ico" viewBox="0 0 24 24"><path d="M5 16l2-7h10l2 7"/><path d="M7 16v3"/><path d="M17 16v3"/><path d="M6 12h12"/><circle cx="8" cy="16" r="1"/><circle cx="16" cy="16" r="1"/></svg>
+          <article class="surface bento-card">
+            <div class="bento-head">
+              <div class="bento-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 17l4-10 4 10 4-10 4 10" stroke="rgba(31,35,40,.82)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h2 class="bento-title" data-i18n="travel.move.title">Se déplacer</h2>
             </div>
-            <h2 class="h2" data-i18n="travel.move.title">Se déplacer</h2>
-            <p class="p" data-i18n="travel.move.text">
-              La location d’un véhicule est fortement recommandée dès votre arrivée à Catane : c’est la solution la plus fluide pour le week-end.
-            </p>
-            <p class="p p-soft" data-i18n="travel.move.tip">
-              Astuce : privilégiez un véhicule compact (Ortigia) et une réservation anticipée.
-            </p>
+            <p class="bento-text" data-i18n="travel.move.text"></p>
           </article>
 
-          <article class="tile">
-            <div class="tile-ico" aria-hidden="true">
-              <svg class="svg-ico" viewBox="0 0 24 24"><path d="M4 10l8-6 8 6v11H4z"/><path d="M9 21v-7h6v7"/></svg>
+          <article class="surface bento-card">
+            <div class="bento-head">
+              <div class="bento-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 11l8-7 8 7v9a2 2 0 0 1-2 2h-3v-7H9v7H6a2 2 0 0 1-2-2v-9Z" stroke="rgba(31,35,40,.82)" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h2 class="bento-title" data-i18n="travel.stay.title">Où loger</h2>
             </div>
-            <h2 class="h2" data-i18n="travel.stay.title">Où loger</h2>
-            <p class="p" data-i18n="travel.stay.text">
-              Zone recommandée : Lentini / alentours (pratique pour la réception). Option suggérée : Badiula.
-            </p>
-            <p class="p p-soft" data-i18n="travel.stay.tip">
-              Code : WeddingAK (valable jusqu’au 31 mars 2026, selon disponibilités).
-            </p>
+            <p class="bento-text" data-i18n="travel.stay.text"></p>
           </article>
 
-          <article class="tile tile--accent">
-            <div class="tile-ico" aria-hidden="true">
-              <svg class="svg-ico" viewBox="0 0 24 24"><path d="M3 20c3-9 6-13 9-13s6 4 9 13"/><path d="M6 20c2-6 4-9 6-9s4 3 6 9"/></svg>
+          <article class="surface bento-card">
+            <div class="bento-head">
+              <div class="bento-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 22s7-4.6 9.4-8.7C23.2 8.6 21.8 5.7 19 4.7c-2-.7-4.1.1-5.2 1.7-1.1-1.6-3.2-2.4-5.2-1.7-2.8 1-4.2 3.9-2.4 7.1C5 16 12 22 12 22Z" stroke="rgba(31,35,40,.82)" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h2 class="bento-title" data-i18n="travel.todo.title">Inspirations</h2>
             </div>
-            <h2 class="h2" data-i18n="travel.todo.title">À faire en Sicile</h2>
-            <p class="p" data-i18n="travel.todo.text">
-              Si votre planning le permet : un coucher de soleil à Ortigia, un dîner au bord de l’eau, et le luxe simple de prendre le temps.
-            </p>
-            <p class="p p-soft" data-i18n="travel.todo.tip">
-              Syracuse se savoure : marchez, respirez, et laissez la lumière faire le reste.
-            </p>
+            <p class="bento-text" data-i18n="travel.todo.text"></p>
+          </article>
+
+          <article class="surface bento-card">
+            <div class="bento-head">
+              <div class="bento-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2v6" stroke="rgba(31,35,40,.82)" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M8 10h8" stroke="rgba(31,35,40,.82)" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M6 22h12" stroke="rgba(31,35,40,.62)" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M7 22V12a5 5 0 0 1 10 0v10" stroke="rgba(31,35,40,.82)" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h2 class="bento-title" data-i18n="travel.goodtoknow.title">À savoir</h2>
+            </div>
+            <p class="bento-text" data-i18n="travel.goodtoknow.text"></p>
           </article>
         </div>
       </div>
